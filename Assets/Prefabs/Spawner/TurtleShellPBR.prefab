@@ -41,10 +41,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 1.5
-  m_Height: 2
+  m_Radius: 0.8
+  m_Height: 1
   m_Direction: 2
-  m_Center: {x: 0, y: 0, z: -0.3}
+  m_Center: {x: 0, y: 0, z: 0.5}
 --- !u!1 &8906187486834248854
 GameObject:
   m_ObjectHideFlags: 0
@@ -410,6 +410,11 @@ MonoBehaviour:
   hpBarPrefab: {fileID: 785332700798895989, guid: 64952279f741616429c5bc19a6ef3a95, type: 3}
   hpBarOffset: {x: 0, y: 2.2, z: 0}
   attackDist: 3.2
+  moveDist: 12
+  beforeAttackDelay: 0.3
+  afterAttackDelay: 0.8
+  moveSpeedClose: 6
+  moveSpeedFar: 2
 --- !u!195 &8908060103877748731
 NavMeshAgent:
   m_ObjectHideFlags: 0

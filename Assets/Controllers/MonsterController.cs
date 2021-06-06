@@ -28,6 +28,11 @@ public class MonsterController : MonoBehaviour
     Slider slider;
 
     public float attackDist = 4.0f;
+    public float moveDist = 10.0f;
+    public float beforeAttackDelay;
+    public float afterAttackDelay;
+    public float moveSpeedClose;
+    public float moveSpeedFar;
 
     private bool isDead = false;
     private bool isAttack = false;
@@ -78,11 +83,19 @@ public class MonsterController : MonoBehaviour
                     nvAgent.isStopped = true;
                     animator.SetTrigger("Attack");
                     isAttack = true;
-                    Invoke("Attack", 0.4f);
-                    Invoke("AttackOut", 1.2f);
+                    Invoke("Attack", beforeAttackDelay);
+                    Invoke("AttackOut", afterAttackDelay);
+                }
+                else if(dist <= moveDist)
+                {
+                    nvAgent.speed = moveSpeedClose;
+                    nvAgent.destination = playerTransform.position;
+                    nvAgent.isStopped = false;
+                    animator.SetBool("isTrace", true);
                 }
                 else
                 {
+                    nvAgent.speed = moveSpeedFar;
                     nvAgent.destination = playerTransform.position;
                     nvAgent.isStopped = false;
                     animator.SetBool("isTrace", true);

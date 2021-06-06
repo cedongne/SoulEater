@@ -939,6 +939,11 @@ MonoBehaviour:
   hpBarPrefab: {fileID: 785332700798895989, guid: 64952279f741616429c5bc19a6ef3a95, type: 3}
   hpBarOffset: {x: 0, y: 2.2, z: 0}
   attackDist: 3.2
+  moveDist: 12
+  beforeAttackDelay: 0.4
+  afterAttackDelay: 1.2
+  moveSpeedClose: 6
+  moveSpeedFar: 2
 --- !u!195 &5158852219085026875
 NavMeshAgent:
   m_ObjectHideFlags: 0

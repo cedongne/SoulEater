@@ -368,10 +368,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 22930316966855854}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7de6c5512b6c3d145b27ee105451f4bd, type: 3}
+  m_Script: {fileID: 11500000, guid: ebddb5b6f81282144ae987dbc13ec0c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   monster:
-  - {fileID: 7835755067436512597, guid: b9499f85364f0bb4582da1c6a2544d04, type: 3}
-  - {fileID: 5158852220017023952, guid: 3af48055b0522cb4896e8697b7dd8baa, type: 3}
+  - {fileID: 5158852220017023952, guid: 2eb897ced15674749a8944f4516aa935, type: 3}
+  - {fileID: 7835755067436512597, guid: 50a7104a177a68a42a2b936bfd8811fd, type: 3}
   MonsterCount: 5
