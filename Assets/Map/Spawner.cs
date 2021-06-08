@@ -11,7 +11,6 @@ public class Spawner : MonoBehaviour
 
     Vector3 pos = new Vector3();
 
-    int monsterNum = 2;
     public void MonsterSpawn(List<List<MapGenerator.Coord>> spawnableRooms, int width, int height)
     {
         GameObject go = new GameObject { name = "Monsters" };

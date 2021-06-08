@@ -183,3 +183,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
+  hitEffect: {fileID: 6797184768491780202, guid: aa5344a66cd82c04392bdf02f8f79cbb, type: 3}

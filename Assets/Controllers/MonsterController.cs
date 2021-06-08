@@ -10,13 +10,13 @@ public class MonsterController : MonoBehaviour
     public enum CurrentState { idle, trace, attack, dead };
     public CurrentState curState = CurrentState.idle;
 
-    Transform transform;
+    Transform monsterTransform;
     Transform playerTransform;
-    Transform camera;
+    Transform mainCamera;
     NavMeshAgent nvAgent;
     Animator animator;
 
-    SphereCollider collider;
+    SphereCollider monsterCollider;
     GameObject hitBox;
     MeshRenderer[] meshs;
 
@@ -42,15 +42,15 @@ public class MonsterController : MonoBehaviour
     {
         stat = GetComponent<Stat>();
 
-        camera = Camera.main.transform;
-        transform = gameObject.GetComponent<Transform>();
+        mainCamera = Camera.main.transform;
+        monsterTransform = gameObject.GetComponent<Transform>();
         playerTransform = GameObject.FindWithTag("Player").GetComponent<Transform>();
         nvAgent = gameObject.GetComponent<NavMeshAgent>();
         nvAgent.enabled = false;
         animator = gameObject.GetComponent<Animator>();
 
-        collider = gameObject.GetComponent<SphereCollider>();
-        hitBox = transform.Find("HitBox").gameObject;
+        monsterCollider = gameObject.GetComponent<SphereCollider>();
+        hitBox = monsterTransform.Find("HitBox").gameObject;
         meshs = GetComponentsInChildren<MeshRenderer>();
 
 
@@ -171,7 +171,7 @@ public class MonsterController : MonoBehaviour
                     {
                         isDead = true;
                         animator.SetTrigger("Die");
-                        collider.isTrigger = true;
+                        monsterCollider.isTrigger = true;
                         Destroy(hpBar, 3f);
                         Destroy(gameObject, 3f);
                     }

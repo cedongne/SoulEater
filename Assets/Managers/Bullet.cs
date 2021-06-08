@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public int damage;
+    public GameObject hitEffect;
 
     private void Start()
     {
@@ -14,7 +15,9 @@ public class Bullet : MonoBehaviour
     {
         if (other.gameObject.tag == "wall" || other.gameObject.tag == "Monster")
         {
+            GameObject instantHitEffect = Instantiate(hitEffect, other.transform.position, other.transform.rotation);
             Destroy(gameObject);
+            Destroy(instantHitEffect, 1.0f);
         }
     }
 
