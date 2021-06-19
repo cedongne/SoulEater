@@ -5,6 +5,11 @@ using UnityEngine.AI;
 
 public class MeshGenerator : MonoBehaviour
 {
+    public GameObject portalObject;
+    public int yCorrect;
+    public int frontCorrect;
+
+    public bool isBoss;
 
     public SquareGrid squareGrid;
     public MeshFilter walls;
@@ -62,34 +67,48 @@ public class MeshGenerator : MonoBehaviour
         }
     }
 
-    /*void CreateWallObjects()
+    void CreatePortal(Mesh wall)
     {
-        int count = 0;
-        GameObject gameObject = new GameObject();
-        gameObject.name = "wallObjects";
-        gameObject.transform.parent = this.transform;
+        int portalDir = Random.Range(0, 3);
+        Vector3 portalPos = this.transform.position;
 
-        for (int i = 0; i < vertices.Count; i++)
+        for (int i = 1; i < wall.vertices.Length; i++)
         {
-            bool visited = true;
-            for (int j = 0; j < outlines.Count; j++)
+            if (portalDir == 0) //xMax(Right)
             {
-                if (outlines[j].Contains(i))
-                    visited = false;
-            }
-            if (visited == true)
-            {
-                if (count == 5)
+                if (wall.vertices[i].x > portalPos.x)
                 {
-                    wallObjects.transform.parent = gameObject.transform;
-                    Instantiate(wallObjects, vertices[i], Quaternion.identity);
-                    count = 0;
+                    portalPos = wall.vertices[i];
                 }
-                count++;
-
+                
+            }
+            else if (portalDir == 1) //xMin(Left)
+            {
+                if (wall.vertices[i].x < portalPos.x)
+                {
+                    portalPos = wall.vertices[i];
+                }
+            }
+            else //zMax(Up)
+            {
+                if (wall.vertices[i].z > portalPos.z)
+                {
+                    portalPos = wall.vertices[i];
+                }
             }
         }
-    }*/
+
+        GameObject instance;
+        if (portalDir == 0)
+            instance = Instantiate(portalObject, new Vector3(this.transform.position.x + portalPos.x - frontCorrect, this.transform.position.y + portalPos.y + yCorrect, this.transform.position.z + portalPos.z), Quaternion.Euler(0, 270, 0));
+        else if (portalDir == 1)
+            instance = Instantiate(portalObject, new Vector3(this.transform.position.x + portalPos.x + frontCorrect, this.transform.position.y + portalPos.y + yCorrect, this.transform.position.z + portalPos.z), Quaternion.Euler(0, 90, 0));
+        else
+            instance = Instantiate(portalObject, new Vector3(this.transform.position.x + portalPos.x, this.transform.position.y + portalPos.y + yCorrect, this.transform.position.z + portalPos.z - frontCorrect), Quaternion.Euler(0, 180, 0));
+        
+        instance.transform.parent = this.transform;
+    }
+
     void CreateWallMesh()
     {
         CalculateMeshOutlines();
@@ -119,9 +138,13 @@ public class MeshGenerator : MonoBehaviour
                 wallTriangles.Add(startIndex + 0);
             }
         }
+
         wallMesh.vertices = wallVertices.ToArray();
         wallMesh.triangles = wallTriangles.ToArray();
         wallMesh.RecalculateNormals();
+
+        if (!isBoss)
+            CreatePortal(wallMesh);
 
         walls.mesh = wallMesh;
 

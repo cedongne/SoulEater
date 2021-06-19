@@ -26,8 +26,17 @@ public class MapGenerator : MonoBehaviour
     {
         GenerateMap();
         GenerateNavMesh();
+        transform.GetChild(4).gameObject.SetActive(false);
     }
 
+    private void Update()
+    {
+        Transform monsters = transform.GetChild(3).GetChild(0);
+        if (monsters.childCount == 0)
+        {
+            transform.GetChild(4).gameObject.SetActive(true);
+        }
+    }
     void GenerateNavMesh()
     {
         NavMeshSurface[] surfaces = this.GetComponentsInChildren<NavMeshSurface>();
@@ -72,7 +81,10 @@ public class MapGenerator : MonoBehaviour
         meshGen.GenerateMesh(borderedMap, 1);
 
         Plane.AddComponent<NavMeshSurface>();
-        spawner.MonsterSpawn(GetRegions(0), width, height);
+        if (spawner.isBoss)
+            spawner.BossSpawn(GetRegions(0), width, height);
+        else
+            spawner.MonsterSpawn(GetRegions(0), width, height);
     }
 
     void ProcessMap()
