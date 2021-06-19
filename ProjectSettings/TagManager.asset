@@ -8,7 +8,15 @@ TagManager:
   - HitBox
   - PlayerAttack
   - Monster
+<<<<<<< HEAD
   - Portal
+=======
+  - FxTemporaire
+  - Item
+  - Coin
+  - Soul
+  - Dead
+>>>>>>> 5e7a38df1d1f07a57853ff1ecabd3c48e7ae2b10
   layers:
   - Default
   - TransparentFX
@@ -45,4 +53,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: eff
+    uniqueID: 2435805463
     locked: 0
