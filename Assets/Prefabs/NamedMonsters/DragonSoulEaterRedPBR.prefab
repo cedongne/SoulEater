@@ -2039,8 +2039,10 @@ MonoBehaviour:
   curState: 0
   hpBarPrefab: {fileID: 785332700798895989, guid: 64952279f741616429c5bc19a6ef3a95, type: 3}
   hpBarOffset: {x: 0, y: 2.2, z: 0}
+  soul: {fileID: 5812065928465339014, guid: d94ad991ce68d974b84d4ccaa187d1d9, type: 3}
   attackDist: 3.2
   moveDist: 16
+  wakeDist: 0
   beforeAttackDelay: 0.5
   afterAttackDelay: 1.5
   moveSpeedClose: 6
@@ -2064,6 +2066,8 @@ MonoBehaviour:
   moveSpeed: 6
   criticalChance: 0
   coolDown: 0
+  skill: []
+  skillNum: 0
 --- !u!195 &3934043740679376562
 NavMeshAgent:
   m_ObjectHideFlags: 0

@@ -830,7 +830,7 @@ GameObject:
   - component: {fileID: 5158852219085026854}
   - component: {fileID: 5158852219085026875}
   m_Layer: 2
-  m_Name: BlackCrocodilePrefab
+  m_Name: BlackCrocodilePrefab 1
   m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -943,6 +943,7 @@ MonoBehaviour:
   soul: {fileID: 4354289369609707610, guid: 8e5c58506540960429fd030fcaa33c7f, type: 3}
   attackDist: 3.2
   moveDist: 12
+  wakeDist: 0
   beforeAttackDelay: 0.4
   afterAttackDelay: 1.2
   moveSpeedClose: 6

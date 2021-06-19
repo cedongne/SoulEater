@@ -304,7 +304,7 @@ GameObject:
   - component: {fileID: 8908060103877748728}
   - component: {fileID: 8908060103877748731}
   m_Layer: 7
-  m_Name: TurtleShellPBR
+  m_Name: HedgeSnailPrefab
   m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -394,6 +394,8 @@ MonoBehaviour:
   moveSpeed: 6
   criticalChance: 0
   coolDown: 0
+  skill: []
+  skillNum: 0
 --- !u!114 &8908060103877748728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -409,6 +411,7 @@ MonoBehaviour:
   curState: 0
   hpBarPrefab: {fileID: 785332700798895989, guid: 64952279f741616429c5bc19a6ef3a95, type: 3}
   hpBarOffset: {x: 0, y: 2.2, z: 0}
+  soul: {fileID: 1018786519660169877, guid: 0bfefe24740a5c141b5e235d038ab8a3, type: 3}
   attackDist: 3.2
   moveDist: 16
   wakeDist: 16

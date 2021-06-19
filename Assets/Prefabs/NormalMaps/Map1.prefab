@@ -376,8 +376,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster:
-  - {fileID: 5158852220017023952, guid: 2eb897ced15674749a8944f4516aa935, type: 3}
-  - {fileID: 7835755067436512597, guid: 50a7104a177a68a42a2b936bfd8811fd, type: 3}
+  - {fileID: 5158852220017023952, guid: c8cbaaaea146ad04f8af2425dc3e12ba, type: 3}
+  - {fileID: 7835755067436512597, guid: 73a67befcf745304db634e56ef6a5bbb, type: 3}
   - {fileID: 3066223193842912184, guid: 2dee620661e83ec4a9b26aabbffbbf18, type: 3}
   namedMonster: {fileID: 3934043741369160766, guid: 73dece5c9dead5b4390c8ffaedcf2934, type: 3}
   bossMonster: {fileID: 0}

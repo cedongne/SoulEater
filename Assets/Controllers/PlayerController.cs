@@ -107,8 +107,6 @@ public class PlayerController : MonoBehaviour
             Debug.Log(map.transform.gameObject);
             this.transform.position = new Vector3(map.transform.position.x + 100, map.transform.position.y, map.transform.position.z);
         }
-<<<<<<< HEAD
-=======
         else if(other.gameObject.tag == "Soul")
         {
             // Collider에 들어오는 순서대로 Queue에 넣음
@@ -116,7 +114,6 @@ public class PlayerController : MonoBehaviour
         }
         Debug.Log("Player Hit : " + stat.hp);
     }
->>>>>>> 5e7a38df1d1f07a57853ff1ecabd3c48e7ae2b10
 
     private void OnTriggerStay(Collider other)
     {

@@ -705,7 +705,7 @@ GameObject:
   - component: {fileID: 530259042178790566}
   - component: {fileID: 530259042178790565}
   m_Layer: 7
-  m_Name: ChestMonsterPBR
+  m_Name: MimicPrefab
   m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -817,6 +817,8 @@ MonoBehaviour:
   moveSpeed: 6
   criticalChance: 0
   coolDown: 0
+  skill: []
+  skillNum: 0
 --- !u!114 &530259042178790565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -832,6 +834,7 @@ MonoBehaviour:
   curState: 0
   hpBarPrefab: {fileID: 785332700798895989, guid: 64952279f741616429c5bc19a6ef3a95, type: 3}
   hpBarOffset: {x: 0, y: 2.2, z: 0}
+  soul: {fileID: 6486988281782208561, guid: 65ecfba4f8741f244a134c6379c16cf1, type: 3}
   attackDist: 3.2
   moveDist: 16
   wakeDist: 4

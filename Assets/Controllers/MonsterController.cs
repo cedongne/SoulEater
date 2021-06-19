@@ -12,7 +12,6 @@ public class MonsterController : MonoBehaviour
 
     Transform monsterTransform;
     Transform playerTransform;
-    Transform mainCamera;
     NavMeshAgent nvAgent;
     Animator animator;
 
@@ -44,7 +43,6 @@ public class MonsterController : MonoBehaviour
     {
         stat = GetComponent<Stat>();
 
-        mainCamera = Camera.main.transform;
         monsterTransform = gameObject.GetComponent<Transform>();
         playerTransform = GameObject.FindWithTag("Player").GetComponent<Transform>();
         nvAgent = gameObject.GetComponent<NavMeshAgent>();
@@ -187,7 +185,7 @@ public class MonsterController : MonoBehaviour
                     else
                     {
                         Vector3 temp = transform.position;
-                        soul = Instantiate<GameObject>(soul, transform);
+                        soul = Instantiate<GameObject>(soul, playerTransform);
                         soul.transform.position = new Vector3(temp.x, 0, temp.z);
                         soul.transform.parent = GameObject.Find("Items").transform;
 

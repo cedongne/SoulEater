@@ -398,7 +398,7 @@ GameObject:
   - component: {fileID: 3066223193175892165}
   - component: {fileID: 3066223193175892160}
   m_Layer: 7
-  m_Name: RedBoarPBR
+  m_Name: DrakePrefab
   m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -485,6 +485,7 @@ MonoBehaviour:
   curState: 0
   hpBarPrefab: {fileID: 785332700798895989, guid: 64952279f741616429c5bc19a6ef3a95, type: 3}
   hpBarOffset: {x: 0, y: 2.2, z: 0}
+  soul: {fileID: 6017883775139764797, guid: 97b225375d34b6a44923dc6a104ff158, type: 3}
   attackDist: 3.2
   moveDist: 16
   wakeDist: 16
@@ -511,6 +512,8 @@ MonoBehaviour:
   moveSpeed: 6
   criticalChance: 0
   coolDown: 0
+  skill: []
+  skillNum: 0
 --- !u!195 &3066223193175892160
 NavMeshAgent:
   m_ObjectHideFlags: 0
