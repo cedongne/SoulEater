@@ -108,6 +108,7 @@ public class MonsterController : MonoBehaviour
 
     IEnumerator OnDamage()
     {
+        isDamage = false;
         foreach (MeshRenderer mesh in meshs)
         {
             mesh.material.color = Color.red;
@@ -123,7 +124,6 @@ public class MonsterController : MonoBehaviour
             mesh.material.color = Color.red;
         }
         yield return new WaitForSeconds(0.2f);
-        isDamage = false;
         foreach (MeshRenderer mesh in meshs)
         {
             mesh.material.color = Color.white;

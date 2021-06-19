@@ -208,9 +208,17 @@ public class PlayerController : MonoBehaviour
 
     void Skill()
     {
-        if(s1Down && !isAction)
+        if (s1Down && !isAction && stat.skill[0].type == Souls.Type.ACTIVE)
         {
             stat.skill[0].Use();
+        }
+        else if (s2Down && !isAction && stat.skill[1].type == Souls.Type.ACTIVE)
+        {
+            stat.skill[1].Use();
+        }
+        else if (s3Down && !isAction && stat.skill[2].type == Souls.Type.ACTIVE)
+        {
+            stat.skill[2].Use();
         }
 
     }

@@ -21,12 +21,10 @@ public class Souls : MonoBehaviour
     private void Awake()
     {
         player = GameObject.Find("Player").gameObject;
-        type = Type.ACTIVE;
     }
 
     public void Use()
     {
-        Debug.Log("Skill1Use");
         GameObject skillUse = Instantiate(skillEffect, player.transform.position, player.transform.rotation);
         Destroy(skillUse, 2f);
     }

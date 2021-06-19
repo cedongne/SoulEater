@@ -14480,5 +14480,8 @@ MonoBehaviour:
   name: Black Crocodile
   damage: 0
   coolTime: 0
+  type: 1
   skillEffect: {fileID: 0}
   skillIcon: {fileID: 21300000, guid: 2713d6ef136da924abbfe2a97b5049a6, type: 3}
+  player: {fileID: 0}
+  order: 0
