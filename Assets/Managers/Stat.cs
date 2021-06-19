@@ -12,8 +12,12 @@ public class Stat : MonoBehaviour
     public int criticalChance;
     public int coolDown;
 
+    public Souls[] skill;
+    public int skillNum;
+
     private void Awake()
     {
         maxHp = hp;
+        skillNum = 0;
     }
 }

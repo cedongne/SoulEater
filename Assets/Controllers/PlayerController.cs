@@ -17,33 +17,43 @@ public class PlayerController : MonoBehaviour
     float vAxis;
     bool dDown; // Dash
     bool aDown; // Attack
+    bool eDown; // Interaction
+    bool s1Down; // Interaction
+    bool s2Down; // Interaction
+    bool s3Down; // Interaction
+
+    bool isAction;
 
     bool isAttackReady = true;
     bool isDodgeReady = true;
     bool isDodge;
     bool isAttack = false;
 
+    bool isSkill1Use = false;
+    bool isSkill2Use = false;
+    bool isSkill3Use = false;
+
     Vector3 moveVec;
     Vector3 dodgeVec;
 
-    Vector3 mousePos;
-    Vector3 playerPos;
-    Vector3 targetPos;
-
     Animator anim;
-    Behaviour behaviour;
 
     float AttackDelay;
     float dodgeDelay;
 
     float dodgeCooltime = 1.0f;
+
+    public GameObject soulTag;
+    List<GameObject> nearItemList;
+
     private void Awake()
     {
         camera = Camera.main;
         anim = GetComponentInChildren<Animator>();
         weapon = other.GetComponent<Weapon>();
-        behaviour = GetComponent<Behaviour>();
         stat = GetComponent<Stat>();
+
+        nearItemList = new List<GameObject>();
     }
     // Start is called before the first frame update
     void Start()
@@ -62,11 +72,13 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        isAction = isAttack || isDodge || isSkill1Use || isSkill2Use || isSkill3Use;
         GetInput();
         Move();
         Turn();
         Dodge();
         Attack();
+        Skill();
     }
     void GetInput()
     {
@@ -75,6 +87,11 @@ public class PlayerController : MonoBehaviour
 
         aDown = Input.GetButtonDown("Attack");
         dDown = Input.GetButtonDown("Dodge");
+        eDown = Input.GetButtonDown("Interaction");
+
+        s1Down = Input.GetButtonDown("Skill1");
+        s2Down = Input.GetButtonDown("Skill2");
+        s3Down = Input.GetButtonDown("Skill3");
     }
 
     private void OnTriggerEnter(Collider other)
@@ -83,8 +100,50 @@ public class PlayerController : MonoBehaviour
         {
             stat.hp -= 10;
         }
-        Debug.Log("Player Hit : " + stat.hp);
+        else if(other.gameObject.tag == "Soul")
+        {
+            // Collider에 들어오는 순서대로 Queue에 넣음
+            nearItemList.Add(other.gameObject);
 
+        }
+        Debug.Log("Player Hit : " + stat.hp);
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Soul"))
+        {
+            var _pickUp = soulTag.GetComponent<InteractionController>();
+            _pickUp.targetTr = other.transform;
+            soulTag.SetActive(true);
+            if (!isAction && eDown)
+            {
+                soulTag.SetActive(false);
+                GameObject getItem = nearItemList[0];
+                nearItemList.Remove(getItem);
+                soulTag.GetComponent<InteractionController>().SkillGet();
+
+                Destroy(getItem);
+            }
+        }
+    }
+        private void OnTriggerExit(Collider other)
+    {
+        if(other.gameObject.tag == "Soul")
+        {
+            // Collider에서 빠져나갈 땐 List에서 제거
+            for(int index = 0; index < nearItemList.Count; index++)
+            {
+                if(nearItemList[index] == other.gameObject)
+                {
+                    nearItemList.RemoveAt(index);
+                } 
+            }
+            if (nearItemList.Count == 0)
+            {
+                soulTag.SetActive(false);
+            }
+        }
     }
     void Move()
     {
@@ -109,7 +168,7 @@ public class PlayerController : MonoBehaviour
         dodgeDelay += Time.deltaTime;
         isDodgeReady = (dodgeDelay > dodgeCooltime);
 
-        if (dDown && !isAttack && isDodgeReady)
+        if (dDown && !isAction && isDodgeReady)
         {
             dodgeVec = moveVec;
             _speed *= 8;
@@ -132,7 +191,7 @@ public class PlayerController : MonoBehaviour
         AttackDelay += Time.deltaTime;
         isAttackReady = (weapon.attackRate < AttackDelay);
 
-        if (!isAttack && aDown && isAttackReady && !isDodge)
+        if (aDown && !isAction && isAttackReady)
         {
             LookMouseCursor();
             weapon.Use();
@@ -147,6 +206,14 @@ public class PlayerController : MonoBehaviour
         isAttack = false;
     }
 
+    void Skill()
+    {
+        if(s1Down && !isAction)
+        {
+            stat.skill[0].Use();
+        }
+
+    }
     void LookMouseCursor()
     {
         Ray ray = camera.ScreenPointToRay(Input.mousePosition);

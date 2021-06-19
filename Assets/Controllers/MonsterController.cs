@@ -24,6 +24,7 @@ public class MonsterController : MonoBehaviour
     public Vector3 hpBarOffset = new Vector3(0, 2.2f, 0);
 
     GameObject hpBar;
+    public GameObject soul;
     Canvas hpCanvas;
     Slider slider;
 
@@ -63,6 +64,7 @@ public class MonsterController : MonoBehaviour
         animator.SetFloat("AttackSpeed", stat.attackSpeed);
 
         SetHpBar();
+        
         StartCoroutine("CheckState");
     }
 
@@ -169,9 +171,15 @@ public class MonsterController : MonoBehaviour
                     }
                     else
                     {
+                        Vector3 temp = transform.position;
+                        soul = Instantiate<GameObject>(soul, transform);
+                        soul.transform.position = new Vector3(temp.x, 0, temp.z);
+                        soul.transform.parent = GameObject.Find("Items").transform;
+
                         isDead = true;
                         animator.SetTrigger("Die");
                         monsterCollider.isTrigger = true;
+                        gameObject.tag = "Dead";
                         Destroy(hpBar, 3f);
                         Destroy(gameObject, 3f);
                     }
