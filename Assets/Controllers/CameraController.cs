@@ -21,12 +21,8 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        if (_mode == Define.CameraMode.QuarterView)
-        {
-            transform.position = _player.transform.position + _delta;
-            transform.LookAt(_player.transform);
-            
-        }
+        transform.position = _player.transform.position + _delta;
+        transform.LookAt(_player.transform);
     }
 
 }

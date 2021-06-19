@@ -81,9 +81,15 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.tag == "HitBox")
         {
-            stat.hp -= 10;
+            stat.hp -= other.GetComponentInParent<Stat>().damage;
+            Debug.Log("Player Hit : " + stat.hp);
         }
-        Debug.Log("Player Hit : " + stat.hp);
+        else if(other.gameObject.tag == "Portal")
+        {
+            MapGenerator map = other.GetComponentInParent<MapGenerator>();
+            Debug.Log(map.transform.gameObject);
+            this.transform.position = new Vector3(map.transform.position.x + 100, map.transform.position.y, map.transform.position.z);
+        }
 
     }
     void Move()

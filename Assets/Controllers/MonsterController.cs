@@ -29,6 +29,7 @@ public class MonsterController : MonoBehaviour
 
     public float attackDist = 4.0f;
     public float moveDist = 10.0f;
+    public float wakeDist;
     public float beforeAttackDelay;
     public float afterAttackDelay;
     public float moveSpeedClose;
@@ -93,12 +94,26 @@ public class MonsterController : MonoBehaviour
                     nvAgent.isStopped = false;
                     animator.SetBool("isTrace", true);
                 }
-                else
+                else if(dist > moveDist && animator.GetBool("isTrace"))
                 {
                     nvAgent.speed = moveSpeedFar;
                     nvAgent.destination = playerTransform.position;
                     nvAgent.isStopped = false;
                     animator.SetBool("isTrace", true);
+                }
+                else if(dist < wakeDist && !animator.GetBool("isTrace"))
+                {
+                    nvAgent.speed = 0;
+                    nvAgent.destination = playerTransform.position;
+                    nvAgent.isStopped = false;
+                    animator.SetBool("isTrace", true);
+                }
+                else
+                {
+                    nvAgent.speed = 0;
+                    nvAgent.destination = playerTransform.position;
+                    nvAgent.isStopped = true;
+                    animator.SetBool("isTrace", false);
                 }
             }
         }
