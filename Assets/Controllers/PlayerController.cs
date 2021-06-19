@@ -104,7 +104,6 @@ public class PlayerController : MonoBehaviour
         {
             // Collider에 들어오는 순서대로 Queue에 넣음
             nearItemList.Add(other.gameObject);
-
         }
         Debug.Log("Player Hit : " + stat.hp);
     }
@@ -116,14 +115,14 @@ public class PlayerController : MonoBehaviour
             var _pickUp = soulTag.GetComponent<InteractionController>();
             _pickUp.targetTr = other.transform;
             soulTag.SetActive(true);
-            if (!isAction && eDown)
+            if (!isAction && Input.GetButtonUp("Interaction") && other.gameObject == nearItemList[0])
             {
                 soulTag.SetActive(false);
                 GameObject getItem = nearItemList[0];
-                nearItemList.Remove(getItem);
                 soulTag.GetComponent<InteractionController>().SkillGet();
 
                 Destroy(getItem);
+                nearItemList.Remove(nearItemList[0]);
             }
         }
     }

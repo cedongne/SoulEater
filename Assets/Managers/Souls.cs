@@ -8,6 +8,7 @@ public class Souls : MonoBehaviour
     public string name;
     public float damage;
     public float coolTime;
+    public float duration;
     public enum Type { ACTIVE, PASSIVE };
     public Type type;
 
@@ -26,6 +27,6 @@ public class Souls : MonoBehaviour
     public void Use()
     {
         GameObject skillUse = Instantiate(skillEffect, player.transform.position, player.transform.rotation);
-        Destroy(skillUse, 2f);
+        Destroy(skillUse, duration);
     }
 }
