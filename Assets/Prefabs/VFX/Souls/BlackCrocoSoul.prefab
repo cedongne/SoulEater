@@ -9661,7 +9661,7 @@ Transform:
   m_GameObject: {fileID: 4354289369609707610}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 6041563455869081794}
   - {fileID: 8444583094831671515}
@@ -14477,11 +14477,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5406b333b00888a49b82483ad98c4000, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isProjectile: 0
+  type: 3
   name: Black Crocodile
   damage: 0
   coolTime: 0
-  type: 1
-  skillEffect: {fileID: 0}
+  duration: 0
+  beforeDelay: 0
+  afterDelay: 0
   skillIcon: {fileID: 21300000, guid: 2713d6ef136da924abbfe2a97b5049a6, type: 3}
-  player: {fileID: 0}
-  order: 0

@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: []
-  namedMonster: {fileID: 0}
+  namedMonster: {fileID: 7139745357497714156, guid: 150195fba9451a54793215e64fbbec6d, type: 3}
   bossMonster: {fileID: 1465489910814111589, guid: a0fc3cc60b54c954eba290de1c97e2b7, type: 3}
   MonsterCount: 0
   namedSpawnRate: 0

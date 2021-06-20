@@ -64,6 +64,7 @@ public class MeshGenerator : MonoBehaviour
         if (!is2D)
         {
             CreateWallMesh();
+            walls.tag = "Wall";
         }
     }
 

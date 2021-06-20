@@ -6,11 +6,21 @@ TagManager:
   tags:
   - PlayerAttack
   - Monster
+<<<<<<< HEAD
   - Soul
   - Portal
   - HitBox
   - Dead
   - SkillHitBox
+=======
+  - Portal
+  - Soul
+  - HitBox
+  - Dead
+  - FxTemporaire
+  - Wall
+  - PlayerDotSkill
+>>>>>>> 6dc153b828e8045dcd8bcaa0856ea2936d1f30f6
   layers:
   - Default
   - TransparentFX

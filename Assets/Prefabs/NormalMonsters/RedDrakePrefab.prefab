@@ -392,13 +392,13 @@ GameObject:
   m_Component:
   - component: {fileID: 3066223193843204252}
   - component: {fileID: 3066223193850206064}
-  - component: {fileID: 3066223193175892163}
   - component: {fileID: 3066223193175892162}
+  - component: {fileID: 3066223193175892160}
   - component: {fileID: 3066223193175892164}
   - component: {fileID: 3066223193175892165}
-  - component: {fileID: 3066223193175892160}
   m_Layer: 7
   m_Name: RedDrakePrefab
+  m_Name: DrakePrefab
   m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -470,6 +470,28 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1.5
   m_Center: {x: 0, y: 1.2, z: 0.8}
+--- !u!195 &3066223193175892160
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3066223193842912184}
+  m_Enabled: 0
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 8
+  m_Acceleration: 20
+  avoidancePriority: 50
+  m_AngularSpeed: 360
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!114 &3066223193175892164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -486,6 +508,7 @@ MonoBehaviour:
   hpBarPrefab: {fileID: 785332700798895989, guid: 64952279f741616429c5bc19a6ef3a95, type: 3}
   hpBarOffset: {x: 0, y: 2.2, z: 0}
   soul: {fileID: 4354289369609707610, guid: 8e5c58506540960429fd030fcaa33c7f, type: 3}
+  soul: {fileID: 6017883775139764797, guid: 97b225375d34b6a44923dc6a104ff158, type: 3}
   attackDist: 3.2
   moveDist: 16
   wakeDist: 16
@@ -509,7 +532,7 @@ MonoBehaviour:
   hp: 20
   damage: 10
   attackSpeed: 1.2
-  moveSpeed: 6
+  moveSpeed: 4
   criticalChance: 0
   coolDown: 0
   skill: []
