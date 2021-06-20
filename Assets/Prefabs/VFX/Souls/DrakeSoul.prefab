@@ -4845,15 +4845,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5406b333b00888a49b82483ad98c4000, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Drake
-  damage: 10
-  coolTime: 10
-  duration: 6
+  isProjectile: 1
   type: 0
-  skillEffect: {fileID: 567312127451810781, guid: f6c1c83b03144174e940ddce277c34da, type: 3}
-  skillIcon: {fileID: 21300000, guid: f63c24dc2deb48a44bbc608fba623693, type: 3}
-  player: {fileID: 0}
-  order: 0
+  name: Drake
+  skillIcon: {fileID: 21300000, guid: 51b39a460ca977349b45d014d8f54f0c, type: 3}
 --- !u!1 &7109663359608759940
 GameObject:
   m_ObjectHideFlags: 0

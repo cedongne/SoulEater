@@ -8,8 +8,9 @@ public class PlayerController : MonoBehaviour
     public GameObject other;
     public GameObject enemy;
 
-    Weapon weapon;
+    Attacks attacks;
     Stat stat;
+    //    PassiveSkill passiveSkill;
 
     float _speed = 5f;
 
@@ -29,9 +30,6 @@ public class PlayerController : MonoBehaviour
     bool isDodge;
     bool isAttack = false;
 
-    bool isSkill1Use = false;
-    bool isSkill2Use = false;
-    bool isSkill3Use = false;
 
     Vector3 moveVec;
     Vector3 dodgeVec;
@@ -50,8 +48,8 @@ public class PlayerController : MonoBehaviour
     {
         camera = Camera.main;
         anim = GetComponentInChildren<Animator>();
-        weapon = other.GetComponent<Weapon>();
         stat = GetComponent<Stat>();
+        attacks = GetComponentInChildren<Attacks>();
 
         nearItemList = new List<GameObject>();
     }
@@ -66,13 +64,13 @@ public class PlayerController : MonoBehaviour
         stat.criticalChance = 0;
         stat.coolDown = 0;
 
-        weapon.DamageUpdate();
+        attacks.DamageUpdate();
     }
 
     // Update is called once per frame
     void Update()
     {
-        isAction = isAttack || isDodge || isSkill1Use || isSkill2Use || isSkill3Use;
+        isAction = isAttack || isDodge;
         GetInput();
         Move();
         Turn();
@@ -101,13 +99,13 @@ public class PlayerController : MonoBehaviour
             stat.hp -= other.GetComponentInParent<Stat>().damage;
             Debug.Log("Player Hit : " + stat.hp);
         }
-        else if(other.gameObject.tag == "Portal")
+        else if (other.gameObject.tag == "Portal")
         {
             MapGenerator map = other.GetComponentInParent<MapGenerator>();
             Debug.Log(map.transform.gameObject);
             this.transform.position = new Vector3(map.transform.position.x + 100, map.transform.position.y, map.transform.position.z);
         }
-        else if(other.gameObject.tag == "Soul")
+        else if (other.gameObject.tag == "Soul")
         {
             // Collider에 들어오는 순서대로 Queue에 넣음
             nearItemList.Add(other.gameObject);
@@ -122,7 +120,8 @@ public class PlayerController : MonoBehaviour
             var _pickUp = soulTag.GetComponent<InteractionController>();
             _pickUp.targetTr = other.transform;
             soulTag.SetActive(true);
-            if (!isAction && Input.GetButtonUp("Interaction") && other.gameObject == nearItemList[0])
+
+            if (!isAction && eDown && other.gameObject == nearItemList[0])
             {
                 soulTag.SetActive(false);
                 GameObject getItem = nearItemList[0];
@@ -133,17 +132,17 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-        private void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider other)
     {
-        if(other.gameObject.tag == "Soul")
+        if (other.gameObject.tag == "Soul")
         {
             // Collider에서 빠져나갈 땐 List에서 제거
-            for(int index = 0; index < nearItemList.Count; index++)
+            for (int index = 0; index < nearItemList.Count; index++)
             {
-                if(nearItemList[index] == other.gameObject)
+                if (nearItemList[index] == other.gameObject)
                 {
                     nearItemList.RemoveAt(index);
-                } 
+                }
             }
             if (nearItemList.Count == 0)
             {
@@ -185,7 +184,7 @@ public class PlayerController : MonoBehaviour
             Invoke("DodgeOut", 0.15f);
         }
     }
-    
+
     void DodgeOut()
     {
         _speed *= 0.125f;
@@ -195,16 +194,16 @@ public class PlayerController : MonoBehaviour
     void Attack()
     {
         AttackDelay += Time.deltaTime;
-        isAttackReady = (weapon.attackRate < AttackDelay);
+        isAttackReady = (attacks.attackRate < AttackDelay);
 
         if (aDown && !isAction && isAttackReady)
         {
             LookMouseCursor();
-            weapon.Use();
+            attacks.Attack();
             anim.SetTrigger("doShot");
             AttackDelay = 0;
             isAttack = true;
-            Invoke("AttackOut", 0.4f);
+            Invoke("AttackOut", 0.1f);
         }
     }
     void AttackOut()
@@ -214,17 +213,46 @@ public class PlayerController : MonoBehaviour
 
     void Skill()
     {
-        if (s1Down && !isAction && stat.skill[0].type == Souls.Type.ACTIVE)
+
+        if (s1Down && !isAction)
         {
-            stat.skill[0].Use();
+            if (stat.skill[0].isProjectile)
+            {
+                LookMouseCursor();
+                anim.SetTrigger("doShot");
+                AttackDelay = stat.skill[0].beforeDelay;
+                isAttack = true;
+                Invoke("AttackOut", stat.skill[0].afterDelay);
+            }
+            attacks.curSoul = stat.skill[0];
+            attacks.Use(stat.skill[0].name);
         }
-        else if (s2Down && !isAction && stat.skill[1].type == Souls.Type.ACTIVE)
+        else if (s2Down && !isAction)
         {
-            stat.skill[1].Use();
+            if (stat.skill[1].isProjectile)
+            {
+                LookMouseCursor();
+                anim.SetTrigger("doShot");
+                AttackDelay = stat.skill[1].beforeDelay;
+                isAttack = true;
+                Invoke("AttackOut", stat.skill[1].afterDelay);
+            }
+            attacks.curSoul = stat.skill[1];
+            attacks.Use(stat.skill[1].name);
         }
-        else if (s3Down && !isAction && stat.skill[2].type == Souls.Type.ACTIVE)
+
+        else if (s3Down && !isAction)
         {
-            stat.skill[2].Use();
+            if (stat.skill[2].isProjectile)
+            {
+                LookMouseCursor();
+                anim.SetTrigger("doShot");
+                AttackDelay = stat.skill[2].beforeDelay;
+                isAttack = true;
+                Invoke("AttackOut", stat.skill[2].afterDelay);
+            }
+            attacks.curSoul = stat.skill[2];
+            attacks.Use(stat.skill[2].name);
         }
 
     }

@@ -63,9 +63,7 @@ public class InteractionController : MonoBehaviour
     public void SkillGet()
     {
         targetSoul = targetTr.GetComponent<Souls>();
-        GameObject getSkillInstance = Instantiate(skillGetEffect, targetTr.position, targetTr.rotation);
-        Destroy(getSkillInstance, 1f);
-        if(stat.skillNum == 3)
+        if (stat.skillNum == 3)
         {
 
         }
@@ -74,8 +72,13 @@ public class InteractionController : MonoBehaviour
             if (skillGetText.text == "Already have it")
                 return;
             skillGetText.text = "Press \"E\" to get";
+
             stat.skill[stat.skillNum] = Instantiate<Souls>(targetSoul);
             stat.skill[stat.skillNum].gameObject.SetActive(false);
+            if (targetSoul.type == Souls.Type.PASSIVE)
+                GameObject.Find("SkillCanvas").transform.GetChild(3 + stat.skillNum).GetChild(0).gameObject.SetActive(true);
+            if (targetSoul.type == Souls.Type.ACTIVE)
+                GameObject.Find("SkillCanvas").transform.GetChild(3 + stat.skillNum).GetChild(0).gameObject.SetActive(false);
             stat.skill[stat.skillNum].transform.parent = GameObject.Find("Player").transform;
 
             skillIcons[stat.skillNum].GetComponent<Image>().sprite = targetSoul.skillIcon;

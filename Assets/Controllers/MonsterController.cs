@@ -173,7 +173,7 @@ public class MonsterController : MonoBehaviour
             {
                 if (!isDamage)
                 {
-                    Weapon weapon = FindObjectOfType<Weapon>();
+                    Attacks weapon = FindObjectOfType<Attacks>();
                     stat.hp -= weapon.damage;
                     slider.value = (float)stat.hp / (float)stat.maxHp;
                     if (stat.hp > 0)

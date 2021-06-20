@@ -26,7 +26,8 @@ public class MapGenerator : MonoBehaviour
     {
         GenerateMap();
         GenerateNavMesh();
-        transform.GetChild(4).gameObject.SetActive(false);
+        if(transform.name != "BossMap")
+            transform.GetChild(4).gameObject.SetActive(false);
     }
 
     private void Update()

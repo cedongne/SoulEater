@@ -5,28 +5,16 @@ using UnityEngine.UI;
 
 public class Souls : MonoBehaviour
 {
+    public enum Type { ACTIVE, PASSIVE };
+    public bool isProjectile;
+    public Type type;
     public string name;
+
     public float damage;
     public float coolTime;
     public float duration;
-    public enum Type { ACTIVE, PASSIVE };
-    public Type type;
 
-    public GameObject skillEffect;
+    public float beforeDelay;
+    public float afterDelay;
     public Sprite skillIcon;
-
-    public GameObject player;
-
-    public int order;
-
-    private void Awake()
-    {
-        player = GameObject.Find("Player").gameObject;
-    }
-
-    public void Use()
-    {
-        GameObject skillUse = Instantiate(skillEffect, player.transform.position, player.transform.rotation);
-        Destroy(skillUse, duration);
-    }
 }
