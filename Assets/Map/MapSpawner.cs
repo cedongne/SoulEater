@@ -6,7 +6,7 @@ public class MapSpawner : MonoBehaviour
 {
     public GameObject[] maps;
     public int mapCount;
-    public GameObject[] bossMap;
+    public GameObject bossMap;
 
     void Start()
     {
@@ -25,14 +25,14 @@ public class MapSpawner : MonoBehaviour
     void LoadNormalMap(int i)
     {
         int mapNum = Random.Range(0, maps.Length);
-        GameObject map = Instantiate(maps[mapNum], new Vector3 (this.transform.position.x + 100 * i, this.transform.position.y, this.transform.position.z), Quaternion.identity);
+        GameObject map = Instantiate(maps[mapNum], new Vector3 (this.transform.position.x + 100 * i, this.transform.position.y, this.transform.position.z), transform.rotation);
         map.name = $"Map{i}";
         map.transform.parent = this.transform;
     }
 
     void LoadBossMap()
     {
-        GameObject map = Instantiate(bossMap[0], new Vector3 (this.transform.position.x + 100 * mapCount, this.transform.position.y, this.transform.position.z), Quaternion.identity);
+        GameObject map = Instantiate(bossMap, new Vector3 (this.transform.position.x + 100 * mapCount, this.transform.position.y, this.transform.position.z), transform.rotation);
         map.name = $"BossMap";
         map.transform.parent = this.transform;
     }

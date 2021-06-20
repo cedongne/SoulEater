@@ -326,7 +326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   portalObject: {fileID: 2954738695132080339, guid: c98be9ff8d0b99c4f8857faf470634cf, type: 3}
-  yCorrect: 0
+  yCorrect: 0.5
   frontCorrect: 2
   isBoss: 0
   walls: {fileID: 22930315173426513}
@@ -376,8 +376,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster:
-  - {fileID: 5158852220017023952, guid: 2eb897ced15674749a8944f4516aa935, type: 3}
-  - {fileID: 7835755067436512597, guid: 50a7104a177a68a42a2b936bfd8811fd, type: 3}
+  - {fileID: 5158852220017023952, guid: e26d4ad6debe932428f56ad5a86ac685, type: 3}
+  - {fileID: 7835755067436512597, guid: 4996f498a9c2b30408cf4eda8e1155b8, type: 3}
   - {fileID: 3066223193842912184, guid: 2dee620661e83ec4a9b26aabbffbbf18, type: 3}
   namedMonster: {fileID: 3934043741369160766, guid: 73dece5c9dead5b4390c8ffaedcf2934, type: 3}
   bossMonster: {fileID: 0}

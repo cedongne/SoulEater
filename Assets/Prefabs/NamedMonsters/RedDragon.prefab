@@ -1953,7 +1953,7 @@ GameObject:
   - component: {fileID: 3934043740679376557}
   - component: {fileID: 3934043740679376562}
   m_Layer: 7
-  m_Name: DragonSoulEaterRedPBR
+  m_Name: RedDragon
   m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2009,7 +2009,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!135 &3934043740679376556
 SphereCollider:
@@ -2039,8 +2039,11 @@ MonoBehaviour:
   curState: 0
   hpBarPrefab: {fileID: 785332700798895989, guid: 64952279f741616429c5bc19a6ef3a95, type: 3}
   hpBarOffset: {x: 0, y: 2.2, z: 0}
+  soul: {fileID: 4354289369609707610, guid: 8e5c58506540960429fd030fcaa33c7f, type: 3}
+  haveSkill: 1
   attackDist: 3.2
   moveDist: 16
+  wakeDist: 0
   beforeAttackDelay: 0.5
   afterAttackDelay: 1.5
   moveSpeedClose: 6
@@ -2064,6 +2067,8 @@ MonoBehaviour:
   moveSpeed: 6
   criticalChance: 0
   coolDown: 0
+  skill: []
+  skillNum: 0
 --- !u!195 &3934043740679376562
 NavMeshAgent:
   m_ObjectHideFlags: 0

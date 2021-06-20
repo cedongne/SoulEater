@@ -32,7 +32,7 @@ public class Spawner : MonoBehaviour
             }
 
             GameObject instance;
-            instance = Instantiate(namedMonster, new Vector3(this.transform.position.x + pos.x, this.transform.position.y + pos.y, this.transform.position.z + pos.z), Quaternion.identity);
+            instance = Instantiate(namedMonster, new Vector3(this.transform.position.x + pos.x, this.transform.position.y + pos.y, this.transform.position.z + pos.z), transform.rotation);
             instance.transform.parent = go.transform;
         }
 
@@ -50,7 +50,7 @@ public class Spawner : MonoBehaviour
             }
 
             GameObject instance;
-            instance = Instantiate(monster[monsterIdx], new Vector3 (this.transform.position.x + pos.x, this.transform.position.y + pos.y, this.transform.position.z + pos.z), Quaternion.identity);
+            instance = Instantiate(monster[monsterIdx], new Vector3 (this.transform.position.x + pos.x, this.transform.position.y + pos.y, this.transform.position.z + pos.z), transform.rotation);
             instance.transform.parent = go.transform;
         }
     }
@@ -70,7 +70,7 @@ public class Spawner : MonoBehaviour
         }
 
         GameObject instance;
-        instance = Instantiate(bossMonster, new Vector3 (this.transform.position.x + pos.x, this.transform.position.y + pos.y, this.transform.position.z + pos.z), Quaternion.identity);
+        instance = Instantiate(bossMonster, new Vector3 (this.transform.position.x + pos.x, this.transform.position.y + pos.y, this.transform.position.z + pos.z), transform.rotation);
         instance.transform.parent = go.transform;
     }
 

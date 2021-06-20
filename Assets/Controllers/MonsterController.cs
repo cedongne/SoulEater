@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
@@ -54,8 +55,6 @@ public class MonsterController : MonoBehaviour
         monsterCollider = gameObject.GetComponent<SphereCollider>();
         hitBox = monsterTransform.Find("HitBox").gameObject;
         meshs = GetComponentsInChildren<MeshRenderer>();
-
-
     }
     // Start is called before the first frame update
     void Start()
@@ -65,7 +64,7 @@ public class MonsterController : MonoBehaviour
         animator.SetFloat("AttackSpeed", stat.attackSpeed);
 
         SetHpBar();
-        
+
         StartCoroutine("CheckState");
     }
 
@@ -77,45 +76,48 @@ public class MonsterController : MonoBehaviour
             yield return null;
 
             float dist = Vector3.Distance(playerTransform.position, transform.position);
-            if (isAttack || isDamage || isDead)
-                nvAgent.isStopped = true;
-            else
+            if (GetComponent<MonsterFlag>().isCasting == false)
             {
-                if (dist <= attackDist)
-                {
+                if (isAttack || isDamage || isDead)
                     nvAgent.isStopped = true;
-                    animator.SetTrigger("Attack");
-                    isAttack = true;
-                    Invoke("Attack", beforeAttackDelay);
-                    Invoke("AttackOut", afterAttackDelay);
-                }
-                else if(dist <= moveDist)
-                {
-                    nvAgent.speed = moveSpeedClose;
-                    nvAgent.destination = playerTransform.position;
-                    nvAgent.isStopped = false;
-                    animator.SetBool("isTrace", true);
-                }
-                else if(dist > moveDist && animator.GetBool("isTrace"))
-                {
-                    nvAgent.speed = moveSpeedFar;
-                    nvAgent.destination = playerTransform.position;
-                    nvAgent.isStopped = false;
-                    animator.SetBool("isTrace", true);
-                }
-                else if(dist < wakeDist && !animator.GetBool("isTrace"))
-                {
-                    nvAgent.speed = 0;
-                    nvAgent.destination = playerTransform.position;
-                    nvAgent.isStopped = false;
-                    animator.SetBool("isTrace", true);
-                }
                 else
                 {
-                    nvAgent.speed = 0;
-                    nvAgent.destination = playerTransform.position;
-                    nvAgent.isStopped = true;
-                    animator.SetBool("isTrace", false);
+                    if (dist <= attackDist)
+                    {
+                        nvAgent.isStopped = true;
+                        animator.SetTrigger("Attack");
+                        isAttack = true;
+                        Invoke("Attack", beforeAttackDelay);
+                        Invoke("AttackOut", afterAttackDelay);
+                    }
+                    else if (dist <= moveDist)
+                    {
+                        nvAgent.speed = moveSpeedClose;
+                        nvAgent.destination = playerTransform.position;
+                        nvAgent.isStopped = false;
+                        animator.SetBool("isTrace", true);
+                    }
+                    else if (dist > moveDist && animator.GetBool("isTrace"))
+                    {
+                        nvAgent.speed = moveSpeedFar;
+                        nvAgent.destination = playerTransform.position;
+                        nvAgent.isStopped = false;
+                        animator.SetBool("isTrace", true);
+                    }
+                    else if (dist < wakeDist && !animator.GetBool("isTrace"))
+                    {
+                        nvAgent.speed = 0;
+                        nvAgent.destination = playerTransform.position;
+                        nvAgent.isStopped = false;
+                        animator.SetBool("isTrace", true);
+                    }
+                    else
+                    {
+                        nvAgent.speed = 0;
+                        nvAgent.destination = playerTransform.position;
+                        nvAgent.isStopped = true;
+                        animator.SetBool("isTrace", false);
+                    }
                 }
             }
         }
@@ -154,6 +156,7 @@ public class MonsterController : MonoBehaviour
         hitBox.SetActive(false);
         isAttack = false;
     }
+
 
     void SetHpBar()
     {

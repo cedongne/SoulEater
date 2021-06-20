@@ -44,8 +44,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster:
-  - {fileID: 6371913875365741018, guid: 5604ffc985e7de1478f3b06a8d8fa7f4, type: 3}
-  - {fileID: 8906298673738594694, guid: f4da7e7c19462fd44b5bc531e0b4576a, type: 3}
+  - {fileID: 6371913875365741018, guid: b1208579fa009654f95cb69be35c2692, type: 3}
+  - {fileID: 8906298673738594694, guid: 37af344bc8eed3f46bbac6a6aecc141c, type: 3}
   - {fileID: 3491989784555237787, guid: 2ea581034c52a774ca7d8c470b5385ec, type: 3}
   namedMonster: {fileID: 7139745357497714156, guid: 150195fba9451a54793215e64fbbec6d, type: 3}
   bossMonster: {fileID: 0}
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   portalObject: {fileID: 2954738695132080339, guid: c98be9ff8d0b99c4f8857faf470634cf, type: 3}
-  yCorrect: 0
+  yCorrect: 0.5
   frontCorrect: 2
   isBoss: 0
   walls: {fileID: 7597968096617534275}
@@ -186,7 +186,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 568163f61ce1fdc4698737ea7e484723, type: 2}
+  - {fileID: 2100000, guid: c0634c585b01db44890222d583d42976, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -281,7 +281,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 568163f61ce1fdc4698737ea7e484723, type: 2}
+  - {fileID: 2100000, guid: c0634c585b01db44890222d583d42976, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -362,7 +362,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 616cd73bd3f2b7c4fa914cf061d790dd, type: 2}
+  - {fileID: 2100000, guid: 4e0f0a0d12bf5df439796c336f599ffe, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -4,19 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - wall
-  - HitBox
   - PlayerAttack
   - Monster
-<<<<<<< HEAD
-  - Portal
-=======
-  - FxTemporaire
-  - Item
-  - Coin
   - Soul
+  - Portal
+  - HitBox
   - Dead
->>>>>>> 5e7a38df1d1f07a57853ff1ecabd3c48e7ae2b10
+  - SkillHitBox
   layers:
   - Default
   - TransparentFX
@@ -24,9 +18,9 @@ TagManager:
   - 
   - Water
   - UI
-  - SkillEffect
-  - Monster
-  - Player
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -53,7 +47,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: eff
-    uniqueID: 2435805463
     locked: 0

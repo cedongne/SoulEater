@@ -1031,7 +1031,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!135 &7835755066864933679
 SphereCollider:
@@ -1062,9 +1062,9 @@ MonoBehaviour:
   hpBarPrefab: {fileID: 785332700798895989, guid: 64952279f741616429c5bc19a6ef3a95, type: 3}
   hpBarOffset: {x: 0, y: 2.2, z: 0}
   soul: {fileID: 1769192092390489438, guid: cb6a58ace6bc44e408d58c62addf34fb, type: 3}
-  name: Green Crocodile
   attackDist: 3.2
   moveDist: 12
+  wakeDist: 0
   beforeAttackDelay: 0.4
   afterAttackDelay: 1.2
   moveSpeedClose: 6
@@ -1089,6 +1089,7 @@ MonoBehaviour:
   criticalChance: 0
   coolDown: 0
   skill: []
+  skillNum: 0
 --- !u!1 &7835755067436512599
 GameObject:
   m_ObjectHideFlags: 0

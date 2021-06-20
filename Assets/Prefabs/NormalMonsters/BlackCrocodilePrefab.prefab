@@ -889,7 +889,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!135 &5158852219085026873
 SphereCollider:
@@ -924,6 +924,7 @@ MonoBehaviour:
   criticalChance: 0
   coolDown: 0
   skill: []
+  skillNum: 0
 --- !u!114 &5158852219085026854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -940,9 +941,9 @@ MonoBehaviour:
   hpBarPrefab: {fileID: 785332700798895989, guid: 64952279f741616429c5bc19a6ef3a95, type: 3}
   hpBarOffset: {x: 0, y: 2.2, z: 0}
   soul: {fileID: 4354289369609707610, guid: 8e5c58506540960429fd030fcaa33c7f, type: 3}
-  name: Black Crocodile
   attackDist: 3.2
   moveDist: 12
+  wakeDist: 0
   beforeAttackDelay: 0.4
   afterAttackDelay: 1.2
   moveSpeedClose: 6

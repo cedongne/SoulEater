@@ -199,7 +199,7 @@ MonoBehaviour:
   Plane: {fileID: 4986809783017928224}
   seed: 
   useRandomSeed: 1
-  randomFillPercent: 35
+  randomFillPercent: 0
 --- !u!114 &4986809783817961500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,7 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb750ed02bd4d9547b59edbb776abd3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  portalObject: {fileID: 0}
+  portalObject: {fileID: 2954738695132080339, guid: c98be9ff8d0b99c4f8857faf470634cf, type: 3}
   yCorrect: 0
   frontCorrect: 0
   isBoss: 1
