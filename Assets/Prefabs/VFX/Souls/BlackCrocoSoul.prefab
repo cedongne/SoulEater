@@ -14477,12 +14477,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5406b333b00888a49b82483ad98c4000, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isProjectile: 0
+  type: 3
   name: Black Crocodile
   damage: 0
   coolTime: 0
   duration: 0
-  type: 1
-  skillEffect: {fileID: 0}
+  beforeDelay: 0
+  afterDelay: 0
   skillIcon: {fileID: 21300000, guid: 2713d6ef136da924abbfe2a97b5049a6, type: 3}
-  player: {fileID: 0}
-  order: 0

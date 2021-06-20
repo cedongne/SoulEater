@@ -12,6 +12,7 @@ TagManager:
   - Dead
   - FxTemporaire
   - Wall
+  - PlayerDotSkill
   layers:
   - Default
   - TransparentFX

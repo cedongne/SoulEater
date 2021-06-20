@@ -78,8 +78,7 @@ public class Attacks : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(curSoul.isProjectile);
-        if (curSoul.isProjectile)
+        if (curSoul.type == Souls.Type.PROJECTILE)
         {
             Destroy(instance);
             instance = Instantiate(DrakeExplosion, transform.position, transform.rotation);

@@ -8,21 +8,7 @@ public class GreenCrocoGas : MonoBehaviour
     private void Start()
     {
         collider = GetComponent<SphereCollider>();
-        InvokeRepeating("setEnable", 0.05f, 1f);
-        InvokeRepeating("setDisable", 0f, 1f);
-    }
-
-    void setEnable()
-    {
-        collider.enabled = true;
-    }
-    void setDisable()
-    {
         collider.enabled = false;
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        
+        collider.enabled = true;
     }
 }

@@ -5,8 +5,7 @@ using UnityEngine.UI;
 
 public class Souls : MonoBehaviour
 {
-    public enum Type { ACTIVE, PASSIVE };
-    public bool isProjectile;
+    public enum Type { ACTIVE, PROJECTILE, SWING, PASSIVE };
     public Type type;
     public string name;
 

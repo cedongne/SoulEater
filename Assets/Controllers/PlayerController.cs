@@ -216,10 +216,13 @@ public class PlayerController : MonoBehaviour
 
         if (s1Down && !isAction)
         {
-            if (stat.skill[0].isProjectile)
+            if (stat.skill[0].type != Souls.Type.PASSIVE)
             {
+                if (stat.skill[0].type == Souls.Type.PROJECTILE)
+                    anim.SetTrigger("doShot");
+                else if (stat.skill[0].type == Souls.Type.SWING)
+                    anim.SetTrigger("doSwing");
                 LookMouseCursor();
-                anim.SetTrigger("doShot");
                 AttackDelay = stat.skill[0].beforeDelay;
                 isAttack = true;
                 Invoke("AttackOut", stat.skill[0].afterDelay);
@@ -229,10 +232,13 @@ public class PlayerController : MonoBehaviour
         }
         else if (s2Down && !isAction)
         {
-            if (stat.skill[1].isProjectile)
+            if (stat.skill[1].type != Souls.Type.PASSIVE)
             {
+                if (stat.skill[1].type == Souls.Type.PROJECTILE)
+                    anim.SetTrigger("doShot");
+                else if (stat.skill[1].type == Souls.Type.SWING)
+                    anim.SetTrigger("doSwing");
                 LookMouseCursor();
-                anim.SetTrigger("doShot");
                 AttackDelay = stat.skill[1].beforeDelay;
                 isAttack = true;
                 Invoke("AttackOut", stat.skill[1].afterDelay);
@@ -243,10 +249,13 @@ public class PlayerController : MonoBehaviour
 
         else if (s3Down && !isAction)
         {
-            if (stat.skill[2].isProjectile)
+            if (stat.skill[2].type != Souls.Type.PASSIVE)
             {
+                if (stat.skill[2].type == Souls.Type.PROJECTILE)
+                    anim.SetTrigger("doShot");
+                else if (stat.skill[2].type == Souls.Type.SWING)
+                    anim.SetTrigger("doSwing");
                 LookMouseCursor();
-                anim.SetTrigger("doShot");
                 AttackDelay = stat.skill[2].beforeDelay;
                 isAttack = true;
                 Invoke("AttackOut", stat.skill[2].afterDelay);

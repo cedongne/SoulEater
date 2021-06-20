@@ -8,7 +8,7 @@ public class Stat : MonoBehaviour
     public int hp;
     public int damage;
     public float attackSpeed;
-    public int moveSpeed;
+    public float moveSpeed;
     public int criticalChance;
     public int coolDown;
 
