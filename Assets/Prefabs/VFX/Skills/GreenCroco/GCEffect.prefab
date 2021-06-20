@@ -14357,9 +14357,11 @@ GameObject:
   - component: {fileID: 4323470662237266328}
   - component: {fileID: 3252683864435270010}
   - component: {fileID: 8634406970804321768}
+  - component: {fileID: 2826971425486470343}
+  - component: {fileID: -5298131098669838245}
   m_Layer: 0
   m_Name: GCEffect
-  m_TagString: Untagged
+  m_TagString: PlayerAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19174,7 +19176,32 @@ SphereCollider:
   m_GameObject: {fileID: 567312127451810781}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 50
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2826971425486470343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 567312127451810781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba0d05ad44b059840abbde93913f4ccb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+--- !u!114 &-5298131098669838245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 567312127451810781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841a19557d8179641aba4207b306c9bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -10,6 +10,8 @@ TagManager:
   - Soul
   - HitBox
   - Dead
+  - FxTemporaire
+  - Wall
   layers:
   - Default
   - TransparentFX

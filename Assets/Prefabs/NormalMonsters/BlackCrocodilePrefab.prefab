@@ -830,7 +830,7 @@ GameObject:
   - component: {fileID: 5158852219085026854}
   - component: {fileID: 5158852219085026875}
   m_Layer: 2
-  m_Name: BlackCrocodilePrefab 1
+  m_Name: BlackCrocodilePrefab
   m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -920,7 +920,7 @@ MonoBehaviour:
   hp: 20
   damage: 10
   attackSpeed: 1.2
-  moveSpeed: 6
+  moveSpeed: 4
   criticalChance: 0
   coolDown: 0
   skill: []

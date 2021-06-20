@@ -435,7 +435,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 92, y: -370}
+  m_AnchoredPosition: {x: 90, y: -370}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &217215078
@@ -745,6 +745,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f43a45fa9fbc8f42810fb0fa67a5c1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 0
+  attackDamage: 10
+  attackRate: 0.6
+  bullet: {fileID: 0}
+  bulletPos: {fileID: 0}
+  waveEffect: {fileID: 0}
   curSoul: {fileID: 0}
   GreenCrocoSoul: {fileID: 5032713771510079553, guid: cb6a58ace6bc44e408d58c62addf34fb, type: 3}
   GreenCrocoGas: {fileID: 567312127451810781, guid: f6c1c83b03144174e940ddce277c34da, type: 3}
@@ -1469,7 +1475,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 126
   m_CollisionDetection: 1
 --- !u!4 &1080095202
 Transform:
@@ -2031,7 +2037,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -92, y: -370}
+  m_AnchoredPosition: {x: -90, y: -370}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1610310272
@@ -2112,14 +2118,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 1611349084}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c365c47cff9389144bf38600eb1b5e5d, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f43a45fa9fbc8f42810fb0fa67a5c1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 20
-  attackRate: 0.3
+  damage: 0
+  attackDamage: 10
+  attackRate: 0.6
   bullet: {fileID: 7682462837729685782, guid: 902bb610cb55dd04e97e5b055ab0b635, type: 3}
   bulletPos: {fileID: 1611349085}
   waveEffect: {fileID: 1714681308540598, guid: e8b757173a4b8844e986754969f80833, type: 3}
+  curSoul: {fileID: 0}
+  GreenCrocoSoul: {fileID: 5032713771510079553, guid: cb6a58ace6bc44e408d58c62addf34fb, type: 3}
+  GreenCrocoGas: {fileID: 567312127451810781, guid: f6c1c83b03144174e940ddce277c34da, type: 3}
+  GreenCrocoHitEffect: {fileID: 9187455525461792594, guid: 80b6757fc973bf643b1f1df454c86814, type: 3}
+  DrakeSoul: {fileID: 1070015303905478434, guid: 97b225375d34b6a44923dc6a104ff158, type: 3}
+  DrakeFireBall: {fileID: 6896560183752123225, guid: d631724dfa73e1844b92ad9d038e1d75, type: 3}
+  DrakeExplosion: {fileID: 1554943434851217700, guid: ff436ab13de756549849290a9866b28b, type: 3}
+  DrakeHitEffect: {fileID: 2493155673997215378, guid: 03b348c959d83124db00fb96ce4aca27, type: 3}
 --- !u!1 &1714891882
 GameObject:
   m_ObjectHideFlags: 0

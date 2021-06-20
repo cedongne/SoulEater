@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7682462837729685780}
   - component: {fileID: 7682462837729685781}
   - component: {fileID: 8667397672926057392}
+  - component: {fileID: 8628025456354461561}
   m_Layer: 0
   m_Name: Bullet Handgun
   m_TagString: PlayerAttack
@@ -184,3 +185,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   hitEffect: {fileID: 447380229725261083, guid: 8c958544880c872438102f94f34dd222, type: 3}
+--- !u!114 &8628025456354461561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7682462837729685782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba0d05ad44b059840abbde93913f4ccb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10

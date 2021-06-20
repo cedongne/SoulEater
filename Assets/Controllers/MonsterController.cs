@@ -126,21 +126,7 @@ public class MonsterController : MonoBehaviour
         {
             mesh.material.color = Color.red;
         }
-        yield return new WaitForSeconds(0.2f);
-        foreach (MeshRenderer mesh in meshs)
-        {
-            mesh.material.color = Color.white;
-        }
-        yield return new WaitForSeconds(0.2f);
-        foreach (MeshRenderer mesh in meshs)
-        {
-            mesh.material.color = Color.red;
-        }
-        yield return new WaitForSeconds(0.2f);
-        foreach (MeshRenderer mesh in meshs)
-        {
-            mesh.material.color = Color.white;
-        }
+        yield return 0.2f;
     }
 
     void Attack()
@@ -173,8 +159,7 @@ public class MonsterController : MonoBehaviour
             {
                 if (!isDamage)
                 {
-                    Attacks weapon = FindObjectOfType<Attacks>();
-                    stat.hp -= weapon.damage;
+                    stat.hp -= other.gameObject.GetComponent<Damage>().damage;
                     slider.value = (float)stat.hp / (float)stat.maxHp;
                     if (stat.hp > 0)
                     {

@@ -7,6 +7,8 @@ public class Attacks : MonoBehaviour
 {
     Stat playerStat;
     public int damage;
+
+    public float attackDamage = 10f;
     public float attackRate = 0.6f;
 
     public GameObject bullet;
@@ -14,11 +16,6 @@ public class Attacks : MonoBehaviour
 
     public GameObject waveEffect;
 
-    Transform weaponTransform;
-
-    GameObject curProjectile;
-    GameObject curExplosion;
-    GameObject curHitEffect;
     public Souls curSoul;
     private GameObject instance;
 
@@ -48,7 +45,6 @@ public class Attacks : MonoBehaviour
         }
         else if (soul == "Drake")
         {
-            curExplosion = DrakeHitEffect;
             Drake_FireBall();
         }
     }
