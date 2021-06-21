@@ -348,8 +348,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 175481704}
   m_CullTransparentMesh: 1
-<<<<<<< HEAD
-=======
 --- !u!1 &202853866
 GameObject:
   m_ObjectHideFlags: 0
@@ -403,7 +401,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> parent of ddb5c57 (Merge branch 'main' of https://github.com/cedongne/SoulEater into main)
 --- !u!1 &217215076
 GameObject:
   m_ObjectHideFlags: 0
@@ -795,8 +792,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 492042950}
   m_CullTransparentMesh: 1
-<<<<<<< HEAD
-=======
 --- !u!1 &511642961
 GameObject:
   m_ObjectHideFlags: 0
@@ -827,7 +822,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> parent of ddb5c57 (Merge branch 'main' of https://github.com/cedongne/SoulEater into main)
 --- !u!1 &513164594
 GameObject:
   m_ObjectHideFlags: 0
@@ -1868,11 +1862,9 @@ MonoBehaviour:
   maps:
   - {fileID: 22930316909786186, guid: 901f76fcc12f6e642a0c04a901f1b97c, type: 3}
   - {fileID: 7597968095417913944, guid: 262cfc6b7ae8a3d499b9f2d79a30a10f, type: 3}
-<<<<<<< HEAD
   mapCount: 6
-=======
   mapCount: 7
->>>>>>> parent of ddb5c57 (Merge branch 'main' of https://github.com/cedongne/SoulEater into main)
+  mapCount: 1
   bossMap: {fileID: 4986809783817961501, guid: 5ddb96816e47cd04d9087a6aad357630, type: 3}
 --- !u!4 &1128679821
 Transform:
