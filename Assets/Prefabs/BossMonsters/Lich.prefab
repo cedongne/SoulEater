@@ -548,7 +548,7 @@ MonoBehaviour:
   curState: 0
   hpBarPrefab: {fileID: 785332700798895989, guid: 64952279f741616429c5bc19a6ef3a95, type: 3}
   hpBarOffset: {x: 0, y: 2.2, z: 0}
-  soul: {fileID: 4354289369609707610, guid: 8e5c58506540960429fd030fcaa33c7f, type: 3}
+  soul: {fileID: 1650796772407568477, guid: 95076489fd2d9284d82630d718962fbe, type: 3}
   attackDist: 3.2
   moveDist: 16
   wakeDist: 24
@@ -577,6 +577,7 @@ MonoBehaviour:
   coolDown: 0
   skill: []
   skillNum: 0
+  isSkillGetting: 0
 --- !u!195 &1465489911437837632
 NavMeshAgent:
   m_ObjectHideFlags: 0
