@@ -386,6 +386,7 @@ MonoBehaviour:
   coolDown: 0
   skill: []
   skillNum: 0
+  isSkillGetting: 0
 --- !u!4 &202853868
 Transform:
   m_ObjectHideFlags: 0
@@ -1880,6 +1881,10 @@ PrefabInstance:
       propertyPath: soulTag
       value: 
       objectReference: {fileID: 2094209706}
+    - target: {fileID: 5042081078395475773, guid: bbcfb7c220e8f274c86844a6f41ecbc4, type: 3}
+      propertyPath: InteractionText
+      value: 
+      objectReference: {fileID: 1978761114}
     - target: {fileID: 5042081078395475775, guid: bbcfb7c220e8f274c86844a6f41ecbc4, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2086,16 +2091,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1494435073}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 15, y: 50, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2094209707}
-  m_RootOrder: 1
+  m_Father: {fileID: 1978761113}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -1100}
+  m_AnchoredPosition: {x: 0, y: -22}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1494435075
@@ -2264,6 +2269,7 @@ MonoBehaviour:
   - {fileID: 605356725}
   - {fileID: 695075489}
   NewSkill: {fileID: 934867800}
+  interaction: {fileID: 2094209708}
 --- !u!1 &1610310270
 GameObject:
   m_ObjectHideFlags: 0
@@ -2545,8 +2551,8 @@ MonoBehaviour:
   curSoul: {fileID: 0}
   HedgeSnailSoul: {fileID: 6015068189770340234, guid: 0bfefe24740a5c141b5e235d038ab8a3, type: 3}
   HedgeSnailPad: {fileID: 7316371557629381249, guid: 808562596be265c49b963554f6d8aecb, type: 3}
-  BlackCrocoSoul: {fileID: 0}
-  BlackCrocoPassive: {fileID: 0}
+  BlackCrocoSoul: {fileID: -2063871691035346046, guid: 8e5c58506540960429fd030fcaa33c7f, type: 3}
+  BlackCrocoPassive: {fileID: 5088021619622233353, guid: 71e9a46e1a02d584ebef99c2a5ab2a97, type: 3}
 --- !u!1 &1978761112
 GameObject:
   m_ObjectHideFlags: 0
@@ -2559,12 +2565,12 @@ GameObject:
   - component: {fileID: 1978761115}
   - component: {fileID: 1978761114}
   m_Layer: 5
-  m_Name: Text
+  m_Name: InteractionText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1978761113
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2575,7 +2581,8 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 15, y: 50, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1494435074}
   m_Father: {fileID: 2094209707}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2760,12 +2767,12 @@ GameObject:
   - component: {fileID: 2094209708}
   - component: {fileID: 2094209710}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: InteractionPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2094209707
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2778,7 +2785,6 @@ RectTransform:
   m_LocalScale: {x: 0.12, y: 0.04, z: 1}
   m_Children:
   - {fileID: 1978761113}
-  - {fileID: 1494435074}
   m_Father: {fileID: 1584241955}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2794,7 +2800,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2094209706}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -2844,6 +2850,7 @@ MonoBehaviour:
   - {fileID: 2062117661}
   - {fileID: 91339529}
   - {fileID: 175481706}
+  text: {fileID: 1978761114}
   skillGetText: {fileID: 1494435075}
   stat: {fileID: 0}
   SkillChangeBlackout: {fileID: 2120998672}

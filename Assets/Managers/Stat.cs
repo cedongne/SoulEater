@@ -15,6 +15,8 @@ public class Stat : MonoBehaviour
     public Souls[] skill;
     public int skillNum;
 
+    public bool isSkillGetting = false;
+
     private void Awake()
     {
         maxHp = hp;

@@ -14,6 +14,7 @@ public class UIManager : MonoBehaviour
     public Image[] SkillCursors;
 
     public Image NewSkill;
+    public Image interaction;
 
     int skillNum = 0;
     // Start is called before the first frame update
@@ -47,7 +48,14 @@ public class UIManager : MonoBehaviour
                 skillNum = (skillNum + 1) % 3;
             if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.E))
             {
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    interaction.GetComponent<InteractionController>().SkillGet(skillNum);
+
+                }
+                SkillCursors[skillNum].gameObject.SetActive(false);
                 isSkillChange = false;
+                Time.timeScale = 1;
             }
         }
     }

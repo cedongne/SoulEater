@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -47,6 +48,7 @@ public class PlayerController : MonoBehaviour
     float dodgeCooltime = 1.0f;
 
     public GameObject soulTag;
+    public Text InteractionText;
     List<GameObject> nearItemList;
 
     private void Awake()
@@ -153,21 +155,23 @@ public class PlayerController : MonoBehaviour
         {
             var _pickUp = soulTag.GetComponent<InteractionController>();
             _pickUp.targetTr = other.transform;
-            soulTag.SetActive(true);
+            soulTag.GetComponent<Image>().enabled = true;
+            InteractionText.gameObject.SetActive(true);
 
             if (!isAction && eDown && other.gameObject == nearItemList[0])
             {
-                soulTag.SetActive(false);
+                soulTag.GetComponent<Image>().enabled = false;
+                InteractionText.gameObject.SetActive(false);
                 GameObject getItem = nearItemList[0];
-                Souls currSoul = soulTag.GetComponent<InteractionController>().SkillGet();
-                Debug.Log(currSoul.monsterName);
-                if (currSoul.type == Souls.Type.PASSIVE)
+                Souls currSoul = soulTag.GetComponent<InteractionController>().SkillGet(stat.skillNum);
+                if (currSoul != null && currSoul.type == Souls.Type.PASSIVE)
                 {
                     Debug.Log("Passive On");
                     passives.turnOnPassive(currSoul.monsterName);
                 }
 
-                Destroy(getItem);
+                getItem.SetActive(false);
+                Destroy(getItem, 100f);
                 nearItemList.Remove(nearItemList[0]);
             }
         }
@@ -186,7 +190,8 @@ public class PlayerController : MonoBehaviour
             }
             if (nearItemList.Count == 0)
             {
-                soulTag.SetActive(false);
+                soulTag.GetComponent<Image>().enabled = false;
+                InteractionText.gameObject.SetActive(false);
             }
         }
     }

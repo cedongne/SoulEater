@@ -17,7 +17,7 @@ public class InteractionController : MonoBehaviour
 
     public GameObject skillGetEffect;
     public Image[] skillIcons;
-    Text text;
+    public Text text;
     public Text skillGetText;
 
     public Stat stat;
@@ -35,68 +35,75 @@ public class InteractionController : MonoBehaviour
         rectParent = canvas.GetComponent<RectTransform>();
         nameTag = this.gameObject.GetComponent<RectTransform>();
 
-        text = nameTag.GetComponentInChildren<Text>();
         stat = GameObject.Find("Player").GetComponent<Stat>();
     }
 
     private void LateUpdate()
     {
-        targetSoul = targetTr.GetComponent<Souls>();
-        text.text = targetSoul.name;
-        var screenPos = Camera.main.WorldToScreenPoint(targetTr.position + offset);
-        var localPos = Vector2.zero;
-
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(
-            rectParent, screenPos, uiCamera, out localPos);
-
-        nameTag.localPosition = localPos;
-        for (int index = 0; index < 3; index++)
+        if (gameObject.GetComponent<Image>().enabled == true)
         {
-            if (skillIcons[index].GetComponent<Image>().sprite == targetSoul.skillIcon)
-            {
-                skillGetText.text = "Already have it";
+            targetSoul = targetTr.GetComponent<Souls>();
+            text.text = targetSoul.name;
+            var screenPos = Camera.main.WorldToScreenPoint(targetTr.position + offset);
+            var localPos = Vector2.zero;
 
-                return;
-            }
-            else
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(
+                rectParent, screenPos, uiCamera, out localPos);
+
+            nameTag.localPosition = localPos;
+            for (int index = 0; index < 3; index++)
             {
-                skillGetText.text = "Press \"E\" to get";
+                if (skillIcons[index].GetComponent<Image>().sprite == targetSoul.skillIcon)
+                {
+                    skillGetText.text = "Already have it";
+
+                    return;
+                }
+                else
+                {
+                    skillGetText.text = "Press \"E\" to get";
+                }
             }
         }
     }
-
-    public Souls SkillGet()
+    public Souls SkillGet(int skillCnt)
     {
+        if (skillGetText.text == "Already have it")
+            return null;
+        skillGetText.text = "Press \"E\" to get";
+
         targetSoul = targetTr.GetComponent<Souls>();
+
         if (stat.skillNum == 3)
         {
+            stat.isSkillGetting = false;
             NewSkill.gameObject.SetActive(true);
             SkillChangeBlackout.gameObject.SetActive(true);
             NewSkillIcon.sprite = targetSoul.skillIcon;
             GetComponentInParent<UIManager>().isSkillChange = true;
+            stat.skillNum--;
             Time.timeScale = 0;
         }
         else
         {
-            if (skillGetText.text == "Already have it")
-                return null;
-            skillGetText.text = "Press \"E\" to get";
+            NewSkill.gameObject.SetActive(false);
+            SkillChangeBlackout.gameObject.SetActive(false);
+            GetComponentInParent<UIManager>().isSkillChange = false;
 
-            stat.skill[stat.skillNum] = Instantiate<Souls>(targetSoul);
-            stat.skill[stat.skillNum].gameObject.SetActive(false);
+            stat.skill[skillCnt] = Instantiate<Souls>(targetSoul);
+            stat.skill[skillCnt].gameObject.SetActive(false);
             if (targetSoul.type == Souls.Type.PASSIVE)
-                GameObject.Find("SkillCanvas").transform.GetChild(4 + stat.skillNum).GetChild(0).gameObject.SetActive(true);
+                GameObject.Find("SkillCanvas").transform.GetChild(4 + skillCnt).GetChild(0).gameObject.SetActive(true);
             if (targetSoul.type == Souls.Type.ACTIVE)
-                GameObject.Find("SkillCanvas").transform.GetChild(4 + stat.skillNum).GetChild(0).gameObject.SetActive(false);
-            stat.skill[stat.skillNum].transform.parent = GameObject.Find("Player").transform;
+                GameObject.Find("SkillCanvas").transform.GetChild(4 + skillCnt).GetChild(0).gameObject.SetActive(false);
+            stat.skill[skillCnt].transform.parent = GameObject.Find("Player").transform;
 
-            skillIcons[stat.skillNum].GetComponent<Image>().sprite = targetSoul.skillIcon;
-            skillIcons[stat.skillNum].gameObject.SetActive(true);
+            skillIcons[skillCnt].GetComponent<Image>().sprite = targetSoul.skillIcon;
+            skillIcons[skillCnt].gameObject.SetActive(true);
             stat.skillNum++;
-
+            stat.isSkillGetting = true;
             return targetSoul;
         }
         return null;
     }
-
 }
