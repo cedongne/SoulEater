@@ -33,6 +33,10 @@ public class Attacks : MonoBehaviour
     public GameObject GruntRock;
     public GameObject GruntExplosion;
 
+    public Souls FireDragonSoul;
+    public GameObject FireDragonMeteor;
+    public GameObject MeteorExplosion;
+
     private void Awake()
     {
     }
@@ -56,6 +60,10 @@ public class Attacks : MonoBehaviour
         else if( soul == "Grunt")
         {
             Invoke("Grunt_Slap", curSoul.beforeDelay);
+        }
+        else if(soul == "Fire Dragon")
+        {
+            Invoke("FireDragon_Meteor", curSoul.beforeDelay);
         }
     }
     IEnumerator Fire()
@@ -86,6 +94,14 @@ public class Attacks : MonoBehaviour
         Rigidbody instanceRigid = instance.GetComponent<Rigidbody>();
         instanceRigid.velocity = transform.forward * 20;
         CurExplosion = GruntExplosion;
+    }
+    public void FireDragon_Meteor()
+    {
+        instance = Instantiate(FireDragonMeteor, new Vector3 (transform.position.x, transform.position.y + 10.0f, transform.position.z), transform.rotation);
+        Vector3 meteorDir = GameObject.Find("Player").GetComponent<PlayerController>().cursorPos - instance.transform.position;
+        Rigidbody instanceRigid = instance.GetComponent<Rigidbody>();
+        instanceRigid.velocity = meteorDir.normalized * 20;
+        CurExplosion = MeteorExplosion;
     }
 
     public void DamageUpdate()

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4986809783017928226}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -158,7 +158,7 @@ GameObject:
   - component: {fileID: 4986809783817961500}
   m_Layer: 0
   m_Name: BossMap
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -219,6 +219,8 @@ MonoBehaviour:
   walls: {fileID: 4986809783926964486}
   cave: {fileID: 4986809784493378778}
   is2D: 0
+  nextSpawnDir: 0
+  MapNum: 0
 --- !u!1 &4986809783926964485
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,7 +234,7 @@ GameObject:
   - component: {fileID: 4986809783926964537}
   m_Layer: 0
   m_Name: Walls
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -313,7 +315,7 @@ GameObject:
   - component: {fileID: 4986809784493378779}
   m_Layer: 9
   m_Name: Cave
-  m_TagString: Untagged
+  m_TagString: Cave
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8

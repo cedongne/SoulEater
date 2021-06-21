@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     public GameObject other;
     public GameObject enemy;
 
+    public Vector3 cursorPos;
+
     Attacks attacks;
     Stat stat;
     //    PassiveSkill passiveSkill;
@@ -303,6 +305,7 @@ public class PlayerController : MonoBehaviour
         if(Physics.Raycast(ray, out hitResult))
         {
             Vector3 mouseDir = new Vector3(hitResult.point.x, transform.position.y, hitResult.point.z) - transform.position;
+            cursorPos = new Vector3(hitResult.point.x, transform.position.y, hitResult.point.z);
             anim.transform.forward = mouseDir;
             transform.forward = mouseDir;
         }
