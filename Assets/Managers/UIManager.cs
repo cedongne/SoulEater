@@ -9,6 +9,13 @@ public class UIManager : MonoBehaviour
     Slider HPgaze;
 
     public GameObject gameover;
+
+    public bool isSkillChange;
+    public Image[] SkillCursors;
+
+    public Image NewSkill;
+
+    int skillNum = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +36,19 @@ public class UIManager : MonoBehaviour
                 gameoverImage.color = new Color(gameoverImage.color.r, gameoverImage.color.g, gameoverImage.color.b, gameoverImage.color.a + (Time.deltaTime / 2f));
             }
         }
+        if (isSkillChange)
+        {
+            SkillCursors[skillNum % 3].gameObject.SetActive(true);
+            SkillCursors[(skillNum + 1) % 3].gameObject.SetActive(false);
+            SkillCursors[(skillNum + 2) % 3].gameObject.SetActive(false);
+            if (Input.GetKeyDown(KeyCode.A))
+                skillNum = (skillNum + 2) % 3;
+            if (Input.GetKeyDown(KeyCode.D))
+                skillNum = (skillNum + 1) % 3;
+            if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.E))
+            {
+                isSkillChange = false;
+            }
+        }
     }
 }
-
