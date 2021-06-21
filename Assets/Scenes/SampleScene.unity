@@ -1870,10 +1870,14 @@ MonoBehaviour:
   - {fileID: 7597968095417913944, guid: 262cfc6b7ae8a3d499b9f2d79a30a10f, type: 3}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   mapCount: 6
 =======
   mapCount: 7
 >>>>>>> parent of ddb5c57 (Merge branch 'main' of https://github.com/cedongne/SoulEater into main)
+=======
+  mapCount: 3
+>>>>>>> parent of da3457d (Finall)
 =======
   mapCount: 3
 >>>>>>> parent of da3457d (Finall)
