@@ -151,7 +151,10 @@ public class MonsterController : MonoBehaviour
 
     void Damaged()
     {
-        isDamage = false;
+        foreach (MeshRenderer mesh in meshs)
+        {
+            mesh.material.color = Color.red;
+        }
     }
 
     void Attack()
