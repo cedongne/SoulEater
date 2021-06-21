@@ -19308,7 +19308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69e3c62c4a36a60499b012483f817559, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.5
+  speed: 0
 --- !u!198 &-5511687875201078271
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -20137,7 +20137,7 @@ ParticleSystem:
           m_PostInfinity: 2
           m_RotationOrder: 4
   EmissionModule:
-    enabled: 1
+    enabled: 0
     serializedVersion: 4
     rateOverTime:
       serializedVersion: 2

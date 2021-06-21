@@ -19194,7 +19194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 2
-  decMoveSpeed: 0.2
+  slowMoveSpeed: 0.5
 --- !u!114 &-5298131098669838245
 MonoBehaviour:
   m_ObjectHideFlags: 0
