@@ -18,6 +18,8 @@ public class UIManager : MonoBehaviour
     public Image interaction;
 
     int skillNum = 0;
+
+    public bool isClear = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,10 +32,14 @@ public class UIManager : MonoBehaviour
     void Update()
     {
         HPgaze.value = (float)playerStat.hp / (float)playerStat.maxHp;
-        if (playerStat.hp <= 0)
+        if (playerStat.hp <= 0 || isClear)
         {
             Image gameoverImage = gameover.GetComponent<Image>();
             gameover.SetActive(true);
+            if (isClear)
+            {
+                GameObject.Find("Game Over Text").GetComponent<Text>().text = "Clear!";
+            }
             if (gameoverImage.color.a < 0.7)
             {
                 gameoverImage.color = new Color(gameoverImage.color.r, gameoverImage.color.g, gameoverImage.color.b, gameoverImage.color.a + (Time.deltaTime / 2f));
