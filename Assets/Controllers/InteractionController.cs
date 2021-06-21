@@ -61,7 +61,7 @@ public class InteractionController : MonoBehaviour
         }
     }
 
-    public void SkillGet()
+    public Souls SkillGet()
     {
         targetSoul = targetTr.GetComponent<Souls>();
         if (stat.skillNum == 3)
@@ -71,7 +71,7 @@ public class InteractionController : MonoBehaviour
         else
         {
             if (skillGetText.text == "Already have it")
-                return;
+                return null;
             skillGetText.text = "Press \"E\" to get";
 
             stat.skill[stat.skillNum] = Instantiate<Souls>(targetSoul);
@@ -85,7 +85,10 @@ public class InteractionController : MonoBehaviour
             skillIcons[stat.skillNum].GetComponent<Image>().sprite = targetSoul.skillIcon;
             skillIcons[stat.skillNum].gameObject.SetActive(true);
             stat.skillNum++;
+
+            return targetSoul;
         }
+        return null;
     }
 
 }
