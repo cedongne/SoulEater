@@ -40,9 +40,11 @@ public class MonsterController : MonoBehaviour
     private bool isDead = false;
     private bool isAttack = false;
     private bool isDamage = false;
+    private bool isCollision = false;
 
     private float getDamage;
-    private float originalMoveSpeed;
+    private float originalMoveSpeedClose;
+    private float originalMoveSpeedFar;
 
     private void Awake()
     {
@@ -63,7 +65,8 @@ public class MonsterController : MonoBehaviour
     {
         stopwatch = new System.Diagnostics.Stopwatch();
 
-        originalMoveSpeed = nvAgent.speed;
+        originalMoveSpeedClose = moveSpeedClose;
+        originalMoveSpeedFar = moveSpeedFar;
 
         nvAgent.enabled = true;
         nvAgent.speed = stat.moveSpeed;
@@ -172,7 +175,6 @@ public class MonsterController : MonoBehaviour
         isAttack = false;
     }
 
-
     void SetHpBar()
     {
         hpCanvas = GameObject.Find("Canvas").GetComponent<Canvas>();
@@ -187,14 +189,19 @@ public class MonsterController : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("enter");
         if (!isDead)
         {
-            if (other.gameObject.tag == "PlayerAttack")
+            if(other.gameObject.tag == "PlayerDotSkill")
             {
+                moveSpeedClose *= other.gameObject.GetComponent<Damage>().slowMoveSpeed;
+                moveSpeedFar *= other.gameObject.GetComponent<Damage>().slowMoveSpeed;
+            }
+            else if (other.gameObject.tag == "PlayerAttack")
+            {
+                moveSpeedClose *= other.gameObject.GetComponent<Damage>().slowMoveSpeed;
+                moveSpeedFar *= other.gameObject.GetComponent<Damage>().slowMoveSpeed;
                 getDamage = other.gameObject.GetComponent<Damage>().damage;
                 stat.hp -= getDamage;
-                nvAgent.speed *= other.gameObject.GetComponent<Damage>().slowMoveSpeed;
                 slider.value = (float)stat.hp / (float)stat.maxHp;
                 if (stat.hp > 0)
                 {
@@ -206,16 +213,15 @@ public class MonsterController : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log("YY");
         if (other.gameObject.tag == "PlayerDotSkill")
         {
-            Debug.Log("Damaged");
             stat.hp -= other.gameObject.GetComponent<Damage>().damage * Time.deltaTime;
             slider.value = (float)stat.hp / (float)stat.maxHp;
         }
     }
     private void OnTriggerExit(Collider other)
     {
-        nvAgent.speed = originalMoveSpeed;
+        moveSpeedClose = originalMoveSpeedClose;
+        moveSpeedFar = originalMoveSpeedFar;
     }
 }
