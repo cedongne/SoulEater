@@ -725,7 +725,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 511642963}
-  - component: {fileID: 511642962}
   m_Layer: 0
   m_Name: Skills
   m_TagString: Untagged
@@ -733,35 +732,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &511642962
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 511642961}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f43a45fa9fbc8f42810fb0fa67a5c1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 0
-  attackDamage: 10
-  attackRate: 0.6
-  bullet: {fileID: 0}
-  bulletPos: {fileID: 0}
-  waveEffect: {fileID: 0}
-  curSoul: {fileID: 0}
-  CurExplosion: {fileID: 0}
-  GreenCrocoSoul: {fileID: 5032713771510079553, guid: cb6a58ace6bc44e408d58c62addf34fb, type: 3}
-  GreenCrocoGas: {fileID: 567312127451810781, guid: f6c1c83b03144174e940ddce277c34da, type: 3}
-  GreenCrocoHitEffect: {fileID: 9187455525461792594, guid: 80b6757fc973bf643b1f1df454c86814, type: 3}
-  DrakeSoul: {fileID: 1070015303905478434, guid: 97b225375d34b6a44923dc6a104ff158, type: 3}
-  DrakeFireBall: {fileID: 6896560183752123225, guid: d631724dfa73e1844b92ad9d038e1d75, type: 3}
-  DrakeExplosion: {fileID: 1554943434851217700, guid: ff436ab13de756549849290a9866b28b, type: 3}
-  DrakeHitEffect: {fileID: 2493155673997215378, guid: 03b348c959d83124db00fb96ce4aca27, type: 3}
-  GruntSoul: {fileID: 0}
-  GruntSlap: {fileID: 0}
 --- !u!4 &511642963
 Transform:
   m_ObjectHideFlags: 0
@@ -1478,7 +1448,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 126
+  m_Constraints: 112
   m_CollisionDetection: 1
 --- !u!4 &1080095202
 Transform:
@@ -2137,7 +2107,7 @@ MonoBehaviour:
   GreenCrocoHitEffect: {fileID: 9187455525461792594, guid: 80b6757fc973bf643b1f1df454c86814, type: 3}
   DrakeSoul: {fileID: 1070015303905478434, guid: 97b225375d34b6a44923dc6a104ff158, type: 3}
   DrakeFireBall: {fileID: 6896560183752123225, guid: d631724dfa73e1844b92ad9d038e1d75, type: 3}
-  DrakeExplosion: {fileID: 1554943434851217700, guid: ff436ab13de756549849290a9866b28b, type: 3}
+  DrakeExplosion: {fileID: 1554943434851217700, guid: f4a63af23736f1247af4229bc1cc5e41, type: 3}
   DrakeHitEffect: {fileID: 2493155673997215378, guid: 03b348c959d83124db00fb96ce4aca27, type: 3}
   GruntSoul: {fileID: 9133846073454139179, guid: 27682960fbca17943a831d139c4c1908, type: 3}
   GruntSlap: {fileID: 3759511956910890739, guid: cf4936ee19b66bb4aa1c46a00c6635b1, type: 3}

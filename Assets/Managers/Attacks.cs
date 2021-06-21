@@ -43,6 +43,7 @@ public class Attacks : MonoBehaviour
     }
     public void Use(string soul)
     {
+        Debug.Log(soul);
         if (soul == "Green Crocodile")
         {
             GreenCroco_PoisonGas();

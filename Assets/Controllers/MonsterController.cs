@@ -195,6 +195,7 @@ public class MonsterController : MonoBehaviour
                 {
                     Vector3 temp = transform.position;
                     soul = Instantiate<GameObject>(soul, playerTransform);
+                    soul.name = soul.GetComponent<Souls>().monsterName;
                     soul.transform.position = new Vector3(temp.x, 0, temp.z);
                     soul.transform.parent = GameObject.Find("Items").transform;
 
