@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Attacks : MonoBehaviour
 {
     Stat playerStat;
-    public int damage;
+    public float damage;
 
     public float attackDamage = 10f;
     public float attackRate = 0.6f;

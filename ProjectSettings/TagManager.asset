@@ -12,6 +12,11 @@ TagManager:
   - Portal
   - HitBox
   - Dead
+  - SkillHitBox
+  - Fire
+  - FxTemporaire
+  - Plane
+  - Cave
   layers:
   - Default
   - TransparentFX

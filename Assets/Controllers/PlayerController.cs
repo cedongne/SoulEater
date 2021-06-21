@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
 
     Attacks attacks;
     Stat stat;
+    Passives passives;
     //    PassiveSkill passiveSkill;
 
     float _speed = 5f;
@@ -54,6 +55,7 @@ public class PlayerController : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
         stat = GetComponent<Stat>();
         attacks = GetComponentInChildren<Attacks>();
+        passives = GetComponentInChildren<Passives>();
 
         nearItemList = new List<GameObject>();
     }
@@ -157,7 +159,13 @@ public class PlayerController : MonoBehaviour
             {
                 soulTag.SetActive(false);
                 GameObject getItem = nearItemList[0];
-                soulTag.GetComponent<InteractionController>().SkillGet();
+                Souls currSoul = soulTag.GetComponent<InteractionController>().SkillGet();
+                Debug.Log(currSoul.monsterName);
+                if (currSoul.type == Souls.Type.PASSIVE)
+                {
+                    Debug.Log("Passive On");
+                    passives.turnOnPassive(currSoul.monsterName);
+                }
 
                 Destroy(getItem);
                 nearItemList.Remove(nearItemList[0]);

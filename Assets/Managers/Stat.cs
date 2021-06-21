@@ -6,7 +6,7 @@ public class Stat : MonoBehaviour
 {
     [HideInInspector] public float maxHp;
     public float hp;
-    public int damage;
+    public float damage;
     public float attackSpeed;
     public float moveSpeed;
     public int criticalChance;

@@ -2525,6 +2525,28 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5042081078395475775, guid: bbcfb7c220e8f274c86844a6f41ecbc4, type: 3}
   m_PrefabInstance: {fileID: 1251587177}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1970300806 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5042081078567735870, guid: bbcfb7c220e8f274c86844a6f41ecbc4, type: 3}
+  m_PrefabInstance: {fileID: 1251587177}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1970300809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1970300806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eee9fe013d316b447a0a7bfbc8912b54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curSoul: {fileID: 0}
+  HedgeSnailSoul: {fileID: 6015068189770340234, guid: 0bfefe24740a5c141b5e235d038ab8a3, type: 3}
+  HedgeSnailPad: {fileID: 7316371557629381249, guid: 808562596be265c49b963554f6d8aecb, type: 3}
+  BlackCrocoSoul: {fileID: 0}
+  BlackCrocoPassive: {fileID: 0}
 --- !u!1 &1978761112
 GameObject:
   m_ObjectHideFlags: 0
