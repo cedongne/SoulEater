@@ -1712,7 +1712,7 @@ MonoBehaviour:
   maps:
   - {fileID: 22930316909786186, guid: 901f76fcc12f6e642a0c04a901f1b97c, type: 3}
   - {fileID: 7597968095417913944, guid: 262cfc6b7ae8a3d499b9f2d79a30a10f, type: 3}
-  mapCount: 0
+  mapCount: 3
   bossMap: {fileID: 4986809783817961501, guid: 5ddb96816e47cd04d9087a6aad357630, type: 3}
 --- !u!4 &1128679821
 Transform:
@@ -2823,7 +2823,6 @@ MonoBehaviour:
   - {fileID: 175481706}
   skillGetText: {fileID: 1494435075}
   stat: {fileID: 0}
-  players: {fileID: 0}
 --- !u!1 &2145215731
 GameObject:
   m_ObjectHideFlags: 0

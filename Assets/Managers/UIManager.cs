@@ -9,7 +9,6 @@ public class UIManager : MonoBehaviour
     Slider HPgaze;
 
     public GameObject gameover;
-    bool isDead = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +22,6 @@ public class UIManager : MonoBehaviour
         HPgaze.value = (float)playerStat.hp / (float)playerStat.maxHp;
         if (playerStat.hp <= 0)
         {
-            isDead = true;
             Image gameoverImage = gameover.GetComponent<Image>();
             gameover.SetActive(true);
             if (gameoverImage.color.a < 0.7)

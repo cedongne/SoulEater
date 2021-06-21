@@ -4845,14 +4845,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5406b333b00888a49b82483ad98c4000, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
+  type: 3
   monsterName: Mimic
   damage: 10
   coolTime: 10
   duration: 6
   beforeDelay: 0
   afterDelay: 0
-  skillIcon: {fileID: 21300000, guid: f63c24dc2deb48a44bbc608fba623693, type: 3}
+  skillIcon: {fileID: 21300000, guid: c7bd230fa8fafe04babb6011b0d8b4c6, type: 3}
 --- !u!1 &7353652214221062288
 GameObject:
   m_ObjectHideFlags: 0

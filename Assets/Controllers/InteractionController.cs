@@ -21,7 +21,6 @@ public class InteractionController : MonoBehaviour
     public Text skillGetText;
 
     public Stat stat;
-    public GameObject players;
 
     // Start is called before the first frame update
     private void Start()
