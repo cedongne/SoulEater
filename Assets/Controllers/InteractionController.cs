@@ -22,6 +22,10 @@ public class InteractionController : MonoBehaviour
 
     public Stat stat;
 
+    public Image SkillChangeBlackout;
+    public Image NewSkill;
+    public Image NewSkillIcon;
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -66,7 +70,11 @@ public class InteractionController : MonoBehaviour
         targetSoul = targetTr.GetComponent<Souls>();
         if (stat.skillNum == 3)
         {
-
+            NewSkill.gameObject.SetActive(true);
+            SkillChangeBlackout.gameObject.SetActive(true);
+            NewSkillIcon.sprite = targetSoul.skillIcon;
+            GetComponentInParent<UIManager>().isSkillChange = true;
+            Time.timeScale = 0;
         }
         else
         {
