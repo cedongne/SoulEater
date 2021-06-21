@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8537893859488140441}
   m_Layer: 0
   m_Name: FireDragonSoul
-  m_TagString: Untagged
+  m_TagString: Soul
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4854,7 +4854,7 @@ MonoBehaviour:
   duration: 6
   beforeDelay: 0
   afterDelay: 0
-  skillIcon: {fileID: 21300000, guid: f63c24dc2deb48a44bbc608fba623693, type: 3}
+  skillIcon: {fileID: 21300000, guid: a7caaabeef403c741a82ca65ebacff05, type: 3}
 --- !u!1 &5812196308663760356
 GameObject:
   m_ObjectHideFlags: 0
