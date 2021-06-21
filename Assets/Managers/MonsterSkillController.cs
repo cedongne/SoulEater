@@ -8,6 +8,7 @@ public class MonsterSkillController : MonoBehaviour
 {
     NavMeshAgent nvAgent;
     Animator animator;
+    Stat stat;
 
     MonsterSkill skill;
     public GameObject circle;
@@ -23,6 +24,7 @@ public class MonsterSkillController : MonoBehaviour
         nvAgent.enabled = true;
         animator = gameObject.GetComponent<Animator>();
 
+        stat = gameObject.GetComponent<Stat>();
         skill = GetComponent<MonsterSkill>();
         watch.Start();
 
@@ -31,7 +33,7 @@ public class MonsterSkillController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (watch.ElapsedMilliseconds > 5000)
+        if (watch.ElapsedMilliseconds > 5000 && stat.hp > 0)
         {
             StopCoroutine("ActivateSkill");
             watch.Restart();

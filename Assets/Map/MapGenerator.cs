@@ -33,7 +33,7 @@ public class MapGenerator : MonoBehaviour
     private void Update()
     {
         Transform monsters = transform.GetChild(3).GetChild(0);
-        if (monsters.childCount == 0)
+        if (monsters.childCount == 0 && transform.name != "BossMap")
         {
             transform.GetChild(4).gameObject.SetActive(true);
         }
@@ -81,7 +81,7 @@ public class MapGenerator : MonoBehaviour
         MeshGenerator meshGen = GetComponent<MeshGenerator>();
         meshGen.GenerateMesh(borderedMap, 1);
 
-        Plane.AddComponent<NavMeshSurface>();
+        NavMeshSurface nav = Plane.AddComponent<NavMeshSurface>();
         if (spawner.isBoss)
             spawner.BossSpawn(GetRegions(0), width, height);
         else

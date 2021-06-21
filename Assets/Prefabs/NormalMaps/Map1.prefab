@@ -312,7 +312,7 @@ MonoBehaviour:
   Plane: {fileID: 22930316074074743}
   seed: 
   useRandomSeed: 1
-  randomFillPercent: 38
+  randomFillPercent: 35
 --- !u!114 &22930316909786187
 MonoBehaviour:
   m_ObjectHideFlags: 0
