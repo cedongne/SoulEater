@@ -155,6 +155,7 @@ public class MonsterController : MonoBehaviour
         {
             mesh.material.color = Color.red;
         }
+
     }
 
     void ColliderEnable()

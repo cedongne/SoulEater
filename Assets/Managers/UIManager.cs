@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     Stat playerStat;
-    Slider HPgaze;
+    Passives passives;
+    public Slider HPgaze;
 
     public GameObject gameover;
 
@@ -21,6 +22,7 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         playerStat = GameObject.Find("Player").GetComponent<Stat>();
+        passives = GameObject.Find("Weapon").GetComponent<Passives>();
         HPgaze = GameObject.Find("HPGaze").GetComponent<Slider>();
     }
 
@@ -50,8 +52,17 @@ public class UIManager : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    interaction.GetComponent<InteractionController>().SkillGet(skillNum);
-
+                    if(playerStat.skill[skillNum].type == Souls.Type.PASSIVE)
+                    {
+                        passives.turnOffPassive(playerStat.skill[skillNum].monsterName);
+                    }
+                    Destroy(playerStat.skill[skillNum]);
+                    Souls currSoul = interaction.GetComponent<InteractionController>().SkillGet(skillNum);
+                    if (currSoul != null && currSoul.type == Souls.Type.PASSIVE)
+                    {
+                        Debug.Log("Passive On");
+                        passives.turnOnPassive(currSoul.monsterName);
+                    }
                 }
                 SkillCursors[skillNum].gameObject.SetActive(false);
                 isSkillChange = false;

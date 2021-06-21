@@ -94,7 +94,7 @@ public class InteractionController : MonoBehaviour
             stat.skill[skillCnt].gameObject.SetActive(false);
             if (targetSoul.type == Souls.Type.PASSIVE)
                 GameObject.Find("SkillCanvas").transform.GetChild(4 + skillCnt).GetChild(0).gameObject.SetActive(true);
-            if (targetSoul.type == Souls.Type.ACTIVE)
+            if (targetSoul.type == Souls.Type.ACTIVE || targetSoul.type == Souls.Type.PROJECTILE || targetSoul.type == Souls.Type.SWING)
                 GameObject.Find("SkillCanvas").transform.GetChild(4 + skillCnt).GetChild(0).gameObject.SetActive(false);
             stat.skill[skillCnt].transform.parent = GameObject.Find("Player").transform;
 
