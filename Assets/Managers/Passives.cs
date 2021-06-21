@@ -88,7 +88,7 @@ public class Passives : MonoBehaviour
     public void MimicPassiveOn()
     {
         Transform player = GameObject.Find("Player").transform;
-        GameObject instance = Instantiate(MimicPassive, player.position, player.rotation);
+        GameObject instance = Instantiate(BlackCrocoPassive, player.position, player.rotation);
         instance.transform.parent = player;
 
         float decCool = instance.GetComponent<PassiveStat>().decreaseCooltimeRate;
@@ -99,7 +99,11 @@ public class Passives : MonoBehaviour
     }
     public void GolemPassiveOn()
     {
-        transform.GetComponent<Attacks>().bullet.GetComponent<Damage>().damage += GolemPassive.GetComponent<PassiveStat>().increaseDamage;
+        Transform player = GameObject.Find("Player").transform;
+        GameObject instance = Instantiate(BlackCrocoPassive, player.position, player.rotation);
+        instance.transform.parent = player;
+
+        transform.GetComponent<Attacks>().bullet.GetComponent<Damage>().damage += instance.GetComponent<PassiveStat>().increaseDamage;
         GolemPassive.GetComponent<Damage>().damage = transform.GetComponent<Attacks>().bullet.GetComponent<Damage>().damage;
         transform.GetComponent<Attacks>().bullet = GolemPassive;
     }
@@ -108,7 +112,7 @@ public class Passives : MonoBehaviour
 
     public void HedgeSnail_PadOff()
     {
-        Destroy(GameObject.Find("HedgeSnailPad 1(Clone)").gameObject);
+        Destroy(GameObject.Find("HedgeSnailPad1(Clone)").gameObject);
     }
     public void BlackCrocoPassiveOff()
     {
@@ -133,8 +137,12 @@ public class Passives : MonoBehaviour
     }
     public void GolemPassiveOff()
     {
-        transform.GetComponent<Attacks>().bullet.GetComponent<Damage>().damage -= GolemPassive.GetComponent<PassiveStat>().increaseDamage;
+        GameObject instance = GameObject.Find("BlackCrocoPassive(Clone)").gameObject;
+
+        transform.GetComponent<Attacks>().bullet.GetComponent<Damage>().damage -= instance.GetComponent<PassiveStat>().increaseDamage;
         bullet.GetComponent<Damage>().damage = transform.GetComponent<Attacks>().bullet.GetComponent<Damage>().damage;
         transform.GetComponent<Attacks>().bullet = bullet;
+
+        Destroy(instance);
     }
 }

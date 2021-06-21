@@ -6,8 +6,7 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     Stat playerStat;
-    Passives passives;
-    public Slider HPgaze;
+    Slider HPgaze;
 
     public GameObject gameover;
 
@@ -18,13 +17,10 @@ public class UIManager : MonoBehaviour
     public Image interaction;
 
     int skillNum = 0;
-
-    public bool isClear = false;
     // Start is called before the first frame update
     void Start()
     {
         playerStat = GameObject.Find("Player").GetComponent<Stat>();
-        passives = GameObject.Find("Weapon").GetComponent<Passives>();
         HPgaze = GameObject.Find("HPGaze").GetComponent<Slider>();
     }
 
@@ -32,14 +28,10 @@ public class UIManager : MonoBehaviour
     void Update()
     {
         HPgaze.value = (float)playerStat.hp / (float)playerStat.maxHp;
-        if (playerStat.hp <= 0 || isClear)
+        if (playerStat.hp <= 0)
         {
             Image gameoverImage = gameover.GetComponent<Image>();
             gameover.SetActive(true);
-            if (isClear)
-            {
-                GameObject.Find("Game Over Text").GetComponent<Text>().text = "Clear!";
-            }
             if (gameoverImage.color.a < 0.7)
             {
                 gameoverImage.color = new Color(gameoverImage.color.r, gameoverImage.color.g, gameoverImage.color.b, gameoverImage.color.a + (Time.deltaTime / 2f));
@@ -58,17 +50,8 @@ public class UIManager : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    if(playerStat.skill[skillNum].type == Souls.Type.PASSIVE)
-                    {
-                        passives.turnOffPassive(playerStat.skill[skillNum].monsterName);
-                    }
-                    Destroy(playerStat.skill[skillNum]);
-                    Souls currSoul = interaction.GetComponent<InteractionController>().SkillGet(skillNum);
-                    if (currSoul != null && currSoul.type == Souls.Type.PASSIVE)
-                    {
-                        Debug.Log("Passive On");
-                        passives.turnOnPassive(currSoul.monsterName);
-                    }
+                    interaction.GetComponent<InteractionController>().SkillGet(skillNum);
+
                 }
                 SkillCursors[skillNum].gameObject.SetActive(false);
                 isSkillChange = false;
