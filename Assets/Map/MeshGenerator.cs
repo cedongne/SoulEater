@@ -20,9 +20,13 @@ public class MeshGenerator : MonoBehaviour
     List<Vector3> vertices;
     List<int> triangles;
 
+    public int nextSpawnDir;
+    public int MapNum;
+
     Dictionary<int, List<Triangle>> triangleDictionary = new Dictionary<int, List<Triangle>>();
     List<List<int>> outlines = new List<List<int>> ();
     HashSet<int> checkedVertices = new HashSet<int>();
+    List<Vector3> wallVertices;
     public void GenerateMesh(int[,] map, float squareSize)
     {
         triangleDictionary.Clear();
@@ -68,11 +72,47 @@ public class MeshGenerator : MonoBehaviour
         }
     }
 
+    public Vector3 getSpawnPos(int spawnDir)
+    {
+        Vector3 pos = transform.position;
+        for (int i = 1; i < wallVertices.Count; i++)
+        {
+            if (spawnDir == 0) //xMax(Right)
+            {
+                if (wallVertices[i].x > pos.x)
+                {
+                    pos = wallVertices[i];
+                    pos.x -= frontCorrect;
+                    pos.y = 0;
+                }
+            }
+            else if (spawnDir == 1) //xMin(Left)
+            {
+                if (wallVertices[i].x < pos.x)
+                {
+                    pos = wallVertices[i];
+                    pos.x += frontCorrect;
+                    pos.y = 0;
+                }
+            }
+            else //zMin(Down)
+            {
+                if (wallVertices[i].z < pos.z)
+                {
+                    pos = wallVertices[i];
+                    pos.z += frontCorrect;
+                    pos.y = 0;
+                }
+            }
+        }
+
+        return transform.position + pos;
+    }
     void CreatePortal(List<Vector3> wall)
     {
         int portalDir = Random.Range(0, 3);
         Vector3 portalPos = this.transform.position;
-
+        
         for (int i = 1; i < wall.Count; i++)
         {
             if (portalDir == 0) //xMax(Right)
@@ -80,14 +120,15 @@ public class MeshGenerator : MonoBehaviour
                 if (wall[i].x > portalPos.x)
                 {
                     portalPos = wall[i];
+                    nextSpawnDir = 1;
                 }
-                
             }
             else if (portalDir == 1) //xMin(Left)
             {
                 if (wall[i].x < portalPos.x)
                 {
                     portalPos = wall[i];
+                    nextSpawnDir = 0;
                 }
             }
             else //zMax(Up)
@@ -95,6 +136,7 @@ public class MeshGenerator : MonoBehaviour
                 if (wall[i].z > portalPos.z)
                 {
                     portalPos = wall[i];
+                    nextSpawnDir = 4;
                 }
             }
         }
@@ -114,7 +156,7 @@ public class MeshGenerator : MonoBehaviour
     {
         CalculateMeshOutlines();
 
-        List<Vector3> wallVertices = new List<Vector3>();
+        wallVertices = new List<Vector3>();
         List<int> wallTriangles = new List<int>();
         Mesh wallMesh = new Mesh();
         float wallHeight = 2;

@@ -332,6 +332,8 @@ MonoBehaviour:
   walls: {fileID: 22930315173426513}
   cave: {fileID: 22930315672336525}
   is2D: 0
+  nextSpawnDir: 0
+  MapNum: 0
 --- !u!1 &22930316966855854
 GameObject:
   m_ObjectHideFlags: 0
@@ -382,5 +384,5 @@ MonoBehaviour:
   namedMonster: {fileID: 3934043741369160766, guid: 73dece5c9dead5b4390c8ffaedcf2934, type: 3}
   bossMonster: {fileID: 1465489910814111589, guid: a0fc3cc60b54c954eba290de1c97e2b7, type: 3}
   MonsterCount: 5
-  namedSpawnRate: 100
+  namedSpawnRate: 30
   isBoss: 0
