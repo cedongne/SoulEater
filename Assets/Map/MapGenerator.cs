@@ -81,7 +81,7 @@ public class MapGenerator : MonoBehaviour
         MeshGenerator meshGen = GetComponent<MeshGenerator>();
         meshGen.GenerateMesh(borderedMap, 1);
 
-        Plane.AddComponent<NavMeshSurface>();
+        NavMeshSurface nav = Plane.AddComponent<NavMeshSurface>();
         if (spawner.isBoss)
             spawner.BossSpawn(GetRegions(0), width, height);
         else
