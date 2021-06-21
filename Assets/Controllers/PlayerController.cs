@@ -101,8 +101,12 @@ public class PlayerController : MonoBehaviour
         }
         else if (other.gameObject.tag == "Portal")
         {
-            MapGenerator map = other.GetComponentInParent<MapGenerator>();
-            this.transform.position = new Vector3(map.transform.position.x + 100, map.transform.position.y, map.transform.position.z);
+            GameObject mapSpawner = other.transform.parent.GetComponentInParent<MapSpawner>().gameObject;
+            int mapNum = other.GetComponentInParent<MeshGenerator>().MapNum;
+            int spawnDir = other.GetComponentInParent<MeshGenerator>().nextSpawnDir;
+
+            MeshGenerator map = mapSpawner.transform.GetChild(mapNum + 1).GetComponent<MeshGenerator>();
+            transform.position = map.getSpawnPos(spawnDir);
         }
         else if(other.gameObject.tag == "SkillHitBox")
         {
