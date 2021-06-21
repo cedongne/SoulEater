@@ -81,7 +81,6 @@ public class MeshGenerator : MonoBehaviour
                 if (wallVertices[i].x > pos.x)
                 {
                     pos = wallVertices[i];
-                    pos.x -= 5;
                     pos.y = 0;
                 }
             }
@@ -90,7 +89,6 @@ public class MeshGenerator : MonoBehaviour
                 if (wallVertices[i].x < pos.x)
                 {
                     pos = wallVertices[i];
-                    pos.x += 5;
                     pos.y = 0;
                 }
             }
@@ -99,13 +97,19 @@ public class MeshGenerator : MonoBehaviour
                 if (wallVertices[i].z < pos.z)
                 {
                     pos = wallVertices[i];
-                    pos.z += 5;
                     pos.y = 0;
                 }
             }
         }
 
-        return transform.position + pos;
+        if (spawnDir == 0)
+            pos.x -= frontCorrect;
+        else if (spawnDir == 1)
+            pos.x += frontCorrect;
+        else if (spawnDir == 3)
+            pos.z += frontCorrect;
+
+            return transform.position + pos;
     }
     void CreatePortal(List<Vector3> wall)
     {
