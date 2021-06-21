@@ -104,12 +104,16 @@ public class PlayerController : MonoBehaviour
             MapGenerator map = other.GetComponentInParent<MapGenerator>();
             this.transform.position = new Vector3(map.transform.position.x + 100, map.transform.position.y, map.transform.position.z);
         }
+        else if(other.gameObject.tag == "SkillHitBox")
+        {
+            stat.hp -= other.GetComponent<SkillStat>().damage;
+            Debug.Log("Player Hit : " + stat.hp);
+        }
         else if(other.gameObject.tag == "Soul")
         {
             // Collider에 들어오는 순서대로 Queue에 넣음
             nearItemList.Add(other.gameObject);
         }
-        Debug.Log("Player Hit : " + stat.hp);
     }
 
     private void OnTriggerStay(Collider other)

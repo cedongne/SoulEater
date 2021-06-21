@@ -10,6 +10,7 @@ public class MonsterSkillController : MonoBehaviour
     Animator animator;
 
     MonsterSkill skill;
+    public GameObject circle;
 
     Stopwatch watch;
     public float castingTime;
@@ -40,9 +41,11 @@ public class MonsterSkillController : MonoBehaviour
         GetComponent<MonsterFlag>().isCasting = true;
         nvAgent.isStopped = true;
         animator.SetTrigger("Skill");
+        skill.DrawCircle();
+        Vector3 playerPos = GameObject.Find("Player").transform.position;
         watch.Restart();
         yield return new WaitForSeconds(castingTime);
-        skill.Use();
+        skill.Use(playerPos);
         GetComponent<MonsterFlag>().isCasting = false;
 
     }

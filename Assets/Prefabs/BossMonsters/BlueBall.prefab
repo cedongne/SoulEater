@@ -19256,7 +19256,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3393307936824058360}
   - component: {fileID: 3351366352485357228}
-  - component: {fileID: 3351366351681508976}
   - component: {fileID: 3897779562509570711}
   - component: {fileID: 8406253693926481159}
   - component: {fileID: 3393307936785957965}
@@ -19265,7 +19264,7 @@ GameObject:
   - component: {fileID: -8644268817320722035}
   m_Layer: 0
   m_Name: BlueBall
-  m_TagString: Untagged
+  m_TagString: SkillHitBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19300,19 +19299,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7794c33cb087bc44947938f6f33fe47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3351366351681508976
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3393307936824425944}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69e3c62c4a36a60499b012483f817559, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0.5
 --- !u!198 &3897779562509570711
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -20141,7 +20127,7 @@ ParticleSystem:
           m_PostInfinity: 2
           m_RotationOrder: 4
   EmissionModule:
-    enabled: 1
+    enabled: 0
     serializedVersion: 4
     rateOverTime:
       serializedVersion: 2
@@ -24099,7 +24085,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 126
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!135 &3393307936785957966
 SphereCollider:
@@ -24127,6 +24113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 40
+  size: 5
 --- !u!114 &-8644268817320722035
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -629,8 +629,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 0}
-  skillEffect:
+  skillList:
+  - {fileID: 6971669248359389798, guid: 77768fcd12b2fe64792087cbb9abb47d, type: 3}
   - {fileID: 3393307936824425944, guid: ee2b26046e42bfc439972bfb983a0f26, type: 3}
+  - {fileID: 7208744025746171787, guid: 315ed835a06f7f14bb8d50601f0eaf0f, type: 3}
 --- !u!114 &-5764750163724147885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -643,6 +645,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 937912bde6d6c9948b5af291cd965a87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  circle: {fileID: 487328686662523773, guid: 8e7a7789c0df7e74488dc6539a47048e, type: 3}
   castingTime: 1
 --- !u!114 &-4466903685768049197
 MonoBehaviour:
