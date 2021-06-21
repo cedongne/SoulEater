@@ -19,7 +19,7 @@ public class Spawner : MonoBehaviour
         GameObject go = new GameObject { name = "Monsters" };
         go.transform.parent = this.transform;
         int rate = Random.Range(0, 100);
-        if (rate < 30)
+        if (rate < namedSpawnRate)
         {
             while (true)
             {

@@ -24175,6 +24175,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ddb699b72f775d4aa8febac8ee4c72e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 30
+  damage: 20
   size: 0
   NumOfSkill: 0

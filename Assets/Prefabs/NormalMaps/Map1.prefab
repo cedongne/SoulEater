@@ -382,5 +382,5 @@ MonoBehaviour:
   namedMonster: {fileID: 3934043741369160766, guid: 73dece5c9dead5b4390c8ffaedcf2934, type: 3}
   bossMonster: {fileID: 1465489910814111589, guid: a0fc3cc60b54c954eba290de1c97e2b7, type: 3}
   MonsterCount: 5
-  namedSpawnRate: 30
+  namedSpawnRate: 100
   isBoss: 0

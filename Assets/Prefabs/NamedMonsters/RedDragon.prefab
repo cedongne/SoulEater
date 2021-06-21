@@ -1952,6 +1952,8 @@ GameObject:
   - component: {fileID: 3934043740679376557}
   - component: {fileID: 3934043740679376562}
   - component: {fileID: 5575649844224287812}
+  - component: {fileID: 7956744801655684606}
+  - component: {fileID: 742238137018285134}
   m_Layer: 7
   m_Name: RedDragon
   m_TagString: Monster
@@ -2087,6 +2089,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isCasting: 0
+--- !u!114 &7956744801655684606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3934043741369160766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4721c735ecadd6542a2cacca4f3070a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monster: {fileID: 0}
+  skillList:
+  - {fileID: 66578115415636404, guid: 60b2cee93d3e5d3439421de4a5da6c08, type: 3}
+--- !u!114 &742238137018285134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3934043741369160766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 937912bde6d6c9948b5af291cd965a87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  circle: {fileID: 487328686662523773, guid: 8e7a7789c0df7e74488dc6539a47048e, type: 3}
+  skillRange: 15
+  castingTime: 0.5
 --- !u!1 &3934043741387680566
 GameObject:
   m_ObjectHideFlags: 0
