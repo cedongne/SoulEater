@@ -325,7 +325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb750ed02bd4d9547b59edbb776abd3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  portalObject: {fileID: 2954738695132080339, guid: c98be9ff8d0b99c4f8857faf470634cf, type: 3}
+  portalObject: {fileID: 100010, guid: c98be9ff8d0b99c4f8857faf470634cf, type: 3}
   yCorrect: 0.5
   frontCorrect: 2
   isBoss: 0
