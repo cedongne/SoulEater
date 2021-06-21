@@ -49,7 +49,6 @@ public class MeshGenerator : MonoBehaviour
         Mesh mesh = new Mesh();
         cave.mesh = mesh;
 
-
         mesh.vertices = vertices.ToArray();
         mesh.triangles = triangles.ToArray();
         mesh.RecalculateNormals();
@@ -74,8 +73,7 @@ public class MeshGenerator : MonoBehaviour
 
     public Vector3 getSpawnPos(int spawnDir)
     {
-        Vector3 pos = transform.position;
-        Debug.Log(wallVertices.Count);
+        Vector3 pos = new Vector3(0,0,0);
         for (int i = 1; i < wallVertices.Count; i++)
         {
             if (spawnDir == 0) //xMax(Right)
@@ -83,7 +81,7 @@ public class MeshGenerator : MonoBehaviour
                 if (wallVertices[i].x > pos.x)
                 {
                     pos = wallVertices[i];
-                    pos.x -= frontCorrect * 3;
+                    pos.x -= 5;
                     pos.y = 0;
                 }
             }
@@ -92,16 +90,16 @@ public class MeshGenerator : MonoBehaviour
                 if (wallVertices[i].x < pos.x)
                 {
                     pos = wallVertices[i];
-                    pos.x += frontCorrect * 3;
+                    pos.x += 5;
                     pos.y = 0;
                 }
             }
-            else if(spawnDir == 4) //zMin(Down)
+            else if(spawnDir == 3) //zMin(Down)
             {
                 if (wallVertices[i].z < pos.z)
                 {
                     pos = wallVertices[i];
-                    pos.z += frontCorrect * 3;
+                    pos.z += 5;
                     pos.y = 0;
                 }
             }
@@ -112,8 +110,8 @@ public class MeshGenerator : MonoBehaviour
     void CreatePortal(List<Vector3> wall)
     {
         int portalDir = Random.Range(0, 3);
-        Vector3 portalPos = this.transform.position;
-        
+        Vector3 portalPos = new Vector3(0, 0, 0);
+
         for (int i = 1; i < wall.Count; i++)
         {
             if (portalDir == 0) //xMax(Right)
@@ -121,7 +119,6 @@ public class MeshGenerator : MonoBehaviour
                 if (wall[i].x > portalPos.x)
                 {
                     portalPos = wall[i];
-                    nextSpawnDir = 1;
                 }
             }
             else if (portalDir == 1) //xMin(Left)
@@ -129,7 +126,6 @@ public class MeshGenerator : MonoBehaviour
                 if (wall[i].x < portalPos.x)
                 {
                     portalPos = wall[i];
-                    nextSpawnDir = 0;
                 }
             }
             else //zMax(Up)
@@ -137,18 +133,26 @@ public class MeshGenerator : MonoBehaviour
                 if (wall[i].z > portalPos.z)
                 {
                     portalPos = wall[i];
-                    nextSpawnDir = 4;
                 }
             }
         }
 
         GameObject instance;
         if (portalDir == 0)
+        {
             instance = Instantiate(portalObject, new Vector3(this.transform.position.x + portalPos.x - frontCorrect, yCorrect, this.transform.position.z + portalPos.z), Quaternion.Euler(0, 270, 0));
+            nextSpawnDir = 1;
+        }
         else if (portalDir == 1)
+        {
             instance = Instantiate(portalObject, new Vector3(this.transform.position.x + portalPos.x + frontCorrect, yCorrect, this.transform.position.z + portalPos.z), Quaternion.Euler(0, 90, 0));
+            nextSpawnDir = 0;
+        }
         else
+        {
             instance = Instantiate(portalObject, new Vector3(this.transform.position.x + portalPos.x, yCorrect, this.transform.position.z + portalPos.z - frontCorrect), Quaternion.Euler(0, 180, 0));
+            nextSpawnDir = 3;
+        }
         
         instance.transform.parent = this.transform;
     }

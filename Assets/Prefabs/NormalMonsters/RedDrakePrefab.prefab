@@ -494,7 +494,7 @@ MonoBehaviour:
   soul: {fileID: 6017883775139764797, guid: 97b225375d34b6a44923dc6a104ff158, type: 3}
   attackDist: 3.2
   moveDist: 16
-  wakeDist: 16
+  wakeDist: 24
   beforeAttackDelay: 0.6
   afterAttackDelay: 0.7
   moveSpeedClose: 4

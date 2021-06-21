@@ -125,8 +125,9 @@ public class PlayerController : MonoBehaviour
                 int mapNum = other.GetComponentInParent<MeshGenerator>().MapNum;
                 int spawnDir = other.GetComponentInParent<MeshGenerator>().nextSpawnDir;
 
-                MeshGenerator map = mapSpawner.transform.GetChild(mapNum + 1).GetComponent<MeshGenerator>();
-                transform.position = map.getSpawnPos(spawnDir);
+                GameObject map = mapSpawner.transform.GetChild(mapNum + 1).gameObject;
+                Debug.Log("Next Map: " + map.name);
+                transform.position = map.GetComponent<MeshGenerator>().getSpawnPos(spawnDir);
             }
             else if (other.gameObject.tag == "Soul")
             {
