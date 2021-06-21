@@ -23828,6 +23828,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 50
   size: 22
+  NumOfSkill: 0
 --- !u!135 &5496971914084411112
 SphereCollider:
   m_ObjectHideFlags: 0

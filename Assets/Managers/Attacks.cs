@@ -30,7 +30,8 @@ public class Attacks : MonoBehaviour
     public GameObject DrakeHitEffect;
 
     public Souls GruntSoul;
-    public GameObject GruntSlap;
+    public GameObject GruntRock;
+    public GameObject GruntExplosion;
 
     private void Awake()
     {
@@ -69,7 +70,6 @@ public class Attacks : MonoBehaviour
     }
     public void GreenCroco_PoisonGas()
     {
-        Debug.Log("Gas!");
         instance = Instantiate(GreenCrocoGas, transform.position, transform.rotation);
         Destroy(instance, GreenCrocoSoul.duration);
     }
@@ -82,8 +82,10 @@ public class Attacks : MonoBehaviour
     }
     public void Grunt_Slap()
     {
-        instance = Instantiate(GruntSlap, transform.position, transform.rotation);
-        Destroy(instance, GruntSoul.duration);
+        instance = Instantiate(GruntRock, transform.position, transform.rotation);
+        Rigidbody instanceRigid = instance.GetComponent<Rigidbody>();
+        instanceRigid.velocity = transform.forward * 20;
+        CurExplosion = GruntExplosion;
     }
 
     public void DamageUpdate()
