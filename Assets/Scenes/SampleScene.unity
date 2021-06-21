@@ -2553,6 +2553,11 @@ MonoBehaviour:
   HedgeSnailPad: {fileID: 7316371557629381249, guid: 808562596be265c49b963554f6d8aecb, type: 3}
   BlackCrocoSoul: {fileID: -2063871691035346046, guid: 8e5c58506540960429fd030fcaa33c7f, type: 3}
   BlackCrocoPassive: {fileID: 5088021619622233353, guid: 71e9a46e1a02d584ebef99c2a5ab2a97, type: 3}
+  MimicSoul: {fileID: 530524454188373294, guid: 65ecfba4f8741f244a134c6379c16cf1, type: 3}
+  MimicPassive: {fileID: 4489129150854023212, guid: 3518cd8518d095a4b9d9ef809ca1df77, type: 3}
+  GolemSoul: {fileID: 6476065118401872366, guid: 0263ca033c4af2542b8ab74bdf6bd93b, type: 3}
+  GolemPassive: {fileID: 6995222494815970018, guid: 9e240d94be9d6fb4c9e7a04f758c9fbc, type: 3}
+  bullet: {fileID: 7682462837729685782, guid: 902bb610cb55dd04e97e5b055ab0b635, type: 3}
 --- !u!1 &1978761112
 GameObject:
   m_ObjectHideFlags: 0

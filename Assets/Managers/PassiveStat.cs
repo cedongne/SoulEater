@@ -6,4 +6,5 @@ public class PassiveStat : MonoBehaviour
 {
     public float increaseDamage;
     public float increaseHP;
+    public float decreaseCooltimeRate;
 }
