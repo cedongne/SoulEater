@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7208744025746471841}
   - component: {fileID: 7208744025732316897}
   - component: {fileID: 7208744025732400961}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Spark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4755,7 +4755,7 @@ GameObject:
   - component: {fileID: 7208744025746471843}
   - component: {fileID: 7208744025732316899}
   - component: {fileID: 7208744025732400963}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Flash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9499,7 +9499,7 @@ GameObject:
   - component: {fileID: 7208744025746471845}
   - component: {fileID: 7208744025732316901}
   - component: {fileID: 7208744025732400965}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14243,7 +14243,7 @@ GameObject:
   - component: {fileID: 7208744025746471847}
   - component: {fileID: 7208744025732316903}
   - component: {fileID: 7208744025732400967}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18990,8 +18990,9 @@ GameObject:
   - component: {fileID: 1475062137567174238}
   - component: {fileID: -2647323565714767007}
   - component: {fileID: 738467317306035423}
-  - component: {fileID: 5496971914084411112}
-  m_Layer: 0
+  - component: {fileID: 5004934642818781882}
+  - component: {fileID: -7969693180279439180}
+  m_Layer: 2
   m_Name: Blizard
   m_TagString: SkillHitBox
   m_Icon: {fileID: 0}
@@ -23829,8 +23830,24 @@ MonoBehaviour:
   damage: 50
   size: 22
   NumOfSkill: 0
---- !u!135 &5496971914084411112
-SphereCollider:
+--- !u!54 &5004934642818781882
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7208744025746171787}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!136 &-7969693180279439180
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -23839,6 +23856,7 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 2
   m_Radius: 9
+  m_Height: 0
+  m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
