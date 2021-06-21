@@ -46,11 +46,15 @@ public class Attacks : MonoBehaviour
         Debug.Log(soul);
         if (soul == "Green Crocodile")
         {
-            GreenCroco_PoisonGas();
+            Invoke("GreenCroco_PoisonGas", curSoul.beforeDelay);
         }
         else if (soul == "Drake")
         {
-            Drake_FireBall();
+            Invoke("Drake_FireBall", curSoul.beforeDelay);
+        }
+        else if( soul == "Grunt")
+        {
+            Invoke("Grunt_Slap", curSoul.beforeDelay);
         }
     }
     IEnumerator Fire()

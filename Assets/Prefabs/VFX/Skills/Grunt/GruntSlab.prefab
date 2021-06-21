@@ -18681,7 +18681,7 @@ GameObject:
   - component: {fileID: 3957439258057434593}
   - component: {fileID: 3871406455311236547}
   m_Layer: 0
-  m_Name: CFX2_RockHit
+  m_Name: GruntSlab
   m_TagString: FxTemporaire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18696,7 +18696,7 @@ Transform:
   m_GameObject: {fileID: 3759511956910890739}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 3764757262899952459}
   - {fileID: 3756314748006514705}
@@ -23637,7 +23637,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19800002, guid: a76926d926901d747bfc11d64f5a87d3, type: 3}
       propertyPath: InitialModule.startSpeed.scalar
-      value: 2
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800002, guid: a76926d926901d747bfc11d64f5a87d3, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 19800002, guid: a76926d926901d747bfc11d64f5a87d3, type: 3}
       propertyPath: ColorModule.gradient.maxGradient.key1.b
@@ -23765,7 +23769,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19800006, guid: a76926d926901d747bfc11d64f5a87d3, type: 3}
       propertyPath: InitialModule.startSpeed.scalar
-      value: 2
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800006, guid: a76926d926901d747bfc11d64f5a87d3, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 19800006, guid: a76926d926901d747bfc11d64f5a87d3, type: 3}
       propertyPath: ColorModule.gradient.maxGradient.key0.b

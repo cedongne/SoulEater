@@ -1051,7 +1051,7 @@ MonoBehaviour:
   wakeDist: 0
   beforeAttackDelay: 0.4
   afterAttackDelay: 1.2
-  moveSpeedClose: 6
+  moveSpeedClose: 4
   moveSpeedFar: 2
 --- !u!114 &7835755066864933665
 MonoBehaviour:

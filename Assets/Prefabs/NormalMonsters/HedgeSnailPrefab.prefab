@@ -401,7 +401,7 @@ MonoBehaviour:
   wakeDist: 16
   beforeAttackDelay: 0.3
   afterAttackDelay: 0.8
-  moveSpeedClose: 6
+  moveSpeedClose: 4
   moveSpeedFar: 2
 --- !u!195 &8908060103877748731
 NavMeshAgent:
