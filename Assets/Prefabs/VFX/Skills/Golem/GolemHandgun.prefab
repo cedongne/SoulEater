@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7682462837729685782
+--- !u!1 &6995222494815970018
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,26 +8,27 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7682462837729685786}
-  - component: {fileID: 7682462837729685787}
-  - component: {fileID: 7682462837729685780}
-  - component: {fileID: 7682462837729685781}
-  - component: {fileID: 8667397672926057392}
-  - component: {fileID: 8628025456354461561}
+  - component: {fileID: 6995222494815970030}
+  - component: {fileID: 6995222494815970031}
+  - component: {fileID: 6995222494815970016}
+  - component: {fileID: 6995222494815970017}
+  - component: {fileID: 8341047724184535108}
+  - component: {fileID: 8950189047827829901}
+  - component: {fileID: 5928990643222406138}
   m_Layer: 0
-  m_Name: Bullet Handgun
+  m_Name: GolemHandgun
   m_TagString: PlayerAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7682462837729685786
+--- !u!4 &6995222494815970030
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7682462837729685782}
+  m_GameObject: {fileID: 6995222494815970018}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -35,14 +36,14 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!96 &7682462837729685787
+--- !u!96 &6995222494815970031
 TrailRenderer:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7682462837729685782}
+  m_GameObject: {fileID: 6995222494815970018}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -79,7 +80,7 @@ TrailRenderer:
   m_Time: 0.3
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1
+    widthMultiplier: 10
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -142,13 +143,13 @@ TrailRenderer:
   m_MinVertexDistance: 0
   m_Autodestruct: 0
   m_Emitting: 1
---- !u!54 &7682462837729685780
+--- !u!54 &6995222494815970016
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7682462837729685782}
+  m_GameObject: {fileID: 6995222494815970018}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -158,26 +159,26 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!135 &7682462837729685781
+--- !u!135 &6995222494815970017
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7682462837729685782}
+  m_GameObject: {fileID: 6995222494815970018}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.75
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8667397672926057392
+--- !u!114 &8341047724184535108
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7682462837729685782}
+  m_GameObject: {fileID: 6995222494815970018}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0b65289567b9a014a85f277b5bf0aa16, type: 3}
@@ -185,13 +186,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   hitEffect: {fileID: 447380229725261083, guid: 8c958544880c872438102f94f34dd222, type: 3}
---- !u!114 &8628025456354461561
+--- !u!114 &8950189047827829901
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7682462837729685782}
+  m_GameObject: {fileID: 6995222494815970018}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba0d05ad44b059840abbde93913f4ccb, type: 3}
@@ -201,3 +202,18 @@ MonoBehaviour:
   damageConst: 0
   duration: 0
   slowMoveSpeed: 0
+--- !u!114 &5928990643222406138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6995222494815970018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9732cc22c90c867418accf9d1b9dbf06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  increaseDamage: 10
+  increaseHP: 0
+  decreaseCooltimeRate: 0

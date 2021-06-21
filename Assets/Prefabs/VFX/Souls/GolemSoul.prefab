@@ -19278,7 +19278,7 @@ GameObject:
   - component: {fileID: 9001140149990692692}
   - component: {fileID: 6476065118401872366}
   m_Layer: 0
-  m_Name: GolemSoul 1
+  m_Name: GolemSoul
   m_TagString: Soul
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24111,11 +24111,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5406b333b00888a49b82483ad98c4000, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  monsterName: Fire Dragon
-  damage: 10
-  coolTime: 10
-  duration: 6
+  type: 3
+  monsterName: Golem
+  damage: 0
+  coolTime: 0
+  duration: 0
   beforeDelay: 0
   afterDelay: 0
-  skillIcon: {fileID: 21300000, guid: a7caaabeef403c741a82ca65ebacff05, type: 3}
+  skillIcon: {fileID: 21300000, guid: b9c4f8c5e0ceb364889cc36149b1b8a1, type: 3}

@@ -76,8 +76,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 2
+  damageConst: 0
   duration: 0
-  slowMoveSpeed: 0
+  slowMoveSpeed: 1
 --- !u!1001 &5929070037505557957
 PrefabInstance:
   m_ObjectHideFlags: 0
