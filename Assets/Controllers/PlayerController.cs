@@ -67,6 +67,7 @@ public class PlayerController : MonoBehaviour
         stat.coolDown = 0;
 
         attacks.DamageUpdate();
+        transform.Translate(new Vector3(0, 0, -15));
     }
 
     // Update is called once per frame

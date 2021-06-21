@@ -75,6 +75,7 @@ public class MeshGenerator : MonoBehaviour
     public Vector3 getSpawnPos(int spawnDir)
     {
         Vector3 pos = transform.position;
+        Debug.Log(wallVertices.Count);
         for (int i = 1; i < wallVertices.Count; i++)
         {
             if (spawnDir == 0) //xMax(Right)
@@ -82,7 +83,7 @@ public class MeshGenerator : MonoBehaviour
                 if (wallVertices[i].x > pos.x)
                 {
                     pos = wallVertices[i];
-                    pos.x -= frontCorrect;
+                    pos.x -= frontCorrect * 3;
                     pos.y = 0;
                 }
             }
@@ -91,16 +92,16 @@ public class MeshGenerator : MonoBehaviour
                 if (wallVertices[i].x < pos.x)
                 {
                     pos = wallVertices[i];
-                    pos.x += frontCorrect;
+                    pos.x += frontCorrect * 3;
                     pos.y = 0;
                 }
             }
-            else //zMin(Down)
+            else if(spawnDir == 4) //zMin(Down)
             {
                 if (wallVertices[i].z < pos.z)
                 {
                     pos = wallVertices[i];
-                    pos.z += frontCorrect;
+                    pos.z += frontCorrect * 3;
                     pos.y = 0;
                 }
             }

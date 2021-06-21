@@ -106,7 +106,7 @@ MonoBehaviour:
   Plane: {fileID: 7597968095716746341}
   seed: 
   useRandomSeed: 1
-  randomFillPercent: 38
+  randomFillPercent: 35
 --- !u!114 &7597968095417913945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,6 +126,8 @@ MonoBehaviour:
   walls: {fileID: 7597968096617534275}
   cave: {fileID: 7597968096118234783}
   is2D: 0
+  nextSpawnDir: 0
+  MapNum: 0
 --- !u!1 &7597968095716746341
 GameObject:
   m_ObjectHideFlags: 0
