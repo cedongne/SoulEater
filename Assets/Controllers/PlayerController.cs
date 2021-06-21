@@ -23,6 +23,8 @@ public class PlayerController : MonoBehaviour
     bool s2Down; // Interaction
     bool s3Down; // Interaction
 
+    bool isDead = false;
+
     bool isAction;
 
     bool isAttackReady = true;
@@ -70,13 +72,16 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        isAction = isAttack || isDodge;
-        GetInput();
-        Move();
-        Turn();
-        Dodge();
-        Attack();
-        Skill();
+        if (!isDead)
+        {
+            isAction = isAttack || isDodge;
+            GetInput();
+            Move();
+            Turn();
+            Dodge();
+            Attack();
+            Skill();
+        }
     }
     void GetInput()
     {
@@ -94,29 +99,38 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "HitBox")
+        if (!isDead)
         {
-            stat.hp -= other.GetComponentInParent<Stat>().damage;
-            Debug.Log("Player Hit : " + stat.hp);
-        }
-        else if (other.gameObject.tag == "Portal")
-        {
-            GameObject mapSpawner = other.transform.parent.GetComponentInParent<MapSpawner>().gameObject;
-            int mapNum = other.GetComponentInParent<MeshGenerator>().MapNum;
-            int spawnDir = other.GetComponentInParent<MeshGenerator>().nextSpawnDir;
+            if (other.gameObject.tag == "HitBox")
+            {
+                stat.hp -= other.GetComponentInParent<Stat>().damage;
+                Debug.Log("Player Hit : " + stat.hp);
+            }
+            else if (other.gameObject.tag == "SkillHitBox")
+            {
+                stat.hp -= other.GetComponent<SkillStat>().damage;
+                Debug.Log("Player Hit : " + stat.hp);
+            }
+            else if (other.gameObject.tag == "Portal")
+            {
+                GameObject mapSpawner = other.transform.parent.GetComponentInParent<MapSpawner>().gameObject;
+                int mapNum = other.GetComponentInParent<MeshGenerator>().MapNum;
+                int spawnDir = other.GetComponentInParent<MeshGenerator>().nextSpawnDir;
 
-            MeshGenerator map = mapSpawner.transform.GetChild(mapNum + 1).GetComponent<MeshGenerator>();
-            transform.position = map.getSpawnPos(spawnDir);
-        }
-        else if(other.gameObject.tag == "SkillHitBox")
-        {
-            stat.hp -= other.GetComponent<SkillStat>().damage;
-            Debug.Log("Player Hit : " + stat.hp);
-        }
-        else if(other.gameObject.tag == "Soul")
-        {
-            // Collider에 들어오는 순서대로 Queue에 넣음
-            nearItemList.Add(other.gameObject);
+                MeshGenerator map = mapSpawner.transform.GetChild(mapNum + 1).GetComponent<MeshGenerator>();
+                transform.position = map.getSpawnPos(spawnDir);
+            }
+            else if (other.gameObject.tag == "Soul")
+            {
+                // Collider에 들어오는 순서대로 Queue에 넣음
+                nearItemList.Add(other.gameObject);
+            }
+            if (stat.hp <= 0)
+            {
+                isDead = true;
+                anim.SetTrigger("Die");
+                gameObject.tag = "Dead";
+            }
         }
     }
 

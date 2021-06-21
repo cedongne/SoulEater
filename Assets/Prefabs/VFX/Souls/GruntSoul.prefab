@@ -4850,7 +4850,7 @@ MonoBehaviour:
   damage: 10
   coolTime: 10
   duration: 6
-  beforeDelay: 0.7
+  beforeDelay: 0.5
   afterDelay: 1
   skillIcon: {fileID: 21300000, guid: f63c24dc2deb48a44bbc608fba623693, type: 3}
 --- !u!1 &2687737986211436460

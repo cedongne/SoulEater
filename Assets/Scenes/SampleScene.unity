@@ -1557,7 +1557,7 @@ MonoBehaviour:
   maps:
   - {fileID: 22930316909786186, guid: 901f76fcc12f6e642a0c04a901f1b97c, type: 3}
   - {fileID: 7597968095417913944, guid: 262cfc6b7ae8a3d499b9f2d79a30a10f, type: 3}
-  mapCount: 1
+  mapCount: 0
   bossMap: {fileID: 4986809783817961501, guid: 5ddb96816e47cd04d9087a6aad357630, type: 3}
 --- !u!4 &1128679821
 Transform:
@@ -2110,7 +2110,8 @@ MonoBehaviour:
   DrakeExplosion: {fileID: 1554943434851217700, guid: f4a63af23736f1247af4229bc1cc5e41, type: 3}
   DrakeHitEffect: {fileID: 2493155673997215378, guid: 03b348c959d83124db00fb96ce4aca27, type: 3}
   GruntSoul: {fileID: 9133846073454139179, guid: 27682960fbca17943a831d139c4c1908, type: 3}
-  GruntSlap: {fileID: 3759511956910890739, guid: cf4936ee19b66bb4aa1c46a00c6635b1, type: 3}
+  GruntRock: {fileID: 1528926440885004153, guid: cff306af7dfe4ff4884204a7f715dfc7, type: 3}
+  GruntExplosion: {fileID: 3759511956910890739, guid: cf4936ee19b66bb4aa1c46a00c6635b1, type: 3}
 --- !u!1 &1714891882
 GameObject:
   m_ObjectHideFlags: 0

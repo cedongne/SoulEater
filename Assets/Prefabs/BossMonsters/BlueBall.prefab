@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3393307936824058352}
   - component: {fileID: 3393307936804660400}
   - component: {fileID: 3393307936804625680}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4827,7 +4827,7 @@ GameObject:
   - component: {fileID: 3393307936824058354}
   - component: {fileID: 3393307936804660402}
   - component: {fileID: 3393307936804625682}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Spark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9643,7 +9643,7 @@ GameObject:
   - component: {fileID: 3393307936824058356}
   - component: {fileID: 3393307936804660404}
   - component: {fileID: 3393307936804625684}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Ring
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14441,7 +14441,7 @@ GameObject:
   - component: {fileID: 3393307936824058358}
   - component: {fileID: 3393307936804660406}
   - component: {fileID: 3393307936804625686}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Core
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19261,7 +19261,7 @@ GameObject:
   - component: {fileID: 3393307936785957966}
   - component: {fileID: 3393307936785957967}
   - component: {fileID: -8644268817320722035}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BlueBall
   m_TagString: SkillHitBox
   m_Icon: {fileID: 0}

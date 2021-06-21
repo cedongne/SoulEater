@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3389654168293669691}
   - component: {fileID: 1737319409685703470}
   - component: {fileID: 1862292077757494140}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Collider
   m_TagString: SkillHitBox
   m_Icon: {fileID: 0}
@@ -58,6 +58,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 30
+  size: 0
+  NumOfSkill: 0
 --- !u!1 &6971669248359389792
 GameObject:
   m_ObjectHideFlags: 0
@@ -69,7 +71,7 @@ GameObject:
   - component: {fileID: 6971669248359679552}
   - component: {fileID: 6971669248340280064}
   - component: {fileID: 6971669248340392608}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4885,7 +4887,7 @@ GameObject:
   - component: {fileID: 6971669248359679554}
   - component: {fileID: 6971669248340280066}
   - component: {fileID: 6971669248340392610}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Spark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9701,7 +9703,7 @@ GameObject:
   - component: {fileID: 6971669248359679556}
   - component: {fileID: 6971669248340280068}
   - component: {fileID: 6971669248340392612}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Core
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14520,7 +14522,7 @@ GameObject:
   - component: {fileID: 9138627819903627058}
   - component: {fileID: 9033655481628503985}
   - component: {fileID: 2289282581850154256}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: IceBall
   m_TagString: SkillHitBox
   m_Icon: {fileID: 0}
@@ -19360,7 +19362,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isProjectile: 1
   isRandomSpawn: 0
-  size: 1
 --- !u!1 &6971669248359389800
 GameObject:
   m_ObjectHideFlags: 0
@@ -19372,7 +19373,7 @@ GameObject:
   - component: {fileID: 6971669248359679560}
   - component: {fileID: 6971669248340280070}
   - component: {fileID: 6971669248340392614}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Core2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
