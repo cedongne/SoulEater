@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -31,7 +32,6 @@ public class PlayerController : MonoBehaviour
     bool isDodgeReady = true;
     bool isDodge;
     bool isAttack = false;
-
 
     Vector3 moveVec;
     Vector3 dodgeVec;
@@ -81,6 +81,13 @@ public class PlayerController : MonoBehaviour
             Dodge();
             Attack();
             Skill();
+        }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                SceneManager.LoadScene("SampleScene");
+            }
         }
     }
     void GetInput()

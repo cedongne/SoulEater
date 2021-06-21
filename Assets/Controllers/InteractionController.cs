@@ -20,7 +20,9 @@ public class InteractionController : MonoBehaviour
     Text text;
     public Text skillGetText;
 
-    Stat stat;
+    public Stat stat;
+    public GameObject players;
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -87,7 +89,4 @@ public class InteractionController : MonoBehaviour
         }
     }
 
-    void disableAlreadyText()
-    {
-    }
 }
