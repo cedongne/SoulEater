@@ -12,20 +12,20 @@ public class MonsterSkill : MonoBehaviour
     int idx;
     Vector3 sSkillPos;
     Vector3[] mSkillPos;
+    int NumOfSkill;
 
     GameObject instance;
 
     public void Awake()
     {
         circle = GetComponent<MonsterSkillController>().circle;
-        mSkillPos = new Vector3[10];
         idx = Random.Range(0, skillList.Length);
     }
     public void Use(Vector3 playerPos)
     {
         if (skillList[idx].GetComponent<skillFlag>().isRandomSpawn)
         {
-            for(int i = 0; i < 10; i++)
+            for(int i = 0; i < NumOfSkill; i++)
             {
                 skillUse = Instantiate(skillList[idx], new Vector3(mSkillPos[i].x, 
                     mSkillPos[i].y + 2.0f, mSkillPos[i].z),
@@ -53,13 +53,15 @@ public class MonsterSkill : MonoBehaviour
     }
     public void setMultiSkillPos()
     {
-        for(int i = 0; i < 10; i++)
+        NumOfSkill = skillList[idx].GetComponent<SkillStat>().NumOfSkill;
+        mSkillPos = new Vector3[NumOfSkill];
+        for (int i = 0; i < NumOfSkill; i++)
         {
-            int xRandom = Random.Range(0, 30);
-            int zRandom = Random.Range(0, 30);
+            int xRandom = Random.Range(0, NumOfSkill);
+            int zRandom = Random.Range(0, NumOfSkill);
             Vector3 pos = transform.position;
-            pos.x += xRandom - 15;
-            pos.z += zRandom - 15;
+            pos.x += xRandom - (float)NumOfSkill / 2;
+            pos.z += zRandom - (float)NumOfSkill / 2;
             mSkillPos[i] = pos;
         }
     }
@@ -74,7 +76,7 @@ public class MonsterSkill : MonoBehaviour
         if (skillList[idx].GetComponent<skillFlag>().isRandomSpawn)
         {
             setMultiSkillPos();
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < NumOfSkill; i++)
             {
                 instance = Instantiate(circle,
                 mSkillPos[i], Quaternion.identity);

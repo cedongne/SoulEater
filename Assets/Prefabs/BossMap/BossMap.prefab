@@ -194,8 +194,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawner: {fileID: 4986809783743066363}
-  width: 50
-  height: 50
+  width: 40
+  height: 40
   Plane: {fileID: 4986809783017928224}
   seed: 
   useRandomSeed: 1

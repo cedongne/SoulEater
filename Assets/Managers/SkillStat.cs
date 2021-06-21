@@ -6,4 +6,5 @@ public class SkillStat : MonoBehaviour
 {
     public int damage;
     public float size;
+    public int NumOfSkill;
 }
