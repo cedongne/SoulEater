@@ -79,7 +79,13 @@ public class Attacks : MonoBehaviour
     public void GreenCroco_PoisonGas()
     {
         instance = Instantiate(GreenCrocoGas, transform.position, transform.rotation);
+        Invoke("GasOff", GreenCrocoSoul.duration - 0.1f);
         Destroy(instance, GreenCrocoSoul.duration);
+    }
+    void GasOff()
+    {
+        Debug.Log("SET");
+        instance.GetComponent<SphereCollider>().center = new Vector3(0, 0, 300f);
     }
     public void Drake_FireBall()
     {
