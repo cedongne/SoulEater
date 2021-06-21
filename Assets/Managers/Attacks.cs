@@ -39,6 +39,7 @@ public class Attacks : MonoBehaviour
 
     private void Awake()
     {
+        bullet.GetComponent<Damage>().damage = 10;
     }
 
     public void Attack()

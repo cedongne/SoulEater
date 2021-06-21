@@ -110,7 +110,6 @@ public class MonsterController : MonoBehaviour
                 {
                     if (dist <= attackDist)
                     {
-                        nvAgent.isStopped = true;
                         animator.SetTrigger("Attack");
                         isAttack = true;
                         Invoke("Attack", beforeAttackDelay);
@@ -151,10 +150,7 @@ public class MonsterController : MonoBehaviour
 
     void Damaged()
     {
-        foreach (MeshRenderer mesh in meshs)
-        {
-            mesh.material.color = Color.red;
-        }
+        isDamage = false;
     }
 
     void ColliderEnable()
@@ -203,7 +199,8 @@ public class MonsterController : MonoBehaviour
                 slider.value = (float)stat.hp / (float)stat.maxHp;
                 if (stat.hp > 0)
                 {
-                    Damaged();
+                    isDamage = true;
+                    Invoke("Damaged", 0.4f);
                     animator.SetTrigger("Hit");
                 }
             }

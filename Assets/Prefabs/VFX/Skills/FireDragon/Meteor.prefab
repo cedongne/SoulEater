@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5444154423199113712}
   - component: {fileID: 5444154424686126248}
   - component: {fileID: 5444154423211919227}
-  m_Layer: 8
+  m_Layer: 2
   m_Name: Meteor
   m_TagString: PlayerAttack
   m_Icon: {fileID: 0}
@@ -127,6 +127,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 20
+  damageConst: 0
+  duration: 0
   slowMoveSpeed: 0
 --- !u!114 &5444154423211919227
 MonoBehaviour:
