@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 1018786519660169877}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 7032667796095595021}
   - {fileID: 5152065716058341908}
@@ -4845,15 +4845,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5406b333b00888a49b82483ad98c4000, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: HedgeSnail
+  type: 0
+  monsterName: HedgeSnail
   damage: 10
   coolTime: 10
   duration: 6
-  type: 0
-  skillEffect: {fileID: 567312127451810781, guid: f6c1c83b03144174e940ddce277c34da, type: 3}
+  beforeDelay: 0
+  afterDelay: 0
   skillIcon: {fileID: 21300000, guid: f63c24dc2deb48a44bbc608fba623693, type: 3}
-  player: {fileID: 0}
-  order: 0
 --- !u!1 &3614268658720981556
 GameObject:
   m_ObjectHideFlags: 0

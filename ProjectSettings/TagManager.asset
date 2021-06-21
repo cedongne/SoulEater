@@ -4,23 +4,14 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - PlayerAttack
-  - Monster
-<<<<<<< HEAD
-  - Soul
-  - Portal
-  - HitBox
-  - Dead
-  - SkillHitBox
-=======
-  - Portal
-  - Soul
-  - HitBox
-  - Dead
-  - FxTemporaire
-  - Wall
   - PlayerDotSkill
->>>>>>> 6dc153b828e8045dcd8bcaa0856ea2936d1f30f6
+  - PlayerAttack
+  - Soul
+  - Wall
+  - Monster
+  - Portal
+  - HitBox
+  - Dead
   layers:
   - Default
   - TransparentFX

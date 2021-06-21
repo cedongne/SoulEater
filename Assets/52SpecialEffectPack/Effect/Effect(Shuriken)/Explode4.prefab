@@ -20334,9 +20334,9 @@ ParticleSystem:
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 0.25882354}
-        key1: {r: 0.24313726, g: 0.7647059, b: 0.9764706, a: 0.45882353}
-        key2: {r: 0.12941177, g: 0.39607844, b: 0.92156863, a: 1}
-        key3: {r: 0.007843138, g: 0.61960787, b: 0.8666667, a: 0.2901961}
+        key1: {r: 0.9410476, g: 0.9764706, b: 0.24313723, a: 0.45882353}
+        key2: {r: 0.92156863, g: 0.63383317, b: 0.12941174, a: 1}
+        key3: {r: 0.8666667, g: 0.7751035, b: 0.007843137, a: 0.2901961}
         key4: {r: 1, g: 1, b: 1, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
@@ -24724,7 +24724,7 @@ ParticleSystem:
           m_PostInfinity: 2
           m_RotationOrder: 4
   EmissionModule:
-    enabled: 1
+    enabled: 0
     serializedVersion: 4
     rateOverTime:
       serializedVersion: 2

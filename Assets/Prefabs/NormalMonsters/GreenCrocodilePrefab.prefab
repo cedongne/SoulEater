@@ -948,6 +948,7 @@ GameObject:
   - component: {fileID: 7835755066864933679}
   - component: {fileID: 7835755066864933675}
   - component: {fileID: 7835755066864933665}
+  - component: {fileID: 4862059891390919089}
   m_Layer: 2
   m_Name: GreenCrocodilePrefab
   m_TagString: Monster
@@ -1016,22 +1017,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!54 &7835755066864933678
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7835755067436512597}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0
 --- !u!135 &7835755066864933679
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1089,6 +1074,19 @@ MonoBehaviour:
   coolDown: 0
   skill: []
   skillNum: 0
+--- !u!114 &4862059891390919089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7835755067436512597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a4bab87ff0ef294c835e9c9db645633, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCasting: 0
 --- !u!1 &7835755067436512599
 GameObject:
   m_ObjectHideFlags: 0

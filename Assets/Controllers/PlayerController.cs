@@ -230,6 +230,7 @@ public class PlayerController : MonoBehaviour
                 isAttack = true;
                 Invoke("AttackOut", stat.skill[0].afterDelay);
             }
+            Debug.Log("Skill activation");
             attacks.curSoul = stat.skill[0];
             attacks.Use(stat.skill[0].name);
         }

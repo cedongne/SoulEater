@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
 
 public class MonsterController : MonoBehaviour
 {
+    System.Diagnostics.Stopwatch stopwatch;
+
     Stat stat;
     public enum CurrentState { idle, trace, attack, dead };
     public CurrentState curState = CurrentState.idle;
@@ -60,6 +61,8 @@ public class MonsterController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        stopwatch = new System.Diagnostics.Stopwatch();
+
         originalMoveSpeed = nvAgent.speed;
 
         nvAgent.enabled = true;
@@ -171,10 +174,9 @@ public class MonsterController : MonoBehaviour
             if (other.gameObject.tag == "PlayerDotSkill")
             {
                 other.gameObject.tag = "PlayerAttack";
-                for(int count = 0; count < 6; count++)
+                while(stopwatch.ElapsedMilliseconds < 6000)
                 {
-                    InvokeRepeating("ColliderEnable", 0f, 1f);
-                    InvokeRepeating("ColliderDisable", 0.1f, 1f);
+
                 }
             }
             else if (other.gameObject.tag == "PlayerAttack")
