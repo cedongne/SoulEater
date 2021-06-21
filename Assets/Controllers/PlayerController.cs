@@ -216,9 +216,9 @@ public class PlayerController : MonoBehaviour
 
     void Skill()
     {
-
         if (s1Down && !isAction)
         {
+            Debug.Log("Skill activation");
             if (stat.skill[0].type != Souls.Type.PASSIVE)
             {
                 if (stat.skill[0].type == Souls.Type.PROJECTILE)
@@ -230,9 +230,8 @@ public class PlayerController : MonoBehaviour
                 isAttack = true;
                 Invoke("AttackOut", stat.skill[0].afterDelay);
             }
-            Debug.Log("Skill activation");
             attacks.curSoul = stat.skill[0];
-            attacks.Use(stat.skill[0].name);
+            attacks.Use(stat.skill[0].monsterName);
         }
         else if (s2Down && !isAction)
         {
@@ -248,7 +247,7 @@ public class PlayerController : MonoBehaviour
                 Invoke("AttackOut", stat.skill[1].afterDelay);
             }
             attacks.curSoul = stat.skill[1];
-            attacks.Use(stat.skill[1].name);
+            attacks.Use(stat.skill[1].monsterName);
         }
 
         else if (s3Down && !isAction)
@@ -265,7 +264,7 @@ public class PlayerController : MonoBehaviour
                 Invoke("AttackOut", stat.skill[2].afterDelay);
             }
             attacks.curSoul = stat.skill[2];
-            attacks.Use(stat.skill[2].name);
+            attacks.Use(stat.skill[2].monsterName);
         }
 
     }

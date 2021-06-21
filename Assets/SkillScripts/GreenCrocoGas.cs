@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class GreenCrocoGas : MonoBehaviour
 {
-    SphereCollider collider;
+    SphereCollider SkillCollider;
     private void Start()
     {
-        collider = GetComponent<SphereCollider>();
-        collider.enabled = false;
-        collider.enabled = true;
+        SkillCollider = GetComponent<SphereCollider>();
+        SkillCollider.enabled = false;
+        SkillCollider.enabled = true;
     }
 }
