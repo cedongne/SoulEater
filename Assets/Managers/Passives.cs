@@ -24,6 +24,7 @@ public class Passives : MonoBehaviour
     public void Awake()
     {
         stat = GetComponentInParent<Stat>();
+        bullet.GetComponent<Damage>().damage = 10;
     }
 
     public void turnOnPassive(string soul)
@@ -112,7 +113,7 @@ public class Passives : MonoBehaviour
 
     public void HedgeSnail_PadOff()
     {
-        Destroy(GameObject.Find("HedgeSnailPad1(Clone)").gameObject);
+        Destroy(GameObject.Find("HedgeSnailPad 1(Clone)").gameObject);
     }
     public void BlackCrocoPassiveOff()
     {

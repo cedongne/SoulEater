@@ -36,6 +36,13 @@ public class PlayerController : MonoBehaviour
     bool isDodgeReady = true;
     bool isDodge;
     bool isAttack = false;
+    bool isSkill1Ready = true;
+    bool isSkill2Ready = true;
+    bool isSkill3Ready = true;
+
+    float skill1Time;
+    float skill2Time;
+    float skill3Time;
 
     Vector3 moveVec;
     Vector3 dodgeVec;
@@ -71,6 +78,10 @@ public class PlayerController : MonoBehaviour
         stat.attackSpeed = 2;
         stat.criticalChance = 0;
         stat.coolDown = 0;
+
+        skill1Time = 10;
+        skill2Time = 10;
+        skill3Time = 10;
 
         attacks.DamageUpdate();
         transform.Translate(new Vector3(0, 0, -15));
@@ -258,57 +269,78 @@ public class PlayerController : MonoBehaviour
 
     void Skill()
     {
-        if (s1Down && !isAction)
+        skill1Time += Time.deltaTime;
+        skill2Time += Time.deltaTime;
+        skill3Time += Time.deltaTime;
+        if (stat.skill[0] != null)
         {
-            Debug.Log("Skill activation");
-            if (stat.skill[0].type != Souls.Type.PASSIVE)
+            isSkill1Ready = skill1Time >= stat.skill[0].coolTime;
+
+            if (s1Down && !isAction && isSkill1Ready)
             {
-                if (stat.skill[0].type == Souls.Type.PROJECTILE)
-                    anim.SetTrigger("doShot");
-                else if (stat.skill[0].type == Souls.Type.SWING)
-                    anim.SetTrigger("doSwing");
-                LookMouseCursor();
-                AttackDelay = stat.skill[0].beforeDelay;
-                isAttack = true;
-                Invoke("AttackOut", stat.skill[0].afterDelay);
+                if (stat.skill[0].type != Souls.Type.PASSIVE)
+                {
+                    if (s1Down)
+                    {
+                        Debug.Log("KEY");
+                    }
+                    if (stat.skill[0].type == Souls.Type.PROJECTILE)
+                        anim.SetTrigger("doShot");
+                    else if (stat.skill[0].type == Souls.Type.SWING)
+                        anim.SetTrigger("doSwing");
+                    LookMouseCursor();
+                    AttackDelay = stat.skill[0].beforeDelay;
+                    isAttack = true;
+                    Invoke("AttackOut", stat.skill[0].afterDelay);
+                }
+                attacks.curSoul = stat.skill[0];
+                attacks.Use(stat.skill[0].monsterName);
+                skill1Time = 0;
             }
-            attacks.curSoul = stat.skill[0];
-            attacks.Use(stat.skill[0].monsterName);
         }
-        else if (s2Down && !isAction)
+        if (stat.skill[1] != null)
         {
-            if (stat.skill[1].type != Souls.Type.PASSIVE)
+            isSkill2Ready = skill2Time >= stat.skill[1].coolTime;
+            if (s2Down && !isAction && isSkill2Ready)
             {
-                if (stat.skill[1].type == Souls.Type.PROJECTILE)
-                    anim.SetTrigger("doShot");
-                else if (stat.skill[1].type == Souls.Type.SWING)
-                    anim.SetTrigger("doSwing");
-                LookMouseCursor();
-                AttackDelay = stat.skill[1].beforeDelay;
-                isAttack = true;
-                Invoke("AttackOut", stat.skill[1].afterDelay);
+                if (stat.skill[1].type != Souls.Type.PASSIVE)
+                {
+                    if (stat.skill[1].type == Souls.Type.PROJECTILE)
+                        anim.SetTrigger("doShot");
+                    else if (stat.skill[1].type == Souls.Type.SWING)
+                        anim.SetTrigger("doSwing");
+                    LookMouseCursor();
+                    AttackDelay = stat.skill[1].beforeDelay;
+                    isAttack = true;
+                    Invoke("AttackOut", stat.skill[1].afterDelay);
+                }
+                attacks.curSoul = stat.skill[1];
+                attacks.Use(stat.skill[1].monsterName);
+                skill2Time = 0;
             }
-            attacks.curSoul = stat.skill[1];
-            attacks.Use(stat.skill[1].monsterName);
         }
 
-        else if (s3Down && !isAction)
+        if (stat.skill[2] != null)
         {
-            if (stat.skill[2].type != Souls.Type.PASSIVE)
+            isSkill3Ready = skill3Time >= stat.skill[2].coolTime;
+            if (s3Down && !isAction && isSkill3Ready)
             {
-                if (stat.skill[2].type == Souls.Type.PROJECTILE)
-                    anim.SetTrigger("doShot");
-                else if (stat.skill[2].type == Souls.Type.SWING)
-                    anim.SetTrigger("doSwing");
-                LookMouseCursor();
-                AttackDelay = stat.skill[2].beforeDelay;
-                isAttack = true;
-                Invoke("AttackOut", stat.skill[2].afterDelay);
+                if (stat.skill[2].type != Souls.Type.PASSIVE)
+                {
+                    if (stat.skill[2].type == Souls.Type.PROJECTILE)
+                        anim.SetTrigger("doShot");
+                    else if (stat.skill[2].type == Souls.Type.SWING)
+                        anim.SetTrigger("doSwing");
+                    LookMouseCursor();
+                    AttackDelay = stat.skill[2].beforeDelay;
+                    isAttack = true;
+                    Invoke("AttackOut", stat.skill[2].afterDelay);
+                }
+                attacks.curSoul = stat.skill[2];
+                attacks.Use(stat.skill[2].monsterName);
+                skill3Time = 0;
             }
-            attacks.curSoul = stat.skill[2];
-            attacks.Use(stat.skill[2].monsterName);
         }
-
     }
     void LookMouseCursor()
     {

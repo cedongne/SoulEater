@@ -569,7 +569,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHp: 20
-  hp: 500
+  hp: 400
   damage: 30
   attackSpeed: 1.2
   moveSpeed: 6
@@ -577,6 +577,7 @@ MonoBehaviour:
   coolDown: 0
   skill: []
   skillNum: 0
+  isSkillGetting: 0
 --- !u!195 &1465489911437837632
 NavMeshAgent:
   m_ObjectHideFlags: 0

@@ -12,7 +12,7 @@ public class GruntRockThrow : MonoBehaviour
         {
             GameObject instance = Instantiate(Explosion, gameObject.transform.position, gameObject.transform.rotation);
             Destroy(gameObject);
-            Destroy(instance, 1f);
+            Destroy(instance, 0.3f);
         }
     }
 }

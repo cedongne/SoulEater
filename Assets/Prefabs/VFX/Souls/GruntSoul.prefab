@@ -4848,10 +4848,10 @@ MonoBehaviour:
   type: 2
   monsterName: Grunt
   damage: 10
-  coolTime: 10
-  duration: 6
+  coolTime: 8
+  duration: 0
   beforeDelay: 0.5
-  afterDelay: 0.5
+  afterDelay: 1
   skillIcon: {fileID: 21300000, guid: 3d17f916438f6ca45a468e76dc32876d, type: 3}
 --- !u!1 &2687737986211436460
 GameObject:

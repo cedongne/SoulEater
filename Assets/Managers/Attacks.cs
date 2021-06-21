@@ -84,7 +84,6 @@ public class Attacks : MonoBehaviour
     }
     void GasOff()
     {
-        Debug.Log("SET");
         instance.GetComponent<SphereCollider>().center = new Vector3(0, 0, 300f);
     }
     public void Drake_FireBall()

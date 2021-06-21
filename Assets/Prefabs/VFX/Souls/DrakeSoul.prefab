@@ -4848,7 +4848,7 @@ MonoBehaviour:
   type: 1
   monsterName: Drake
   damage: 10
-  coolTime: 0
+  coolTime: 4
   duration: 0
   beforeDelay: 0
   afterDelay: 0

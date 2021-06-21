@@ -154,14 +154,6 @@ public class MonsterController : MonoBehaviour
         isDamage = false;
     }
 
-    void ColliderEnable()
-    {
-        monsterCollider.enabled = true;
-    }
-    void ColliderDisable()
-    {
-        monsterCollider.enabled = false;
-    }
     void Attack()
     {
         hitBox.SetActive(true);
@@ -200,7 +192,8 @@ public class MonsterController : MonoBehaviour
                 slider.value = (float)stat.hp / (float)stat.maxHp;
                 if (stat.hp > 0)
                 {
-                    Damaged();
+                    isDamage = true;
+                    Invoke("Damaged", 0.5f);
                     animator.SetTrigger("Hit");
                 }
             }

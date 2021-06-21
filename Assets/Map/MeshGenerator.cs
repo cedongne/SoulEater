@@ -78,7 +78,7 @@ public class MeshGenerator : MonoBehaviour
         {
             if (spawnDir == 0) //xMax(Right)
             {
-                if (wallVertices[i].x > pos.x)
+                if (wallVertices[i].x >= pos.x)
                 {
                     pos = wallVertices[i];
                     pos.y = 0;
@@ -86,7 +86,7 @@ public class MeshGenerator : MonoBehaviour
             }
             else if (spawnDir == 1) //xMin(Left)
             {
-                if (wallVertices[i].x < pos.x)
+                if (wallVertices[i].x <= pos.x)
                 {
                     pos = wallVertices[i];
                     pos.y = 0;
@@ -94,7 +94,7 @@ public class MeshGenerator : MonoBehaviour
             }
             else if(spawnDir == 3) //zMin(Down)
             {
-                if (wallVertices[i].z < pos.z)
+                if (wallVertices[i].z <= pos.z)
                 {
                     pos = wallVertices[i];
                     pos.y = 0;
@@ -120,21 +120,21 @@ public class MeshGenerator : MonoBehaviour
         {
             if (portalDir == 0) //xMax(Right)
             {
-                if (wall[i].x > portalPos.x)
+                if (wall[i].x >= portalPos.x)
                 {
                     portalPos = wall[i];
                 }
             }
             else if (portalDir == 1) //xMin(Left)
             {
-                if (wall[i].x < portalPos.x)
+                if (wall[i].x <= portalPos.x)
                 {
                     portalPos = wall[i];
                 }
             }
             else //zMax(Up)
             {
-                if (wall[i].z > portalPos.z)
+                if (wall[i].z >= portalPos.z)
                 {
                     portalPos = wall[i];
                 }

@@ -4848,7 +4848,7 @@ MonoBehaviour:
   type: 0
   monsterName: Green Crocodile
   damage: 10
-  coolTime: 10
+  coolTime: 12
   duration: 6
   beforeDelay: 0
   afterDelay: 0
