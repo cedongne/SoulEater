@@ -12,6 +12,8 @@ public class MonsterSkillController : MonoBehaviour
     MonsterSkill skill;
     public GameObject circle;
 
+    public float skillRange;
+
     Stopwatch watch;
     public float castingTime;
     void Awake()
@@ -32,21 +34,24 @@ public class MonsterSkillController : MonoBehaviour
         if (watch.ElapsedMilliseconds > 5000)
         {
             StopCoroutine("ActivateSkill");
+            watch.Restart();
             StartCoroutine("ActivateSkill");
         }
     }
 
     IEnumerator ActivateSkill()
     {
-        GetComponent<MonsterFlag>().isCasting = true;
-        nvAgent.isStopped = true;
-        animator.SetTrigger("Skill");
-        skill.DrawCircle();
         Vector3 playerPos = GameObject.Find("Player").transform.position;
-        watch.Restart();
-        yield return new WaitForSeconds(castingTime);
-        skill.Use(playerPos);
-        GetComponent<MonsterFlag>().isCasting = false;
-
+        float dist = Vector3.Distance(playerPos, transform.position);
+        if ( dist < skillRange)
+        {
+            GetComponent<MonsterFlag>().isCasting = true;
+            nvAgent.isStopped = true;
+            animator.SetTrigger("Skill");
+            skill.DrawCircle();
+            yield return new WaitForSeconds(castingTime);
+            skill.Use(playerPos);
+            GetComponent<MonsterFlag>().isCasting = false;
+        }
     }
 }

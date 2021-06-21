@@ -646,6 +646,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   circle: {fileID: 487328686662523773, guid: 8e7a7789c0df7e74488dc6539a47048e, type: 3}
+  skillRange: 15
   castingTime: 1
 --- !u!114 &-4466903685768049197
 MonoBehaviour:
