@@ -15,5 +15,6 @@ public class Define
     {
         QuarterView,
         SideView,
+        topView,
     }
 }
