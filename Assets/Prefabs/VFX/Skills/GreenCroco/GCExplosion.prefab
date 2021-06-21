@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9187455525462084464}
   - component: {fileID: 9187455525480435248}
   - component: {fileID: 9187455525480544144}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Core
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4829,8 +4829,8 @@ GameObject:
   - component: {fileID: 9085278288457499144}
   - component: {fileID: 5301319407025650660}
   - component: {fileID: 3246338143432321388}
-  m_Layer: 0
-  m_Name: DeadBall
+  m_Layer: 2
+  m_Name: GCExplosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9661,7 +9661,7 @@ GameObject:
   - component: {fileID: 9187455525462084468}
   - component: {fileID: 9187455525480435252}
   - component: {fileID: 9187455525480544148}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Flash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14441,7 +14441,7 @@ GameObject:
   - component: {fileID: 9187455525462084470}
   - component: {fileID: 9187455525480435254}
   - component: {fileID: 9187455525480544150}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Flash
   m_TagString: Untagged
   m_Icon: {fileID: 0}

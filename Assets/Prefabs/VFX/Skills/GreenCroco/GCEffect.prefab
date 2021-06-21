@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 567312127452174321}
   - component: {fileID: 567312127436968625}
   - component: {fileID: 567312127437007633}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4813,7 +4813,7 @@ GameObject:
   - component: {fileID: 567312127452174325}
   - component: {fileID: 567312127436968629}
   - component: {fileID: 567312127437007637}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Flash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9557,7 +9557,7 @@ GameObject:
   - component: {fileID: 567312127452174327}
   - component: {fileID: 567312127436968631}
   - component: {fileID: 567312127437007639}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Poison
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14359,7 +14359,7 @@ GameObject:
   - component: {fileID: 8634406970804321768}
   - component: {fileID: 2826971425486470343}
   - component: {fileID: -5298131098669838245}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GCEffect
   m_TagString: PlayerDotSkill
   m_Icon: {fileID: 0}
@@ -19193,6 +19193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 2
+  duration: 0
   slowMoveSpeed: 0.5
 --- !u!114 &-5298131098669838245
 MonoBehaviour:

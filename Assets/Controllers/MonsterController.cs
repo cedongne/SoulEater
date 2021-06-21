@@ -41,7 +41,7 @@ public class MonsterController : MonoBehaviour
     private bool isAttack = false;
     private bool isDamage = false;
 
-    private int getDamage;
+    private float getDamage;
     private float originalMoveSpeed;
 
     private void Awake()
@@ -210,6 +210,14 @@ public class MonsterController : MonoBehaviour
         }
     }
 
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.tag == "PlayerDotSkill")
+        {
+            stat.hp -= collision.gameObject.GetComponent<Damage>().damage * Time.deltaTime;
+            slider.value = (float)stat.hp / (float)stat.maxHp;
+        }
+    }
     private void OnTriggerExit(Collider other)
     {
         nvAgent.speed = originalMoveSpeed;

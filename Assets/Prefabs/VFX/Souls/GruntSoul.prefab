@@ -4851,7 +4851,7 @@ MonoBehaviour:
   coolTime: 10
   duration: 6
   beforeDelay: 0.5
-  afterDelay: 1
+  afterDelay: 0.5
   skillIcon: {fileID: 21300000, guid: 3d17f916438f6ca45a468e76dc32876d, type: 3}
 --- !u!1 &2687737986211436460
 GameObject:
