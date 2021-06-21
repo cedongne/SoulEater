@@ -151,10 +151,7 @@ public class MonsterController : MonoBehaviour
 
     void Damaged()
     {
-        foreach (MeshRenderer mesh in meshs)
-        {
-            mesh.material.color = Color.red;
-        }
+        isDamage = false;
     }
 
     void ColliderEnable()
