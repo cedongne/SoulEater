@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Damage : MonoBehaviour
 {
-    public int damage;
+    public float damage;
+    public float duration;
     public float slowMoveSpeed;
 }

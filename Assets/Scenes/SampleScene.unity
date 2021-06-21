@@ -1090,7 +1090,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mode: 0
-  _delta: {x: 0, y: 30, z: -21}
+  _delta: {x: 0, y: 20, z: -15}
   _player: {fileID: 1833656633}
 --- !u!1 &1059053302
 GameObject:
@@ -1463,6 +1463,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5042081078395475770, guid: bbcfb7c220e8f274c86844a6f41ecbc4, type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 5042081078395475770, guid: bbcfb7c220e8f274c86844a6f41ecbc4, type: 3}
       propertyPath: m_Interpolate
       value: 0
       objectReference: {fileID: 0}
@@ -1478,6 +1482,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5042081078567735869, guid: bbcfb7c220e8f274c86844a6f41ecbc4, type: 3}
+      propertyPath: GruntRock
+      value: 
+      objectReference: {fileID: 1528926440885004153, guid: cff306af7dfe4ff4884204a7f715dfc7, type: 3}
+    - target: {fileID: 5042081078567735869, guid: bbcfb7c220e8f274c86844a6f41ecbc4, type: 3}
+      propertyPath: GruntExplosion
+      value: 
+      objectReference: {fileID: 3759511956910890739, guid: cf4936ee19b66bb4aa1c46a00c6635b1, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbcfb7c220e8f274c86844a6f41ecbc4, type: 3}
 --- !u!1 &1334156784

@@ -404,7 +404,7 @@ MonoBehaviour:
   curState: 0
   hpBarPrefab: {fileID: 785332700798895989, guid: 64952279f741616429c5bc19a6ef3a95, type: 3}
   hpBarOffset: {x: 0, y: 2.2, z: 0}
-  soul: {fileID: 3535797533388571899, guid: e48b1cb89a666d2488a76d4d3a68ff36, type: 3}
+  soul: {fileID: 9154605246913191921, guid: 0263ca033c4af2542b8ab74bdf6bd93b, type: 3}
   attackDist: 3.2
   moveDist: 16
   wakeDist: 24

@@ -41,7 +41,7 @@ public class MonsterController : MonoBehaviour
     private bool isAttack = false;
     private bool isDamage = false;
 
-    private int getDamage;
+    private float getDamage;
     private float originalMoveSpeed;
 
     private void Awake()
@@ -74,6 +74,24 @@ public class MonsterController : MonoBehaviour
         StartCoroutine("CheckState");
     }
 
+    private void Update()
+    {
+        if(stat.hp <= 0 && !isDead)
+        {
+            Vector3 temp = transform.position;
+            soul = Instantiate<GameObject>(soul, playerTransform);
+            soul.name = soul.GetComponent<Souls>().monsterName;
+            soul.transform.position = new Vector3(temp.x, 0, temp.z);
+            soul.transform.parent = GameObject.Find("Items").transform;
+
+            isDead = true;
+            animator.SetTrigger("Die");
+            monsterCollider.isTrigger = true;
+            gameObject.tag = "Dead";
+            Destroy(hpBar, 3f);
+            Destroy(gameObject, 3f);
+        }
+    }
     IEnumerator CheckState()
     {
         while (!isDead)
@@ -169,47 +187,33 @@ public class MonsterController : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("enter");
         if (!isDead)
         {
-            if (other.gameObject.tag == "PlayerDotSkill")
-            {
-                other.gameObject.tag = "PlayerAttack";
-                while(stopwatch.ElapsedMilliseconds < 6000)
-                {
-
-                }
-            }
-            else if (other.gameObject.tag == "PlayerAttack")
+            if (other.gameObject.tag == "PlayerAttack")
             {
                 getDamage = other.gameObject.GetComponent<Damage>().damage;
                 stat.hp -= getDamage;
                 nvAgent.speed *= other.gameObject.GetComponent<Damage>().slowMoveSpeed;
                 slider.value = (float)stat.hp / (float)stat.maxHp;
-
                 if (stat.hp > 0)
                 {
                     Damaged();
                     animator.SetTrigger("Hit");
                 }
-                else
-                {
-                    Vector3 temp = transform.position;
-                    soul = Instantiate<GameObject>(soul, playerTransform);
-                    soul.name = soul.GetComponent<Souls>().monsterName;
-                    soul.transform.position = new Vector3(temp.x, 0, temp.z);
-                    soul.transform.parent = GameObject.Find("Items").transform;
-
-                    isDead = true;
-                    animator.SetTrigger("Die");
-                    monsterCollider.isTrigger = true;
-                    gameObject.tag = "Dead";
-                    Destroy(hpBar, 3f);
-                    Destroy(gameObject, 3f);
-                }
             }
         }
     }
-
+    private void OnTriggerStay(Collider other)
+    {
+        Debug.Log("YY");
+        if (other.gameObject.tag == "PlayerDotSkill")
+        {
+            Debug.Log("Damaged");
+            stat.hp -= other.gameObject.GetComponent<Damage>().damage * Time.deltaTime;
+            slider.value = (float)stat.hp / (float)stat.maxHp;
+        }
+    }
     private void OnTriggerExit(Collider other)
     {
         nvAgent.speed = originalMoveSpeed;

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Stat : MonoBehaviour
 {
-    [HideInInspector] public int maxHp;
-    public int hp;
+    [HideInInspector] public float maxHp;
+    public float hp;
     public int damage;
     public float attackSpeed;
     public float moveSpeed;

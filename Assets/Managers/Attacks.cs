@@ -84,8 +84,19 @@ public class Attacks : MonoBehaviour
     public void Drake_FireBall()
     {
         instance = Instantiate(DrakeFireBall, transform.position, transform.rotation);
+        instance.transform.Rotate(new Vector3(0, 30, 0));
         Rigidbody instanceRigid = instance.GetComponent<Rigidbody>();
-        instanceRigid.velocity = transform.forward * 30;
+        instanceRigid.velocity = instance.transform.forward * 30;
+
+        GameObject instance2 = Instantiate(DrakeFireBall, transform.position, transform.rotation);
+        Rigidbody instanceRigid2 = instance2.GetComponent<Rigidbody>();
+        instanceRigid2.velocity = instance2.transform.forward * 30;
+
+        GameObject instance3 = Instantiate(DrakeFireBall, transform.position, transform.rotation);
+        instance3.transform.Rotate(new Vector3(0, -30, 0));
+        Rigidbody instanceRigid3 = instance3.GetComponent<Rigidbody>();
+        instanceRigid3.velocity = instance3.transform.forward * 30;
+
         CurExplosion = DrakeExplosion;
     }
     public void Grunt_Slap()
