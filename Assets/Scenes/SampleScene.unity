@@ -752,6 +752,7 @@ MonoBehaviour:
   bulletPos: {fileID: 0}
   waveEffect: {fileID: 0}
   curSoul: {fileID: 0}
+  CurExplosion: {fileID: 0}
   GreenCrocoSoul: {fileID: 5032713771510079553, guid: cb6a58ace6bc44e408d58c62addf34fb, type: 3}
   GreenCrocoGas: {fileID: 567312127451810781, guid: f6c1c83b03144174e940ddce277c34da, type: 3}
   GreenCrocoHitEffect: {fileID: 9187455525461792594, guid: 80b6757fc973bf643b1f1df454c86814, type: 3}
@@ -759,6 +760,8 @@ MonoBehaviour:
   DrakeFireBall: {fileID: 6896560183752123225, guid: d631724dfa73e1844b92ad9d038e1d75, type: 3}
   DrakeExplosion: {fileID: 1554943434851217700, guid: ff436ab13de756549849290a9866b28b, type: 3}
   DrakeHitEffect: {fileID: 2493155673997215378, guid: 03b348c959d83124db00fb96ce4aca27, type: 3}
+  GruntSoul: {fileID: 0}
+  GruntSlap: {fileID: 0}
 --- !u!4 &511642963
 Transform:
   m_ObjectHideFlags: 0
@@ -2128,6 +2131,7 @@ MonoBehaviour:
   bulletPos: {fileID: 1611349085}
   waveEffect: {fileID: 1714681308540598, guid: e8b757173a4b8844e986754969f80833, type: 3}
   curSoul: {fileID: 0}
+  CurExplosion: {fileID: 0}
   GreenCrocoSoul: {fileID: 5032713771510079553, guid: cb6a58ace6bc44e408d58c62addf34fb, type: 3}
   GreenCrocoGas: {fileID: 567312127451810781, guid: f6c1c83b03144174e940ddce277c34da, type: 3}
   GreenCrocoHitEffect: {fileID: 9187455525461792594, guid: 80b6757fc973bf643b1f1df454c86814, type: 3}
@@ -2135,6 +2139,8 @@ MonoBehaviour:
   DrakeFireBall: {fileID: 6896560183752123225, guid: d631724dfa73e1844b92ad9d038e1d75, type: 3}
   DrakeExplosion: {fileID: 1554943434851217700, guid: ff436ab13de756549849290a9866b28b, type: 3}
   DrakeHitEffect: {fileID: 2493155673997215378, guid: 03b348c959d83124db00fb96ce4aca27, type: 3}
+  GruntSoul: {fileID: 9133846073454139179, guid: 27682960fbca17943a831d139c4c1908, type: 3}
+  GruntSlap: {fileID: 3759511956910890739, guid: cf4936ee19b66bb4aa1c46a00c6635b1, type: 3}
 --- !u!1 &1714891882
 GameObject:
   m_ObjectHideFlags: 0

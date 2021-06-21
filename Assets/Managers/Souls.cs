@@ -7,7 +7,7 @@ public class Souls : MonoBehaviour
 {
     public enum Type { ACTIVE, PROJECTILE, SWING, PASSIVE };
     public Type type;
-    public string name;
+    public string monsterName;
 
     public float damage;
     public float coolTime;

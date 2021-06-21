@@ -4845,10 +4845,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5406b333b00888a49b82483ad98c4000, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isProjectile: 1
   type: 1
-  name: Drake
-  damage: 0
+  monsterName: Drake
+  damage: 10
   coolTime: 0
   duration: 0
   beforeDelay: 0

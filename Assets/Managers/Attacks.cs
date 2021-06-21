@@ -17,6 +17,7 @@ public class Attacks : MonoBehaviour
     public GameObject waveEffect;
 
     public Souls curSoul;
+    public GameObject CurExplosion;
     private GameObject instance;
 
     public Souls GreenCrocoSoul;
@@ -27,6 +28,9 @@ public class Attacks : MonoBehaviour
     public GameObject DrakeFireBall;
     public GameObject DrakeExplosion;
     public GameObject DrakeHitEffect;
+
+    public Souls GruntSoul;
+    public GameObject GruntSlap;
 
     private void Awake()
     {
@@ -60,6 +64,7 @@ public class Attacks : MonoBehaviour
     }
     public void GreenCroco_PoisonGas()
     {
+        Debug.Log("Gas!");
         instance = Instantiate(GreenCrocoGas, transform.position, transform.rotation);
         Destroy(instance, GreenCrocoSoul.duration);
     }
@@ -68,6 +73,12 @@ public class Attacks : MonoBehaviour
         instance = Instantiate(DrakeFireBall, transform.position, transform.rotation);
         Rigidbody instanceRigid = instance.GetComponent<Rigidbody>();
         instanceRigid.velocity = transform.forward * 30;
+        CurExplosion = DrakeExplosion;
+    }
+    public void Grunt_Slap()
+    {
+        instance = Instantiate(GruntSlap, transform.position, transform.rotation);
+        Destroy(instance, GruntSoul.duration);
     }
 
     public void DamageUpdate()
@@ -81,7 +92,7 @@ public class Attacks : MonoBehaviour
         if (curSoul.type == Souls.Type.PROJECTILE)
         {
             Destroy(instance);
-            instance = Instantiate(DrakeExplosion, transform.position, transform.rotation);
+            instance = Instantiate(CurExplosion, transform.position, transform.rotation);
         }
     }
 }

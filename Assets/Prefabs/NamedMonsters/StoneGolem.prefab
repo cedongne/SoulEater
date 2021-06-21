@@ -333,6 +333,7 @@ GameObject:
   - component: {fileID: 7139745358894277186}
   - component: {fileID: 7139745358894277213}
   - component: {fileID: 7139745358894277214}
+  - component: {fileID: 1617650006039890419}
   m_Layer: 7
   m_Name: StoneGolem
   m_TagString: Monster
@@ -421,7 +422,6 @@ MonoBehaviour:
   hpBarPrefab: {fileID: 785332700798895989, guid: 64952279f741616429c5bc19a6ef3a95, type: 3}
   hpBarOffset: {x: 0, y: 2.2, z: 0}
   soul: {fileID: 4354289369609707610, guid: 8e5c58506540960429fd030fcaa33c7f, type: 3}
-  haveSkill: 1
   attackDist: 3.2
   moveDist: 16
   wakeDist: 0
@@ -472,6 +472,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1617650006039890419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7139745357497714156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a4bab87ff0ef294c835e9c9db645633, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCasting: 0
 --- !u!1 &7139745357521745477
 GameObject:
   m_ObjectHideFlags: 0
