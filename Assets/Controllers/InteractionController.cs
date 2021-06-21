@@ -77,9 +77,9 @@ public class InteractionController : MonoBehaviour
             stat.skill[stat.skillNum] = Instantiate<Souls>(targetSoul);
             stat.skill[stat.skillNum].gameObject.SetActive(false);
             if (targetSoul.type == Souls.Type.PASSIVE)
-                GameObject.Find("SkillCanvas").transform.GetChild(3 + stat.skillNum).GetChild(0).gameObject.SetActive(true);
+                GameObject.Find("SkillCanvas").transform.GetChild(4 + stat.skillNum).GetChild(0).gameObject.SetActive(true);
             if (targetSoul.type == Souls.Type.ACTIVE)
-                GameObject.Find("SkillCanvas").transform.GetChild(3 + stat.skillNum).GetChild(0).gameObject.SetActive(false);
+                GameObject.Find("SkillCanvas").transform.GetChild(4 + stat.skillNum).GetChild(0).gameObject.SetActive(false);
             stat.skill[stat.skillNum].transform.parent = GameObject.Find("Player").transform;
 
             skillIcons[stat.skillNum].GetComponent<Image>().sprite = targetSoul.skillIcon;
