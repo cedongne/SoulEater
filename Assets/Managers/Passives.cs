@@ -74,7 +74,6 @@ public class Passives : MonoBehaviour
         Transform player = GameObject.Find("Player").transform;
         GameObject instance = Instantiate(HedgeSnailPad, player.position, player.rotation);
         instance.transform.parent = player;
-
     }
     public void BlackCrocoPassiveOn()
     {

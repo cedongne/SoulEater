@@ -193,7 +193,7 @@ public class MonsterController : MonoBehaviour
                 if (stat.hp > 0)
                 {
                     isDamage = true;
-                    Invoke("Damaged", 0.5f);
+                    Invoke("Damaged", 0.4f);
                     animator.SetTrigger("Hit");
                 }
             }
