@@ -90,20 +90,10 @@ public class Passives : MonoBehaviour
         Transform player = GameObject.Find("Player").transform;
         GameObject instance = Instantiate(MimicPassive, player.position, player.rotation);
         instance.transform.parent = player;
-
-        float decCool = instance.GetComponent<PassiveStat>().decreaseCooltimeRate;
-        for(int i = 0; i < stat.skill.Length; i++)
-        {
-            stat.skill[i].coolTime *= (100 - decCool) / 100;
-        }
     }
     public void GolemPassiveOn()
     {
-        Transform player = GameObject.Find("Player").transform;
-        GameObject instance = Instantiate(GolemPassive, player.position, player.rotation);
-        instance.transform.parent = player;
-
-        transform.GetComponent<Attacks>().bullet.GetComponent<Damage>().damage += instance.GetComponent<PassiveStat>().increaseDamage;
+        transform.GetComponent<Attacks>().bullet.GetComponent<Damage>().damage += GolemPassive.GetComponent<PassiveStat>().increaseDamage;
         GolemPassive.GetComponent<Damage>().damage = transform.GetComponent<Attacks>().bullet.GetComponent<Damage>().damage;
         transform.GetComponent<Attacks>().bullet = GolemPassive;
     }
@@ -128,21 +118,20 @@ public class Passives : MonoBehaviour
         GameObject instance = GameObject.Find("MimicPassive(Clone)").gameObject;
 
         float decCool = instance.GetComponent<PassiveStat>().decreaseCooltimeRate;
+        Destroy(instance);
         for (int i = 0; i < stat.skill.Length; i++)
         {
-            stat.skill[i].coolTime *= 100 / (100 - decCool);
+            if (stat.skill[i].isCoolDown)
+            {
+                stat.skill[i].coolTime *= 100 / (100 - decCool);
+                stat.skill[i].isCoolDown = false;
+            }
         }
-
-        Destroy(instance);
     }
     public void GolemPassiveOff()
     {
-        GameObject instance = GameObject.Find("GolemPassive(Clone)").gameObject;
-
-        transform.GetComponent<Attacks>().bullet.GetComponent<Damage>().damage -= instance.GetComponent<PassiveStat>().increaseDamage;
+        transform.GetComponent<Attacks>().bullet.GetComponent<Damage>().damage -= GolemPassive.GetComponent<PassiveStat>().increaseDamage;
         bullet.GetComponent<Damage>().damage = transform.GetComponent<Attacks>().bullet.GetComponent<Damage>().damage;
         transform.GetComponent<Attacks>().bullet = bullet;
-
-        Destroy(instance);
     }
 }

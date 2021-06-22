@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5447566731136594870}
   - component: {fileID: 76264397070604853}
+  - component: {fileID: -6989611416445343221}
   m_Layer: 0
-  m_Name: Mimic
+  m_Name: MimicPassive
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,3 +47,15 @@ MonoBehaviour:
   increaseDamage: 0
   increaseHP: 0
   decreaseCooltimeRate: 50
+--- !u!114 &-6989611416445343221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4489129150854023212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37bf32eb2f73aa438b3ded0f1e24882, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
