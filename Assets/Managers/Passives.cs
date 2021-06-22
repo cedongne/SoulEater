@@ -99,11 +99,7 @@ public class Passives : MonoBehaviour
     }
     public void GolemPassiveOn()
     {
-        Transform player = GameObject.Find("Player").transform;
-        GameObject instance = Instantiate(GolemPassive, player.position, player.rotation);
-        instance.transform.parent = player;
-
-        transform.GetComponent<Attacks>().bullet.GetComponent<Damage>().damage += instance.GetComponent<PassiveStat>().increaseDamage;
+        transform.GetComponent<Attacks>().bullet.GetComponent<Damage>().damage += GolemPassive.GetComponent<PassiveStat>().increaseDamage;
         GolemPassive.GetComponent<Damage>().damage = transform.GetComponent<Attacks>().bullet.GetComponent<Damage>().damage;
         transform.GetComponent<Attacks>().bullet = GolemPassive;
     }
@@ -137,12 +133,8 @@ public class Passives : MonoBehaviour
     }
     public void GolemPassiveOff()
     {
-        GameObject instance = GameObject.Find("GolemPassive(Clone)").gameObject;
-
-        transform.GetComponent<Attacks>().bullet.GetComponent<Damage>().damage -= instance.GetComponent<PassiveStat>().increaseDamage;
+        transform.GetComponent<Attacks>().bullet.GetComponent<Damage>().damage -= GolemPassive.GetComponent<PassiveStat>().increaseDamage;
         bullet.GetComponent<Damage>().damage = transform.GetComponent<Attacks>().bullet.GetComponent<Damage>().damage;
         transform.GetComponent<Attacks>().bullet = bullet;
-
-        Destroy(instance);
     }
 }
