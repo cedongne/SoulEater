@@ -16,6 +16,7 @@ public class UIManager : MonoBehaviour
     public Image NewSkill;
     public Image interaction;
 
+    Passives passives;
     int skillNum = 0;
 
     Text GameOverText;
@@ -27,6 +28,7 @@ public class UIManager : MonoBehaviour
         GameOverText = GameOver.GetComponent<Text>();
         playerStat = GameObject.Find("Player").GetComponent<Stat>();
         HPgaze = GameObject.Find("HPGaze").GetComponent<Slider>();
+        passives = GameObject.Find("Weapon").GetComponent<Passives>();
     }
 
     // Update is called once per frame
@@ -57,10 +59,20 @@ public class UIManager : MonoBehaviour
                 skillNum = (skillNum + 1) % 3;
             if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.E))
             {
+                
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    interaction.GetComponent<InteractionController>().SkillGet(skillNum);
-
+                    if(playerStat.skill[skillNum].type == Souls.Type.PASSIVE)
+                    {
+                        passives.turnOffPassive(playerStat.skill[skillNum].monsterName);
+                    }
+                    Destroy(GameObject.Find("Player").transform.Find(playerStat.skill[skillNum].name).gameObject);
+                    Souls currSoul = interaction.GetComponent<InteractionController>().SkillGet(skillNum);
+                    if (currSoul != null && currSoul.type == Souls.Type.PASSIVE)
+                    {
+                        Debug.Log("Passive On");
+                        passives.turnOnPassive(currSoul.monsterName);
+                    }
                 }
                 SkillCursors[skillNum].gameObject.SetActive(false);
                 isSkillChange = false;

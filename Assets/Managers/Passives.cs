@@ -112,7 +112,7 @@ public class Passives : MonoBehaviour
 
     public void HedgeSnail_PadOff()
     {
-        Destroy(GameObject.Find("HedgeSnailPad 1(Clone)").gameObject);
+        Destroy(GameObject.Find("HedgeSnailPassive(Clone)"));
     }
     public void BlackCrocoPassiveOff()
     {
