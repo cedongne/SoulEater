@@ -2510,6 +2510,8 @@ MonoBehaviour:
   - {fileID: 695075489}
   NewSkill: {fileID: 934867800}
   interaction: {fileID: 2094209708}
+  GameOver: {fileID: 1363685020}
+  isGameClear: 0
 --- !u!114 &1584241957
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -33,9 +33,14 @@ public class MapGenerator : MonoBehaviour
     private void Update()
     {
         Transform monsters = transform.GetChild(3).GetChild(0);
-        if (monsters.childCount == 0 && transform.name != "BossMap")
+        if (monsters.childCount == 0)
         {
-            transform.GetChild(4).gameObject.SetActive(true);
+            if (transform.name != "BossMap")
+                transform.GetChild(4).gameObject.SetActive(true);
+            else
+            {
+                GameObject.Find("Canvas").GetComponent<UIManager>().isGameClear = true;
+            }
         }
     }
     void GenerateNavMesh()

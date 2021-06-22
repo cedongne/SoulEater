@@ -17,9 +17,14 @@ public class UIManager : MonoBehaviour
     public Image interaction;
 
     int skillNum = 0;
+
+    Text GameOverText;
+    public GameObject GameOver;
+    public bool isGameClear;
     // Start is called before the first frame update
     void Start()
     {
+        GameOverText = GameOver.GetComponent<Text>();
         playerStat = GameObject.Find("Player").GetComponent<Stat>();
         HPgaze = GameObject.Find("HPGaze").GetComponent<Slider>();
     }
@@ -28,8 +33,12 @@ public class UIManager : MonoBehaviour
     void Update()
     {
         HPgaze.value = (float)playerStat.hp / (float)playerStat.maxHp;
-        if (playerStat.hp <= 0)
+        if (playerStat.hp <= 0 || isGameClear)
         {
+            if (isGameClear)
+            {
+                GameOverText.text = "Clear!";
+            }
             Image gameoverImage = gameover.GetComponent<Image>();
             gameover.SetActive(true);
             if (gameoverImage.color.a < 0.7)
