@@ -6,8 +6,6 @@ using UnityEngine.UI;
 
 public class MonsterController : MonoBehaviour
 {
-    System.Diagnostics.Stopwatch stopwatch;
-
     Stat stat;
     public enum CurrentState { idle, trace, attack, dead };
     public CurrentState curState = CurrentState.idle;
@@ -19,7 +17,6 @@ public class MonsterController : MonoBehaviour
 
     SphereCollider monsterCollider;
     GameObject hitBox;
-    MeshRenderer[] meshs;
 
     public GameObject hpBarPrefab;
     public Vector3 hpBarOffset = new Vector3(0, 2.2f, 0);
@@ -58,13 +55,10 @@ public class MonsterController : MonoBehaviour
 
         monsterCollider = gameObject.GetComponent<SphereCollider>();
         hitBox = monsterTransform.Find("HitBox").gameObject;
-        meshs = GetComponentsInChildren<MeshRenderer>();
     }
     // Start is called before the first frame update
     void Start()
     {
-        stopwatch = new System.Diagnostics.Stopwatch();
-
         originalMoveSpeedClose = moveSpeedClose;
         originalMoveSpeedFar = moveSpeedFar;
 
