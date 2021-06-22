@@ -17,5 +17,5 @@ public class Souls : MonoBehaviour
     public float afterDelay;
     public Sprite skillIcon;
 
-    public bool isCoolDown;
+    public bool isCoolDown = false;
 }
