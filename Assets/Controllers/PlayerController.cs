@@ -284,10 +284,6 @@ public class PlayerController : MonoBehaviour
             {
                 if (stat.skill[0].type != Souls.Type.PASSIVE)
                 {
-                    if (s1Down)
-                    {
-                        Debug.Log("KEY");
-                    }
                     if (stat.skill[0].type == Souls.Type.PROJECTILE)
                         anim.SetTrigger("doShot");
                     else if (stat.skill[0].type == Souls.Type.SWING)
