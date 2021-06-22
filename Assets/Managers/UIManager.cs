@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -40,6 +41,10 @@ public class UIManager : MonoBehaviour
             if (isGameClear)
             {
                 GameOverText.text = "Clear!";
+                if (Input.GetKeyDown(KeyCode.R))
+                {
+                    SceneManager.LoadScene("SampleScene");
+                }
             }
             Image gameoverImage = gameover.GetComponent<Image>();
             gameover.SetActive(true);

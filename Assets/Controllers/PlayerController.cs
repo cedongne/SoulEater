@@ -58,6 +58,8 @@ public class PlayerController : MonoBehaviour
     public Text InteractionText;
     List<GameObject> nearItemList;
 
+    UIManager uiManager;
+
     private void Awake()
     {
         camera = Camera.main;
@@ -67,6 +69,8 @@ public class PlayerController : MonoBehaviour
         passives = GetComponentInChildren<Passives>();
 
         nearItemList = new List<GameObject>();
+
+        uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
     }
     // Start is called before the first frame update
     void Start()
@@ -100,7 +104,7 @@ public class PlayerController : MonoBehaviour
             Attack();
             Skill();
         }
-        else
+        else if(isDead)
         {
             if (Input.GetKeyDown(KeyCode.R))
             {
