@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 400000}
   - component: {fileID: 19800000}
   - component: {fileID: 19900000}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RiseRing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4791,7 +4791,7 @@ GameObject:
   - component: {fileID: 400002}
   - component: {fileID: 19800002}
   - component: {fileID: 19900002}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Ring
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9571,7 +9571,7 @@ GameObject:
   - component: {fileID: 400004}
   - component: {fileID: 19800004}
   - component: {fileID: 19900004}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Light2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14351,7 +14351,7 @@ GameObject:
   - component: {fileID: 400006}
   - component: {fileID: 19800006}
   - component: {fileID: 19900006}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RiseRing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19131,7 +19131,7 @@ GameObject:
   - component: {fileID: 400008}
   - component: {fileID: 19800008}
   - component: {fileID: 19900008}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23912,7 +23912,7 @@ GameObject:
   - component: {fileID: 114000013061455438}
   - component: {fileID: 728414884455069818}
   - component: {fileID: 703337856500004088}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Portal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28789,6 +28789,10 @@ PrefabInstance:
     - target: {fileID: 8152113273841844908, guid: 880537caf96230047b8691dc362fe510, type: 3}
       propertyPath: m_Name
       value: GameObject 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8152113273841844908, guid: 880537caf96230047b8691dc362fe510, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 880537caf96230047b8691dc362fe510, type: 3}

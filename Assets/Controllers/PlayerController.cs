@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    private new Camera camera;
+    private Camera camera;
     public GameObject other;
     public GameObject enemy;
 

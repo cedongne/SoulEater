@@ -89,7 +89,7 @@ public class Passives : MonoBehaviour
     public void MimicPassiveOn()
     {
         Transform player = GameObject.Find("Player").transform;
-        GameObject instance = Instantiate(BlackCrocoPassive, player.position, player.rotation);
+        GameObject instance = Instantiate(MimicPassive, player.position, player.rotation);
         instance.transform.parent = player;
 
         float decCool = instance.GetComponent<PassiveStat>().decreaseCooltimeRate;
@@ -101,7 +101,7 @@ public class Passives : MonoBehaviour
     public void GolemPassiveOn()
     {
         Transform player = GameObject.Find("Player").transform;
-        GameObject instance = Instantiate(BlackCrocoPassive, player.position, player.rotation);
+        GameObject instance = Instantiate(GolemPassive, player.position, player.rotation);
         instance.transform.parent = player;
 
         transform.GetComponent<Attacks>().bullet.GetComponent<Damage>().damage += instance.GetComponent<PassiveStat>().increaseDamage;
@@ -138,7 +138,7 @@ public class Passives : MonoBehaviour
     }
     public void GolemPassiveOff()
     {
-        GameObject instance = GameObject.Find("BlackCrocoPassive(Clone)").gameObject;
+        GameObject instance = GameObject.Find("GolemPassive(Clone)").gameObject;
 
         transform.GetComponent<Attacks>().bullet.GetComponent<Damage>().damage -= instance.GetComponent<PassiveStat>().increaseDamage;
         bullet.GetComponent<Damage>().damage = transform.GetComponent<Attacks>().bullet.GetComponent<Damage>().damage;

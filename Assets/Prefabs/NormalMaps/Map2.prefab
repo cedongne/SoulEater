@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 7597968095716746337}
   - component: {fileID: 7597968095716746336}
   - component: {fileID: 7597968095716746343}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Plane
   m_TagString: Plane
   m_Icon: {fileID: 0}
@@ -235,7 +235,7 @@ GameObject:
   - component: {fileID: 7597968096118234781}
   - component: {fileID: 7597968096118234783}
   - component: {fileID: 7597968096118234782}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Cave
   m_TagString: Cave
   m_Icon: {fileID: 0}
@@ -316,7 +316,7 @@ GameObject:
   - component: {fileID: 7597968096617534273}
   - component: {fileID: 7597968096617534275}
   - component: {fileID: 7597968096617534332}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Walls
   m_TagString: Wall
   m_Icon: {fileID: 0}
