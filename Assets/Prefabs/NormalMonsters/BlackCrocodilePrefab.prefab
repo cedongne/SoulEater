@@ -909,6 +909,7 @@ MonoBehaviour:
   coolDown: 0
   skill: []
   skillNum: 0
+  isSkillGetting: 0
 --- !u!114 &5158852219085026854
 MonoBehaviour:
   m_ObjectHideFlags: 0
