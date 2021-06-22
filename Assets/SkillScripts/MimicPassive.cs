@@ -18,10 +18,13 @@ public class MimicPassive : MonoBehaviour
     {
         for (int i = 0; i < stat.skill.Length; i++)
         {
-            if (!stat.skill[i].isCoolDown)
+            if(stat.skill[i] != null)
             {
-                stat.skill[i].coolTime *= (100 - passiveStat.decreaseCooltimeRate) / 100;
-                stat.skill[i].isCoolDown = true;
+                if (!stat.skill[i].isCoolDown)
+                {
+                    stat.skill[i].coolTime *= (100 - passiveStat.decreaseCooltimeRate) / 100;
+                    stat.skill[i].isCoolDown = true;
+                }
             }
         }
     }
