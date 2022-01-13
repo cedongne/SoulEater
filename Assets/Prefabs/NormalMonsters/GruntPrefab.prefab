@@ -337,6 +337,7 @@ MonoBehaviour:
   afterAttackDelay: 0.8
   moveSpeedClose: 4
   moveSpeedFar: 2
+  soulDropProbability: 30
 --- !u!114 &3491989784701029460
 MonoBehaviour:
   m_ObjectHideFlags: 0

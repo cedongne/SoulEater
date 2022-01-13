@@ -404,6 +404,7 @@ MonoBehaviour:
   afterAttackDelay: 0.8
   moveSpeedClose: 4
   moveSpeedFar: 2
+  soulDropProbability: 30
 --- !u!195 &8908060103877748731
 NavMeshAgent:
   m_ObjectHideFlags: 0

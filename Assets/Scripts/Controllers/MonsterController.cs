@@ -34,6 +34,8 @@ public class MonsterController : MonoBehaviour
     public float moveSpeedClose;
     public float moveSpeedFar;
 
+    public float soulDropProbability = 30;
+
     private bool isDead = false;
     private bool isAttack = false;
     private bool isDamage = false;
@@ -76,10 +78,16 @@ public class MonsterController : MonoBehaviour
         if(stat.hp <= 0 && !isDead)
         {
             Vector3 temp = transform.position;
-            soul = Instantiate<GameObject>(soul, playerTransform);
-            soul.name = soul.GetComponent<Souls>().monsterName;
-            soul.transform.position = new Vector3(temp.x, 0, temp.z);
-            soul.transform.parent = GameObject.Find("Items").transform;
+            float rand = Random.Range(1, 100);
+            Debug.Log(rand + " " + soulDropProbability);
+            if (rand <= soulDropProbability)
+            {
+                soul = Instantiate(soul, playerTransform);
+                soul.name = soul.GetComponent<Souls>().monsterName;
+                soul.transform.position = new Vector3(temp.x, 0, temp.z);
+                soul.transform.parent = GameObject.Find("Items").transform;
+
+            }
 
             isDead = true;
             animator.SetTrigger("Die");
