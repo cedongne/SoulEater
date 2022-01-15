@@ -200,8 +200,6 @@ INHA Univ. 2021-1 Game Programming Class Project
     | `몬스터`   | 골렘                        | `스킬 타입` | 패시브 |
     | `효과`     | 기본공격 크기, 대미지 10 증가 | `쿨타임`   | -      |
     | `선딜레이` | -                           | `후딜레이`  | -     |
-    
-    ![image](https://user-images.githubusercontent.com/57585303/149452611-f58c22dd-362a-4a1d-8ec7-0947e2f80ca6.png)
 
 
   각 스킬 타입의 구현 방식은 다음과 같다.
