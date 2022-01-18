@@ -20,7 +20,7 @@ public class EnemyHpBar : MonoBehaviour
         uiCamera = canvas.worldCamera;
 
         rectParent = canvas.GetComponent<RectTransform>();
-        rectHp = this.gameObject.GetComponent<RectTransform>();
+        rectHp = gameObject.GetComponent<RectTransform>();
     }
 
     private void LateUpdate()

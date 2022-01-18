@@ -178,6 +178,7 @@ public class MonsterController : MonoBehaviour
         _hpBar.targetTr = gameObject.transform;
         _hpBar.offset = hpBarOffset;
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (!isDead)
