@@ -152,7 +152,7 @@ public class PlayerController : MonoBehaviour
             }
             else if (other.gameObject.tag == "Soul")
             {
-                // Collider에 들어오는 순서대로 Queue에 넣음
+                // Collider에 들어오는 순서대로 List에 넣음
                 nearItemList.Add(other.gameObject);
             }
             if (stat.hp <= 0)
@@ -235,13 +235,18 @@ public class PlayerController : MonoBehaviour
 
         if (dDown && !isAction && isDodgeReady)
         {
-            dodgeVec = moveVec;
-            _speed *= 8;
-            anim.SetTrigger("doDodge");
-            isDodge = true;
-            dodgeDelay = 0f;
+            if (!moveVec.Equals(Vector3.zero))
+            {
+                dodgeVec = moveVec;
+                _speed *= 8;
 
-            Invoke("DodgeOut", 0.15f);
+                anim.SetTrigger("doDodge");
+
+                isDodge = true;
+                dodgeDelay = 0f;
+
+                Invoke("DodgeOut", 0.15f);
+            }
         }
     }
 

@@ -82,7 +82,7 @@ public class MonsterController : MonoBehaviour
             Debug.Log(rand + " " + soulDropProbability);
             if (rand <= soulDropProbability)
             {
-                soul = Instantiate(soul, playerTransform);
+                soul = Instantiate(soul);
                 soul.name = soul.GetComponent<Souls>().monsterName;
                 soul.transform.position = new Vector3(temp.x, 0, temp.z);
                 soul.transform.parent = GameObject.Find("Items").transform;
