@@ -4,11 +4,12 @@ INHA Univ. 2021-1 Game Programming Class Project
 
 2인 팀으로 개발되었으며, 팀장을 맡아 전체적인 프로젝트 관리를 겸한 본인의 개발 영역은
 
-- 입력 처리 및 애니메이션
-- 물리 처리
-- UI/UX 및 기능 구현(미니맵 제외)
-- 대부분의 캐릭터 스킬 구현
-- 드랍 아이템 구현
+- 입력 처리 및 애니메이션 [[PlayerController.cs](https://github.com/cedongne/SoulEater/blob/main/Assets/Scripts/Controllers/PlayerController.cs) / [CameraController.cs](https://github.com/cedongne/SoulEater/blob/main/Assets/Scripts/Controllers/CameraController.cs) / [InteractionController.cs](https://github.com/cedongne/SoulEater/blob/main/Assets/Scripts/Controllers/InteractionController.cs)]
+- 물리 처리 
+- 몬스터 시스템 구현 [[MonsterController.cs](https://github.com/cedongne/SoulEater/blob/main/Assets/Scripts/Controllers/MonsterController.cs)]
+- UI/UX 및 기능 구현(미니맵 제외) [[UIManager.cs](https://github.com/cedongne/SoulEater/blob/main/Assets/Scripts/Managers/UIManager.cs) / [EnemyHPBar.cs](https://github.com/cedongne/SoulEater/blob/main/Assets/Scripts/Managers/EnemyHpBar.cs)]
+- 대부분의 캐릭터 스킬 구현 [[Attacks.cs](https://github.com/cedongne/SoulEater/blob/main/Assets/Scripts/Managers/Attacks.cs) / [Cooltime.cs](https://github.com/cedongne/SoulEater/blob/main/Assets/Scripts/Managers/Cooltime.cs)]
+- 드랍 아이템 구현 [[PlayerController.cs](https://github.com/cedongne/SoulEater/blob/main/Assets/Scripts/Controllers/PlayerController.cs)]
 
 등이 있다.
 
