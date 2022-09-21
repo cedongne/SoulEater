@@ -351,16 +351,13 @@ public class PlayerController : MonoBehaviour
     void LookMouseCursor()
     {
         ray = camera.ScreenPointToRay(Input.mousePosition);
-        RaycastHit[] hitResult;
+        RaycastHit hitResult;
         Debug.DrawRay(transform.position, ray.direction * 15, Color.red);
-        hitResult = Physics.RaycastAll(ray);
-        if (hitResult.Length > 0)
+        if (Physics.Raycast(ray, out hitResult))
         {
-            int index;
-            for(index = 0; !hitResult[index].transform.CompareTag("Plane"); index++) { }
 
-            Vector3 mouseDir = new Vector3(hitResult[index].point.x, transform.position.y, hitResult[index].point.z) - transform.position;
-            cursorPos = new Vector3(hitResult[index].point.x, transform.position.y, hitResult[index].point.z);
+            Vector3 mouseDir = new Vector3(hitResult.point.x, transform.position.y, hitResult.point.z) - transform.position;
+            cursorPos = new Vector3(hitResult.point.x, transform.position.y, hitResult.point.z);
             anim.transform.forward = mouseDir;
             transform.forward = mouseDir;
         }

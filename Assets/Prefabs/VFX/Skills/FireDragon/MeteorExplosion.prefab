@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7605156257379159081}
   - component: {fileID: 7605156257379159078}
   - component: {fileID: 7539417547863187378}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: MeteorExplosion
   m_TagString: PlayerAttack
   m_Icon: {fileID: 0}
@@ -4880,7 +4880,7 @@ GameObject:
   - component: {fileID: 7605156256931723209}
   - component: {fileID: 7605156256917566089}
   - component: {fileID: 7605156256917523241}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Spark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9660,7 +9660,7 @@ GameObject:
   - component: {fileID: 7605156256931723211}
   - component: {fileID: 7605156256917566091}
   - component: {fileID: 7605156256917523243}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Core
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14440,7 +14440,7 @@ GameObject:
   - component: {fileID: 7605156256931723213}
   - component: {fileID: 7605156256917566093}
   - component: {fileID: 7605156256917523245}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Ring
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19220,7 +19220,7 @@ GameObject:
   - component: {fileID: 7605156256931723215}
   - component: {fileID: 7605156256917566095}
   - component: {fileID: 7605156256917523247}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Flash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
