@@ -38,7 +38,7 @@ INHA Univ. 2021-1 Game Programming Class Project
     
     - **기본공격**
       
-      LookMouseCursor 함수로 원하는 방향을 향해 플레이어가 회전하면 해당 방향으로 Velocity를 주어 투사체를 발사하였다.
+      LookMouseCursor 함수로 원하는 방향을 향해 플레이어가 회전하면 해당 방향으로 Velocity를 주어 투사체를 발사하였다. 몬스터에게 공격이 닿은 직후 `Bullet` 오브젝트의 태그를 Notagged로 변경하여 중첩 콜라이더에 대한 반응을 해결하였다.
   
     - **대시**
    
