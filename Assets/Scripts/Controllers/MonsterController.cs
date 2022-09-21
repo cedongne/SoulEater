@@ -190,6 +190,7 @@ public class MonsterController : MonoBehaviour
             }
             else if (other.gameObject.tag == "PlayerAttack")
             {
+                other.tag = "Untagged";
                 getDamage = other.gameObject.GetComponent<Damage>().damage;
                 stat.hp -= getDamage;
                 slider.value = (float)stat.hp / (float)stat.maxHp;

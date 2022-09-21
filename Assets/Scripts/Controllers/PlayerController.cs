@@ -60,6 +60,7 @@ public class PlayerController : MonoBehaviour
 
     UIManager uiManager;
 
+    Ray ray;
     private void Awake()
     {
         camera = Camera.main;
@@ -349,13 +350,17 @@ public class PlayerController : MonoBehaviour
     }
     void LookMouseCursor()
     {
-        Ray ray = camera.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hitResult;
-
-        if(Physics.Raycast(ray, out hitResult))
+        ray = camera.ScreenPointToRay(Input.mousePosition);
+        RaycastHit[] hitResult;
+        Debug.DrawRay(transform.position, ray.direction * 15, Color.red);
+        hitResult = Physics.RaycastAll(ray);
+        if (hitResult.Length > 0)
         {
-            Vector3 mouseDir = new Vector3(hitResult.point.x, transform.position.y, hitResult.point.z) - transform.position;
-            cursorPos = new Vector3(hitResult.point.x, transform.position.y, hitResult.point.z);
+            int index;
+            for(index = 0; !hitResult[index].transform.CompareTag("Plane"); index++) { }
+
+            Vector3 mouseDir = new Vector3(hitResult[index].point.x, transform.position.y, hitResult[index].point.z) - transform.position;
+            cursorPos = new Vector3(hitResult[index].point.x, transform.position.y, hitResult[index].point.z);
             anim.transform.forward = mouseDir;
             transform.forward = mouseDir;
         }

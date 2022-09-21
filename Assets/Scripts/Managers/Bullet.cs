@@ -15,6 +15,8 @@ public class Bullet : MonoBehaviour
     {
         if (other.gameObject.tag == "wall" || other.gameObject.tag == "Monster")
         {
+//            tag = "Untagged";
+            Debug.Log("Hit " + other.name);
             GameObject instantHitEffect = Instantiate(hitEffect, other.transform.position, other.transform.rotation);
             Destroy(gameObject);
             Destroy(instantHitEffect, 1.0f);
